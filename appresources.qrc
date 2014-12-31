@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>Icons/serial_port_icon.icns</file>
+    </qresource>
+    <qresource prefix="/StyleSheet">
+        <file>StyleSheet/style.qss</file>
+    </qresource>
+</RCC>
