@@ -15,20 +15,20 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    	qcustomplot.cpp \
+        qcustomplot/qcustomplot.cpp \
     helpwindow.cpp
 
 HEADERS  += mainwindow.hpp \
-    		qcustomplot.h \
+                qcustomplot/qcustomplot.h \
     helpwindow.hpp
 
 
 FORMS    += mainwindow.ui \
     helpwindow.ui
 
-RC_FILE = myapp.rc
+RC_FILE = res/myapp.rc
 
 RESOURCES += \
-    appresources.qrc
+    res/appresources.qrc
 
 
