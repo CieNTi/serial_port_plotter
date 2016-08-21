@@ -317,13 +317,13 @@ void MainWindow::on_connectButton_clicked()
 void MainWindow::portOpenedSuccess()
 {
     //qDebug() << "Port opened signal received!";
+    setupPlot();                                                                          // Create the QCustomPlot area
     ui->connectButton->setText("Disconnect");                                             // Change buttons
     ui->statusBar->showMessage("Connected!");
     enableControls(false);                                                                // Disable controls if port is open
     ui->stopPlotButton->setText("Stop Plot");                                             // Enable button for stopping plot
     ui->stopPlotButton->setEnabled(true);
     ui->savePNGButton->setEnabled(true);                                                  // Enable button for saving plot
-    setupPlot();                                                                          // Create the QCustomPlot area
     updateTimer.start(20);                                                                // Slot is refreshed 20 times per second
     connected = true;                                                                     // Set flags
     plotting = true;
