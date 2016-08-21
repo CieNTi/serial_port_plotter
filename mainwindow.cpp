@@ -27,9 +27,10 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 
-/******************************************************************************************************************/
-/* Constructor */
-/******************************************************************************************************************/
+/**
+ * @brief Constructor
+ * @param parent
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
@@ -58,65 +59,32 @@ MainWindow::MainWindow(QWidget *parent) :
     connected(false),
     plotting(false),
     dataPointNumber(0),
+    serialPort(NULL),
     STATE(WAIT_START),
     NUMBER_OF_POINTS(500)
 {
-    ui->setupUi(this);
-    createUI();                                                                           // Create the UI
-    ui->plot->setBackground(gui_colors[0]);                                             // Background for the plot area
-    setupPlot();                                                                          // Setup plot area
-    ui->stopPlotButton->setEnabled(false);                                                // Plot button is disabled initially
+    ui->setupUi (this);
 
-    ui->plot->setNotAntialiasedElements(QCP::aeAll);                                      // used for higher performance (see QCustomPlot real time example)
-    QFont font;
-    font.setStyleStrategy(QFont::NoAntialias);
-    ui->plot->xAxis->setTickLabelFont(font);
-    ui->plot->yAxis->setTickLabelFont(font);
-    ui->plot->legend->setFont(font);
+    /* Init UI and populate UI controls */
+    createUI();
 
-    ui->plot->yAxis->setAutoTickStep(false);                                              // User can change tick step with a spin box
-    ui->plot->yAxis->setTickStep(500);                                                    // Set initial tick step
-    ui->plot->xAxis->setTickLabelColor(gui_colors[2]);                              // Tick labels color
-    ui->plot->yAxis->setTickLabelColor(gui_colors[2]);                              // See QCustomPlot examples / styled demo
-    ui->plot->xAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
-    ui->plot->yAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
-    ui->plot->xAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
-    ui->plot->yAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
-    ui->plot->xAxis->grid()->setSubGridVisible(true);
-    ui->plot->yAxis->grid()->setSubGridVisible(true);
-    ui->plot->xAxis->setBasePen(QPen(gui_colors[2]));
-    ui->plot->yAxis->setBasePen(QPen(gui_colors[2]));
-    ui->plot->xAxis->setTickPen(QPen(gui_colors[2]));
-    ui->plot->yAxis->setTickPen(QPen(gui_colors[2]));
-    ui->plot->xAxis->setSubTickPen(QPen(gui_colors[2]));
-    ui->plot->yAxis->setSubTickPen(QPen(gui_colors[2]));
-    ui->plot->xAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
-    ui->plot->yAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
-    ui->plot->setInteraction(QCP::iRangeDrag, true);
-    ui->plot->setInteraction(QCP::iRangeZoom, true);
-                                                                                          // Slot for printing coordinates
-    connect(ui->plot, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(onMouseMoveInPlot(QMouseEvent*)));
-
-    serialPort = NULL;                                                                    // Set serial port pointer to NULL initially
-    connect(&updateTimer, SIGNAL(timeout()), this, SLOT(replot()));                       // Connect update timer to replot slot
+    /* Setup plot area and connect controls slots */
+    setupPlot();
 }
-/******************************************************************************************************************/
 
-
-/******************************************************************************************************************/
-/* Destructor */
-/******************************************************************************************************************/
+/**
+ * @brief Destructor
+ */
 MainWindow::~MainWindow()
 {
     if(serialPort != NULL) delete serialPort;
     delete ui;
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Create the GUI */
-/******************************************************************************************************************/
+/**
+ * @brief Create remaining elements and populate the controls
+ */
 void MainWindow::createUI()
 {
     if(QSerialPortInfo::availablePorts().size() == 0) {                                   // Check if there are any ports at all; if not, disable controls and return
@@ -151,26 +119,60 @@ void MainWindow::createUI()
     ui->comboStop->addItem("1 bit");                                                      // Populate stop bits combo box
     ui->comboStop->addItem("2 bits");
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Setup the plot area */
-/******************************************************************************************************************/
+/**
+ * @brief Setup the plot area
+ */
 void MainWindow::setupPlot()
 {
     ui->plot->clearItems();                                                              // Remove everything from the plot
+    ui->plot->setBackground(gui_colors[0]);                                             // Background for the plot area
 
     ui->plot->yAxis->setTickStep(ui->spinYStep->value());                                // Set tick step according to user spin box
     ui->plot->yAxis->setRange(ui->spinAxesMin->value(), ui->spinAxesMax->value());       // Set lower and upper plot range
     ui->plot->xAxis->setRange(0, NUMBER_OF_POINTS);                                      // Set x axis range for specified number of points
+
+    ui->stopPlotButton->setEnabled(false);                                                // Plot button is disabled initially
+
+    ui->plot->setNotAntialiasedElements(QCP::aeAll);                                      // used for higher performance (see QCustomPlot real time example)
+    QFont font;
+    font.setStyleStrategy(QFont::NoAntialias);
+    ui->plot->xAxis->setTickLabelFont(font);
+    ui->plot->yAxis->setTickLabelFont(font);
+    ui->plot->legend->setFont(font);
+
+    ui->plot->yAxis->setAutoTickStep(false);                                              // User can change tick step with a spin box
+    ui->plot->yAxis->setTickStep(500);                                                    // Set initial tick step
+    ui->plot->xAxis->setTickLabelColor(gui_colors[2]);                              // Tick labels color
+    ui->plot->yAxis->setTickLabelColor(gui_colors[2]);                              // See QCustomPlot examples / styled demo
+    ui->plot->xAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
+    ui->plot->yAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
+    ui->plot->xAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
+    ui->plot->yAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
+    ui->plot->xAxis->grid()->setSubGridVisible(true);
+    ui->plot->yAxis->grid()->setSubGridVisible(true);
+    ui->plot->xAxis->setBasePen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setBasePen(QPen(gui_colors[2]));
+    ui->plot->xAxis->setTickPen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setTickPen(QPen(gui_colors[2]));
+    ui->plot->xAxis->setSubTickPen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setSubTickPen(QPen(gui_colors[2]));
+    ui->plot->xAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
+    ui->plot->yAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
+    ui->plot->setInteraction(QCP::iRangeDrag, true);
+    ui->plot->setInteraction(QCP::iRangeZoom, true);
+                                                                                          // Slot for printing coordinates
+    connect(ui->plot, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(onMouseMoveInPlot(QMouseEvent*)));
+
+    connect(&updateTimer, SIGNAL(timeout()), this, SLOT(replot()));                       // Connect update timer to replot slot
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Enable/disable controls */
-/******************************************************************************************************************/
+/**
+ * @brief Enable/disable controls
+ * @param enable true enable, false disable
+ */
 void MainWindow::enableControls(bool enable)
 {
     ui->comboBaud->setEnabled(enable);                                                    // Disable controls in the GUI
@@ -179,12 +181,16 @@ void MainWindow::enableControls(bool enable)
     ui->comboPort->setEnabled(enable);
     ui->comboStop->setEnabled(enable);
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Open the inside serial port; connect its signals */
-/******************************************************************************************************************/
+/**
+ * @brief Open the inside serial port; connect its signals
+ * @param portInfo
+ * @param baudRate
+ * @param dataBits
+ * @param parity
+ * @param stopBits
+ */
 void MainWindow::openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits)
 {
     serialPort = new QSerialPort(portInfo, 0);                                            // Create a new serial port
@@ -207,18 +213,18 @@ void MainWindow::openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::D
     }
 
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Port Combo Box index changed slot; displays info for selected port when combo box is changed */
-/******************************************************************************************************************/
+/**
+ * @brief Port Combo Box index changed slot; displays info for selected port when combo box is changed
+ * @param arg1
+ */
 void MainWindow::on_comboPort_currentIndexChanged(const QString &arg1)
 {
     QSerialPortInfo selectedPort(arg1);                                                   // Dislplay info for selected port
     ui->statusBar->showMessage(selectedPort.description());
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 /******************************************************************************************************************/
@@ -274,12 +280,11 @@ void MainWindow::on_connectButton_clicked()
         openPort(portInfo, baudRate, dataBits, parity, stopBits);                         // Open serial port and connect its signals
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for port opened successfully */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for port opened successfully
+ */
 void MainWindow::portOpenedSuccess()
 {
     //qDebug() << "Port opened signal received!";
@@ -294,23 +299,21 @@ void MainWindow::portOpenedSuccess()
     connected = true;                                                                     // Set flags
     plotting = true;
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for fail to open the port */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for fail to open the port
+ */
 void MainWindow::portOpenedFail()
 {
     //qDebug() << "Port cannot be open signal received!";
     ui->statusBar->showMessage("Cannot open port!");
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for closing the port */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for closing the port
+ */
 void MainWindow::onPortClosed()
 {
     //qDebug() << "Port closed signal received!";
@@ -322,11 +325,11 @@ void MainWindow::onPortClosed()
     disconnect(this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
     disconnect(this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
 }
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Replot */
-/******************************************************************************************************************/
+/**
+ * @brief Replot
+ */
 void MainWindow::replot()
 {
     if(connected) {
@@ -334,12 +337,11 @@ void MainWindow::replot()
         ui->plot->replot();
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Stop Plot Button */
-/******************************************************************************************************************/
+/**
+ * @brief Stop Plot Button
+ */
 void MainWindow::on_stopPlotButton_clicked()
 {
     if(plotting) {                                                                        // Stop plotting
@@ -352,12 +354,12 @@ void MainWindow::on_stopPlotButton_clicked()
         ui->stopPlotButton->setText("Stop Plot");
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for new data from serial port . Data is comming in QStringList and needs to be parsed */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for new data from serial port . Data is comming in QStringList and needs to be parsed
+ * @param newData
+ */
 void MainWindow::onNewDataArrived(QStringList newData)
 {
     if(plotting) {
@@ -375,34 +377,33 @@ void MainWindow::onNewDataArrived(QStringList newData)
 //        } else return;
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for spin box for plot minimum value on y axis */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for spin box for plot minimum value on y axis
+ * @param arg1
+ */
 void MainWindow::on_spinAxesMin_valueChanged(int arg1)
 {
     ui->plot->yAxis->setRangeLower(arg1);
     ui->plot->replot();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Slot for spin box for plot maximum value on y axis */
-/******************************************************************************************************************/
+/**
+ * @brief Slot for spin box for plot maximum value on y axis
+ * @param arg1
+ */
 void MainWindow::on_spinAxesMax_valueChanged(int arg1)
 {
     ui->plot->yAxis->setRangeUpper(arg1);
     ui->plot->replot();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Read data for inside serial port */
-/******************************************************************************************************************/
+/**
+ * @brief Read data for inside serial port
+ */
 void MainWindow::readData()
 {
     if(serialPort->bytesAvailable()) {                                                    // If any bytes are available
@@ -437,12 +438,12 @@ void MainWindow::readData()
         }
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Number of axes combo; when changed, display axes colors in status bar */
-/******************************************************************************************************************/
+/**
+ * @brief Number of axes combo; when changed, display axes colors in status bar
+ * @param index
+ */
 void MainWindow::on_comboAxes_currentIndexChanged(int index)
 {
     if(index == 0) {
@@ -453,33 +454,31 @@ void MainWindow::on_comboAxes_currentIndexChanged(int index)
         ui->statusBar->showMessage("Axis 1: Red; Axis 2: Yellow; Axis 3: Green");
     }
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Spin box for changing the Y Tick step */
-/******************************************************************************************************************/
+/**
+ * @brief Spin box for changing the Y Tick step
+ * @param arg1
+ */
 void MainWindow::on_spinYStep_valueChanged(int arg1)
 {
     ui->plot->yAxis->setTickStep(arg1);
     ui->plot->replot();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Save a JPG image of the plot to current EXE directory */
-/******************************************************************************************************************/
+/**
+ * @brief Save a PNG image of the plot to current EXE directory
+ */
 void MainWindow::on_savePNGButton_clicked()
 {
-    ui->plot->saveJpg(QString::number(dataPointNumber) + ".jpg");
+    ui->plot->savePng (QString::number(dataPointNumber) + ".png");
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Reset the zoom of the plot to the initial values */
-/******************************************************************************************************************/
+/**
+ * @brief Reset the zoom of the plot to the initial values
+ */
 void MainWindow::on_resetPlotButton_clicked()
 {
     ui->plot->yAxis->setRange(0, 4095);
@@ -487,12 +486,12 @@ void MainWindow::on_resetPlotButton_clicked()
     ui->plot->yAxis->setTickStep(500);
     ui->plot->replot();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Prints coordinates of mouse pointer in status bar on mouse release */
-/******************************************************************************************************************/
+/**
+ * @brief Prints coordinates of mouse pointer in status bar on mouse release
+ * @param event
+ */
 void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
 {
     int xx = ui->plot->xAxis->pixelToCoord(event->x());
@@ -501,27 +500,26 @@ void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
     coordinates = coordinates.arg(xx).arg(yy);
     ui->statusBar->showMessage(coordinates);
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Spin box controls how many data points are collected and displayed */
-/******************************************************************************************************************/
+/**
+ * @brief Spin box controls how many data points are collected and displayed
+ * @param arg1
+ */
 void MainWindow::on_spinPoints_valueChanged(int arg1)
 {
     NUMBER_OF_POINTS = arg1;
     ui->plot->replot();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-/******************************************************************************************************************/
-/* Shows a window with instructions */
-/******************************************************************************************************************/
+/**
+ * @brief Shows a window with instructions
+ */
 void MainWindow::on_actionHow_to_use_triggered()
 {
     helpWindow = new HelpWindow(this);
     helpWindow->setWindowTitle("How to use this application");
     helpWindow->show();
 }
-/******************************************************************************************************************/
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
