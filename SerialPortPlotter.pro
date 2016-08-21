@@ -26,9 +26,8 @@ HEADERS  += mainwindow.hpp \
 FORMS    += mainwindow.ui \
     helpwindow.ui
 
-RC_FILE = res/myapp.rc
+RC_FILE = res/serial_port_plotter.rc
 
 RESOURCES += \
-    res/appresources.qrc
-
-
+    res/serial_port_plotter.qrc \
+    res/qdark_stylesheet/qdarkstyle/style.qrc

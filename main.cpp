@@ -31,14 +31,17 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QFile file(":/v1_stylesheet/style.qss");                            // Apply style sheet
-    if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    /* Apply style sheet */
+    QFile file(":/serial_port_plotter/styles/style.qss");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+      {
         a.setStyleSheet(file.readAll());
         file.close();
-    }
+      }
 
+    /* Get the icon for the window corner */
     MainWindow w;
-    QIcon appIcon(":/icons/serial_port_icon.icns");                       // Get the icon for the right corner
+    QIcon appIcon(":/serial_port_plotter/icons/serial_port_icon.icns");
     w.setWindowIcon(appIcon);
     w.setWindowTitle("Serial Port Plotter");
     w.show();
