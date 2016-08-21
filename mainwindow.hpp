@@ -39,8 +39,8 @@
 #define IN_MESSAGE      2
 #define UNDEFINED       3
 
-#define CUSTOM_COLORS   7
-#define GCP_CUSTOM_COLORS 3
+#define CUSTOM_LINE_COLORS   7
+#define GCP_CUSTOM_LINE_COLORS 3
 
 namespace Ui {
     class MainWindow;
@@ -66,7 +66,7 @@ private slots:
     void on_spinAxesMin_valueChanged(int arg1);                                           // Changing lower limit for the plot
     void on_spinAxesMax_valueChanged(int arg1);                                           // Changing upper limit for the plot
     void readData();                                                                      // Slot for inside serial port
-    void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
+    //void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
     void on_spinYStep_valueChanged(int arg1);                                             // Spin box for changing Y axis tick step
     void on_savePNGButton_clicked();                                                      // Button for saving JPG
     void on_resetPlotButton_clicked();                                                    // Resets plot to initial zoom and coordinates
@@ -85,8 +85,8 @@ private:
     Ui::MainWindow *ui;
 
     /* Line colors */
-    QColor line_colors[CUSTOM_COLORS];
-    QColor gui_colors[GCP_CUSTOM_COLORS];
+    QColor line_colors[CUSTOM_LINE_COLORS];
+    QColor gui_colors[GCP_CUSTOM_LINE_COLORS];
 
     /* Main info */
     bool connected;                                                                       // Status connection variable

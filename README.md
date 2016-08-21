@@ -49,6 +49,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Resources structure
 - Updated qcustomplot to v1.3.2
 - Menubar is replaced by icon toolbar for usability
+- mainwindow.cpp comments are now doxygen friendly
 
 ### Fixed
 
@@ -62,3 +63,6 @@ Initial README and commit
 
 [Unreleased]: https://link/to/diff
 [1.0.0]: https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/
+
+# To-Do
+- Fill baud automatically and allow custom by textbox (when COM ui)
