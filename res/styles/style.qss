@@ -35,7 +35,7 @@ QProgressBar::chunk:horizontal {
 QToolTip
 {
     border: 1px solid #3A3939;
-    background-color: rgb(90, 102, 117);;
+    background-color: rgb(90, 102, 117);
     color: white;
     padding: 1px;
     opacity: 200;
@@ -312,7 +312,7 @@ QTextEdit
 
 QPlainTextEdit
 {
-    background-color: #201F1F;;
+    background-color: #201F1F;
     color: silver;
     border-radius: 3px;
     border: 1px solid #3A3939;
@@ -443,7 +443,8 @@ QStackedWidget
 }
 
 QToolBar {
-    border: 1px solid #393838;
+    /* border: 1px solid #393838; */
+    border: none;
     background: 1px solid #302F2F;
     font-weight: bold;
 }
@@ -849,7 +850,7 @@ QListView::item:!selected:hover, QListView::item:!selected:hover, QTreeView::ite
 }
 
 QListView::item:selected:hover, QListView::item:selected:hover, QTreeView::item:selected:hover  {
-    background: #78879b;;
+    background: #78879b;
     color: #FFFFFF;
 }
 
@@ -891,19 +892,22 @@ QSlider::handle:vertical {
 
 QToolButton {
     background-color: transparent;
-    border: 1px solid #3A3939;
+    /* border: 1px solid #3A3939;
+    border-radius: 3px; */
+    border: none;
     border-radius: 3px;
     margin: 3px;
+    padding: 3px;
 }
 
 QToolButton:pressed, QToolButton::menu-button:pressed {
     background-color: #4A4949;
-    border: 1px solid silver;
+    /* border: 1px solid silver; */
 }
 
 QToolButton:hover, QToolButton::menu-button:hover {
     background-color: #4A4949;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 QToolButton[popupMode="1"] { /* only for MenuButtonPopup */

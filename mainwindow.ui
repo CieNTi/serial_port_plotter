@@ -281,48 +281,6 @@
          <item row="0" column="0">
           <layout class="QVBoxLayout" name="plotControlsLayout">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <item>
-              <widget class="QLabel" name="labelAxes">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>AXES</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="comboAxes">
-               <property name="minimumSize">
-                <size>
-                 <width>69</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>69</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="currentIndex">
-                <number>-1</number>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="horizontalLayout_10">
              <item>
               <widget class="QLabel" name="pointsLabel">
@@ -361,10 +319,10 @@
                 <number>10</number>
                </property>
                <property name="maximum">
-                <number>1000</number>
+                <number>100000</number>
                </property>
                <property name="value">
-                <number>500</number>
+                <number>1000</number>
                </property>
               </widget>
              </item>
@@ -528,9 +486,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="saveJPGButton">
+            <widget class="QPushButton" name="savePNGButton">
              <property name="text">
-              <string>Save JPG</string>
+              <string>Save PNG</string>
              </property>
             </widget>
            </item>
@@ -583,26 +541,85 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>843</width>
-     <height>20</height>
-    </rect>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
    </property>
-   <widget class="QMenu" name="menuHelo">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionHow_to_use"/>
-   </widget>
-   <addaction name="menuHelo"/>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConnect"/>
+   <addaction name="actionDisconnect"/>
+   <addaction name="separator"/>
+   <addaction name="actionHow_to_use"/>
   </widget>
-  <action name="actionHow_to_use">
+  <action name="actionConnect">
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</normaloff>
+     <normalon>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</normalon>
+     <disabledoff>:/serial_port_plotter/icons/line_icon_set/play-button.png</disabledoff>
+     <disabledon>:/serial_port_plotter/icons/line_icon_set/play-button.png</disabledon>
+     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</activeoff>
+     <activeon>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</activeon>
+     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</selectedoff>
+     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</iconset>
+   </property>
    <property name="text">
-    <string>How to use </string>
+    <string>Connect</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect to COM port</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</normaloff>
+     <normalon>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</normalon>
+     <disabledoff>:/serial_port_plotter/icons/line_icon_set/stop-button.png</disabledoff>
+     <disabledon>:/serial_port_plotter/icons/line_icon_set/stop-button.png</disabledon>
+     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</activeoff>
+     <activeon>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</activeon>
+     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</selectedoff>
+     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</iconset>
+   </property>
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+   <property name="toolTip">
+    <string>Disconnect COM port</string>
+   </property>
+  </action>
+  <action name="actionHow_to_use">
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</normaloff>
+     <normalon>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</normalon>
+     <disabledoff>:/serial_port_plotter/icons/line_icon_set/amplified-speaker.png</disabledoff>
+     <disabledon>:/serial_port_plotter/icons/line_icon_set/amplified-speaker.png</disabledon>
+     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</activeoff>
+     <activeon>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</activeon>
+     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</selectedoff>
+     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</iconset>
+   </property>
+   <property name="text">
+    <string>How to use</string>
    </property>
   </action>
  </widget>
@@ -615,6 +632,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res/serial_port_plotter.qrc"/>
+ </resources>
  <connections/>
 </ui>

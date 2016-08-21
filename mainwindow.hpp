@@ -39,6 +39,9 @@
 #define IN_MESSAGE      2
 #define UNDEFINED       3
 
+#define CUSTOM_COLORS   7
+#define GCP_CUSTOM_COLORS 3
+
 namespace Ui {
     class MainWindow;
 }
@@ -65,7 +68,7 @@ private slots:
     void readData();                                                                      // Slot for inside serial port
     void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
     void on_spinYStep_valueChanged(int arg1);                                             // Spin box for changing Y axis tick step
-    void on_saveJPGButton_clicked();                                                      // Button for saving JPG
+    void on_savePNGButton_clicked();                                                      // Button for saving JPG
     void on_resetPlotButton_clicked();                                                    // Resets plot to initial zoom and coordinates
     void onMouseMoveInPlot(QMouseEvent *event);                                           // Displays coordinates of mouse pointer when clicked in plot in status bar
     void on_spinPoints_valueChanged(int arg1);                                            // Spin box controls how many data points are collected and displayed
@@ -81,11 +84,19 @@ signals:
 private:
     Ui::MainWindow *ui;
 
+    /* Line colors */
+    QColor line_colors[CUSTOM_COLORS];
+    QColor gui_colors[GCP_CUSTOM_COLORS];
+
+    /* Main info */
     bool connected;                                                                       // Status connection variable
     bool plotting;                                                                        // Status plotting variable
     int dataPointNumber;                                                                  // Keep track of data points
+
+    /* Data format */
+    int data_format;
+
     QTimer updateTimer;                                                                   // Timer used for replotting the plot
-    int numberOfAxes;                                                                     // Number of axes for the plot
     QTime timeOfFirstData;                                                                // Record the time of the first data point
     double timeBetweenSamples;                                                            // Store time between samples
     QSerialPort *serialPort;                                                              // Serial port; runs in this thread

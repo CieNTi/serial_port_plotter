@@ -33,11 +33,37 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    connected(false), plotting(false), dataPointNumber(0), numberOfAxes(1), STATE(WAIT_START), NUMBER_OF_POINTS(500)
+
+    /* Populate colors */
+    line_colors (
+      {
+        /* For channel data (matlab parula palette) */
+        QColor ("#0072bd"), /**< 0: blue */
+        QColor ("#d95319"), /**< 1: orange */
+        QColor ("#edb120"), /**< 2: yellow */
+        QColor ("#7e2f8e"), /**< 3: purple */
+        QColor ("#77ac30"), /**< 4: green */
+        QColor ("#4dbeee"), /**< 5: light-blue */
+        QColor ("#a2142f"), /**< 6: red */
+      }),
+    gui_colors (
+      {
+        /* Monochromatic for axes and ui */
+        QColor (48,  47,  47,  255), /**<  7: qdark ui dark/background color */
+        QColor (80,  80,  80,  255), /**<  8: qdark ui medium/grid color */
+        QColor (170, 170, 170, 255)  /**<  9: qdark ui light/text color */
+      }),
+
+    /* Main vars */
+    connected(false),
+    plotting(false),
+    dataPointNumber(0),
+    STATE(WAIT_START),
+    NUMBER_OF_POINTS(500)
 {
     ui->setupUi(this);
     createUI();                                                                           // Create the UI
-    ui->plot->setBackground(QBrush(QColor(48,47,47)));                                    // Background for the plot area
+    ui->plot->setBackground(gui_colors[0]);                                             // Background for the plot area
     setupPlot();                                                                          // Setup plot area
     ui->stopPlotButton->setEnabled(false);                                                // Plot button is disabled initially
 
@@ -50,20 +76,20 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->plot->yAxis->setAutoTickStep(false);                                              // User can change tick step with a spin box
     ui->plot->yAxis->setTickStep(500);                                                    // Set initial tick step
-    ui->plot->xAxis->setTickLabelColor(QColor(170,170,170));                              // Tick labels color
-    ui->plot->yAxis->setTickLabelColor(QColor(170,170,170));                              // See QCustomPlot examples / styled demo
-    ui->plot->xAxis->grid()->setPen(QPen(QColor(170,170,170), 1, Qt::DotLine));
-    ui->plot->yAxis->grid()->setPen(QPen(QColor(170,170,170), 1, Qt::DotLine));
-    ui->plot->xAxis->grid()->setSubGridPen(QPen(QColor(80,80,80), 1, Qt::DotLine));
-    ui->plot->yAxis->grid()->setSubGridPen(QPen(QColor(80,80,80), 1, Qt::DotLine));
+    ui->plot->xAxis->setTickLabelColor(gui_colors[2]);                              // Tick labels color
+    ui->plot->yAxis->setTickLabelColor(gui_colors[2]);                              // See QCustomPlot examples / styled demo
+    ui->plot->xAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
+    ui->plot->yAxis->grid()->setPen(QPen(gui_colors[2], 1, Qt::DotLine));
+    ui->plot->xAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
+    ui->plot->yAxis->grid()->setSubGridPen(QPen(gui_colors[1], 1, Qt::DotLine));
     ui->plot->xAxis->grid()->setSubGridVisible(true);
     ui->plot->yAxis->grid()->setSubGridVisible(true);
-    ui->plot->xAxis->setBasePen(QPen(QColor(170,170,170)));
-    ui->plot->yAxis->setBasePen(QPen(QColor(170,170,170)));
-    ui->plot->xAxis->setTickPen(QPen(QColor(170,170,170)));
-    ui->plot->yAxis->setTickPen(QPen(QColor(170,170,170)));
-    ui->plot->xAxis->setSubTickPen(QPen(QColor(170,170,170)));
-    ui->plot->yAxis->setSubTickPen(QPen(QColor(170,170,170)));
+    ui->plot->xAxis->setBasePen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setBasePen(QPen(gui_colors[2]));
+    ui->plot->xAxis->setTickPen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setTickPen(QPen(gui_colors[2]));
+    ui->plot->xAxis->setSubTickPen(QPen(gui_colors[2]));
+    ui->plot->yAxis->setSubTickPen(QPen(gui_colors[2]));
     ui->plot->xAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
     ui->plot->yAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
     ui->plot->setInteraction(QCP::iRangeDrag, true);
@@ -89,7 +115,7 @@ MainWindow::~MainWindow()
 
 
 /******************************************************************************************************************/
-/**Create the GUI */
+/* Create the GUI */
 /******************************************************************************************************************/
 void MainWindow::createUI()
 {
@@ -97,7 +123,7 @@ void MainWindow::createUI()
         enableControls(false);
         ui->connectButton->setEnabled(false);
         ui->statusBar->showMessage("No ports detected.");
-        ui->saveJPGButton->setEnabled(false);
+        ui->savePNGButton->setEnabled(false);
         return;
     }
 
@@ -124,10 +150,20 @@ void MainWindow::createUI()
 
     ui->comboStop->addItem("1 bit");                                                      // Populate stop bits combo box
     ui->comboStop->addItem("2 bits");
+}
+/******************************************************************************************************************/
 
-    ui->comboAxes->addItem("1");                                                          // Populate axes combo box; 3 axes maximum allowed
-    ui->comboAxes->addItem("2");
-    ui->comboAxes->addItem("3");
+
+/******************************************************************************************************************/
+/* Setup the plot area */
+/******************************************************************************************************************/
+void MainWindow::setupPlot()
+{
+    ui->plot->clearItems();                                                              // Remove everything from the plot
+
+    ui->plot->yAxis->setTickStep(ui->spinYStep->value());                                // Set tick step according to user spin box
+    ui->plot->yAxis->setRange(ui->spinAxesMin->value(), ui->spinAxesMax->value());       // Set lower and upper plot range
+    ui->plot->xAxis->setRange(0, NUMBER_OF_POINTS);                                      // Set x axis range for specified number of points
 }
 /******************************************************************************************************************/
 
@@ -142,39 +178,6 @@ void MainWindow::enableControls(bool enable)
     ui->comboParity->setEnabled(enable);
     ui->comboPort->setEnabled(enable);
     ui->comboStop->setEnabled(enable);
-    ui->comboAxes->setEnabled(enable);
-}
-/******************************************************************************************************************/
-
-
-/******************************************************************************************************************/
-/* Setup the plot area */
-/******************************************************************************************************************/
-void MainWindow::setupPlot()
-{
-    ui->plot->clearItems();                                                              // Remove everything from the plot
-
-    ui->plot->yAxis->setTickStep(ui->spinYStep->value());                                // Set tick step according to user spin box
-    numberOfAxes = ui->comboAxes->currentText().toInt();                                 // Get number of axes from the user combo
-    ui->plot->yAxis->setRange(ui->spinAxesMin->value(), ui->spinAxesMax->value());       // Set lower and upper plot range
-    ui->plot->xAxis->setRange(0, NUMBER_OF_POINTS);                                      // Set x axis range for specified number of points
-
-    if(numberOfAxes == 1) {                                                               // If 1 axis selected
-        ui->plot->addGraph();                                                             // add Graph 0
-        ui->plot->graph(0)->setPen(QPen(Qt::red));
-    } else if(numberOfAxes == 2) {                                                        // If 2 axes selected
-        ui->plot->addGraph();                                                             // add Graph 0
-        ui->plot->graph(0)->setPen(QPen(Qt::red));
-        ui->plot->addGraph();                                                             // add Graph 1
-        ui->plot->graph(1)->setPen(QPen(Qt::yellow));
-    } else if(numberOfAxes == 3) {                                                        // If 3 axis selected
-        ui->plot->addGraph();                                                             // add Graph 0
-        ui->plot->graph(0)->setPen(QPen(Qt::red));
-        ui->plot->addGraph();                                                             // add Graph 1
-        ui->plot->graph(1)->setPen(QPen(Qt::yellow));
-        ui->plot->addGraph();                                                             // add Graph 2
-        ui->plot->graph(2)->setPen(QPen(Qt::green));
-    }
 }
 /******************************************************************************************************************/
 
@@ -234,7 +237,7 @@ void MainWindow::on_connectButton_clicked()
         plotting = false;                                                                 // Not plotting anymore
         receivedData.clear();                                                             // Clear received string
         ui->stopPlotButton->setEnabled(false);                                            // Take care of controls
-        ui->saveJPGButton->setEnabled(false);
+        ui->savePNGButton->setEnabled(false);
         enableControls(true);
     } else {                                                                              // If application is not connected, connect
                                                                                           // Get parameters from controls first
@@ -285,7 +288,7 @@ void MainWindow::portOpenedSuccess()
     enableControls(false);                                                                // Disable controls if port is open
     ui->stopPlotButton->setText("Stop Plot");                                             // Enable button for stopping plot
     ui->stopPlotButton->setEnabled(true);
-    ui->saveJPGButton->setEnabled(true);                                                  // Enable button for saving plot
+    ui->savePNGButton->setEnabled(true);                                                  // Enable button for saving plot
     setupPlot();                                                                          // Create the QCustomPlot area
     updateTimer.start(20);                                                                // Slot is refreshed 20 times per second
     connected = true;                                                                     // Set flags
@@ -361,28 +364,15 @@ void MainWindow::onNewDataArrived(QStringList newData)
         int dataListSize = newData.size();                                                    // Get size of received list
         dataPointNumber++;                                                                    // Increment data number
 
-        if(numberOfAxes == 1 && dataListSize > 0) {                                           // Add data to graphs according to number of axes
-            ui->plot->graph(0)->addData(dataPointNumber, newData[0].toInt());                 // Add data to Graph 0
-            ui->plot->graph(0)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);           // Remove data from graph 0
-        } else if(numberOfAxes == 2) {
-            ui->plot->graph(0)->addData(dataPointNumber, newData[0].toInt());
-            ui->plot->graph(0)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);
-            if(dataListSize > 1){
-                ui->plot->graph(1)->addData(dataPointNumber, newData[1].toInt());
-                ui->plot->graph(1)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);
-            }
-        } else if(numberOfAxes == 3) {
-            ui->plot->graph(0)->addData(dataPointNumber, newData[0].toInt());
-            ui->plot->graph(0)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);
-            if(dataListSize > 1) {
-                ui->plot->graph(1)->addData(dataPointNumber, newData[1].toInt());
-                ui->plot->graph(1)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);
-            }
-            if(dataListSize > 2) {
-                ui->plot->graph(2)->addData(dataPointNumber, newData[2].toInt());
-                ui->plot->graph(2)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);
-            }
-        } else return;
+//        if(numberOfAxes == 1) {                                                               // If 1 axis selected
+//            ui->plot->addGraph();                                                             // add Graph 0
+//            ui->plot->graph(0)->setPen(QPen(Qt::red));
+//        }
+
+//        if(numberOfAxes == 1 && dataListSize > 0) {                                           // Add data to graphs according to number of axes
+//            ui->plot->graph(0)->addData(dataPointNumber, newData[0].toInt());                 // Add data to Graph 0
+//            ui->plot->graph(0)->removeDataBefore(dataPointNumber - NUMBER_OF_POINTS);           // Remove data from graph 0
+//        } else return;
     }
 }
 /******************************************************************************************************************/
@@ -480,7 +470,7 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
 /******************************************************************************************************************/
 /* Save a JPG image of the plot to current EXE directory */
 /******************************************************************************************************************/
-void MainWindow::on_saveJPGButton_clicked()
+void MainWindow::on_savePNGButton_clicked()
 {
     ui->plot->saveJpg(QString::number(dataPointNumber) + ".jpg");
 }
