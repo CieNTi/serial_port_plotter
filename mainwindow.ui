@@ -370,10 +370,10 @@
                 <number>10000</number>
                </property>
                <property name="singleStep">
-                <number>10</number>
+                <number>1</number>
                </property>
                <property name="value">
-                <number>500</number>
+                <number>10</number>
                </property>
               </widget>
              </item>
@@ -422,6 +422,9 @@
                </property>
                <property name="singleStep">
                 <number>10</number>
+               </property>
+               <property name="value">
+                <number>-5</number>
                </property>
               </widget>
              </item>
@@ -472,7 +475,7 @@
                 <number>10</number>
                </property>
                <property name="value">
-                <number>4095</number>
+                <number>260</number>
                </property>
               </widget>
              </item>
@@ -568,14 +571,14 @@
   <action name="actionConnect">
    <property name="icon">
     <iconset resource="res/serial_port_plotter.qrc">
-     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</normaloff>
-     <normalon>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</normalon>
-     <disabledoff>:/serial_port_plotter/icons/line_icon_set/play-button.png</disabledoff>
-     <disabledon>:/serial_port_plotter/icons/line_icon_set/play-button.png</disabledon>
-     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</activeoff>
-     <activeon>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</activeon>
-     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</selectedoff>
-     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/play-button.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/play-button.png</iconset>
+     <normaloff>:/serial_port_plotter/play_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/play_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/play_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/play_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/play_act.png</activeoff>
+     <activeon>:/serial_port_plotter/play_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/play_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/play_act.png</selectedon>:/serial_port_plotter/play_nor.png</iconset>
    </property>
    <property name="text">
     <string>Connect</string>
@@ -590,14 +593,14 @@
    </property>
    <property name="icon">
     <iconset resource="res/serial_port_plotter.qrc">
-     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</normaloff>
-     <normalon>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</normalon>
-     <disabledoff>:/serial_port_plotter/icons/line_icon_set/stop-button.png</disabledoff>
-     <disabledon>:/serial_port_plotter/icons/line_icon_set/stop-button.png</disabledon>
-     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</activeoff>
-     <activeon>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</activeon>
-     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</selectedoff>
-     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/stop-button.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/stop-button.png</iconset>
+     <normaloff>:/serial_port_plotter/stop_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/stop_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/stop_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/stop_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/stop_act.png</activeoff>
+     <activeon>:/serial_port_plotter/stop_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/stop_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/stop_act.png</selectedon>:/serial_port_plotter/stop_nor.png</iconset>
    </property>
    <property name="text">
     <string>Disconnect</string>
@@ -609,14 +612,14 @@
   <action name="actionHow_to_use">
    <property name="icon">
     <iconset resource="res/serial_port_plotter.qrc">
-     <normaloff>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</normaloff>
-     <normalon>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</normalon>
-     <disabledoff>:/serial_port_plotter/icons/line_icon_set/amplified-speaker.png</disabledoff>
-     <disabledon>:/serial_port_plotter/icons/line_icon_set/amplified-speaker.png</disabledon>
-     <activeoff>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</activeoff>
-     <activeon>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</activeon>
-     <selectedoff>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</selectedoff>
-     <selectedon>:/serial_port_plotter/icons/line_icon_set_white/amplified-speaker.png</selectedon>:/serial_port_plotter/icons/line_icon_set_text/amplified-speaker.png</iconset>
+     <normaloff>:/serial_port_plotter/help_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/help_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/help_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/help_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/help_act.png</activeoff>
+     <activeon>:/serial_port_plotter/help_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/help_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/help_act.png</selectedon>:/serial_port_plotter/help_nor.png</iconset>
    </property>
    <property name="text">
     <string>How to use</string>
