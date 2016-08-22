@@ -59,9 +59,10 @@ MainWindow::MainWindow (QWidget *parent) :
   gui_colors (
     {
       /* Monochromatic for axes and ui */
-      QColor (48,  47,  47,  255), /**<  7: qdark ui dark/background color */
-      QColor (80,  80,  80,  255), /**<  8: qdark ui medium/grid color */
-      QColor (170, 170, 170, 255)  /**<  9: qdark ui light/text color */
+      QColor (48,  47,  47,  255), /**<  0: qdark ui dark/background color */
+      QColor (80,  80,  80,  255), /**<  1: qdark ui medium/grid color */
+      QColor (170, 170, 170, 255), /**<  2: qdark ui light/text color */
+      QColor (48,  47,  47,  200)  /**<  3: qdark ui dark/background color w/transparency */
     }),
 
   /* Main vars */
@@ -79,6 +80,17 @@ MainWindow::MainWindow (QWidget *parent) :
 
   /* Setup plot area and connect controls slots */
   setupPlot();
+
+  /* Slot for printing coordinates */
+  connect (ui->plot, SIGNAL (mouseMove (QMouseEvent*)), this, SLOT (onMouseMoveInPlot (QMouseEvent*)));
+
+  /* Channel selection */
+  connect (ui->plot, SIGNAL(selectionChangedByUser()), this, SLOT(channel_selection()));
+  connect (ui->plot, SIGNAL(legendDoubleClick (QCPLegend*, QCPAbstractLegendItem*, QMouseEvent*)), this, SLOT(legend_double_click (QCPLegend*, QCPAbstractLegendItem*, QMouseEvent*)));
+
+  /* Connect update timer to replot slot */
+  connect (&updateTimer, SIGNAL (timeout()), this, SLOT (replot()));
+
 }
 
 /**
@@ -174,7 +186,7 @@ void MainWindow::setupPlot()
     ui->plot->xAxis->setTickLabelColor (gui_colors[2]);
     ui->plot->xAxis->setTickLabelFont (font);
     /* Range */
-    ui->plot->xAxis->setRange (0, NUMBER_OF_POINTS);
+    ui->plot->xAxis->setRange (0, ui->spinPoints->value());
     ui->plot->xAxis->setAutoTickCount (12);
 
     /* Y Axis */
@@ -196,14 +208,20 @@ void MainWindow::setupPlot()
     /* User interactions Drag and Zoom are allowed only on X axis, Y is fixed manually by UI control */
     ui->plot->setInteraction (QCP::iRangeDrag, true);
     ui->plot->setInteraction (QCP::iRangeZoom, true);
+    ui->plot->setInteraction (QCP::iSelectPlottables, true);
+    ui->plot->setInteraction (QCP::iSelectLegend, true);
     ui->plot->axisRect()->setRangeDrag (Qt::Horizontal);
     ui->plot->axisRect()->setRangeZoom (Qt::Horizontal);
 
-    /* Slot for printing coordinates */
-    connect (ui->plot, SIGNAL (mouseRelease (QMouseEvent*)), this, SLOT (onMouseMoveInPlot (QMouseEvent*)));
-
-    /* Connect update timer to replot slot */
-    connect (&updateTimer, SIGNAL (timeout()), this, SLOT (replot()));
+    /* Legend */
+    QFont legendFont;
+    legendFont.setPointSize (9);
+    ui->plot->legend->setVisible (true);
+    ui->plot->legend->setFont (legendFont);
+    ui->plot->legend->setBrush (gui_colors[3]);
+    ui->plot->legend->setBorderPen (gui_colors[2]);
+    /* By default, the legend is in the inset layout of the main axis rect. So this is how we access it to change legend placement */
+    ui->plot->axisRect()->insetLayout()->setInsetAlignment (0, Qt::AlignTop|Qt::AlignRight);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -418,6 +436,8 @@ void MainWindow::onNewDataArrived(QStringList newData)
                 /* Add new channel data */
                 ui->plot->addGraph();
                 ui->plot->graph()->setPen (line_colors[channel % CUSTOM_LINE_COLORS]);
+                ui->plot->graph()->setName (QString("Channel %1").arg(channel));
+                ui->plot->legend->item (channel)->setTextColor (line_colors[channel % CUSTOM_LINE_COLORS]);
               }
 
             /* [TODO] Method selection and plotting */
@@ -574,6 +594,56 @@ void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
     QString coordinates("X: %1 Y: %2");
     coordinates = coordinates.arg(xx).arg(yy);
     ui->statusBar->showMessage(coordinates);
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Select both line and legend (channel)
+ * @param plottable
+ * @param event
+ */
+void MainWindow::channel_selection (void)
+{
+    /* synchronize selection of graphs with selection of corresponding legend items */
+     for (int i = 0; i < ui->plot->graphCount(); i++)
+       {
+         QCPGraph *graph = ui->plot->graph(i);
+         QCPPlottableLegendItem *item = ui->plot->legend->itemWithPlottable (graph);
+         if (item->selected())
+           {
+             item->setSelected (true);
+             graph->setSelected (true);
+           }
+         else
+           {
+             item->setSelected (false);
+             graph->setSelected (false);
+           }
+       }
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Rename a graph by double clicking on its legend item
+ * @param legend
+ * @param item
+ */
+void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *item, QMouseEvent *event)
+{
+    Q_UNUSED (legend)
+
+    /* Only react if item was clicked (user could have clicked on border padding of legend where there is no item, then item is 0) */
+    if (item)
+      {
+        QCPPlottableLegendItem *plItem = qobject_cast<QCPPlottableLegendItem*>(item);
+        bool ok;
+        QString newName = QInputDialog::getText (this, "Change channel name", "New name:", QLineEdit::Normal, plItem->plottable()->name(), &ok, Qt::Tool);
+        if (ok)
+          {
+            plItem->plottable()->setName (newName);
+            ui->plot->replot();
+          }
+      }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 

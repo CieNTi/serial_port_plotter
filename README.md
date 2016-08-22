@@ -4,10 +4,13 @@ This is a Windows application that displays real time data from serial port. The
 
 # Features
 - No axes limit: An unknown/new channel data create a new graph and uses it
-- No data point limit: All received data is kept and user can look for old data
-- Exports to PNG with transparency
-- Zooming and dragging using the mouse wheel
-- Clicking anywhere in the plot displays the X and Y values of the graph in the status bar.
+- 14 available line colors
+- No data point limit: All received data is kept so user can explore old data
+- Exports to PNG
+- Zooming and dragging using the mouse wheel (X axis)
+- Moving around the plot displays the X and Y values of the graph in the status bar
+- Channel's name legend (double-click to modify)
+- Channel selection (click on legend's text)
 
 # Screenshot
 
@@ -20,7 +23,7 @@ Just send your integer data over the serial port. The application expects certai
 # Send data over the serial port
 
 ```c
-printf("$%d %d;", data1, data2);
+printf ("$%d %d (...) %d;", data1, data2, ..., datan);
 ```
 
 Depending on how much data you want to display, you can adjust the number of data points. For example, if you send data from the serial port of the mbed every 10 ms (100 Hz) and the plotter is set to display 500 points, it will contain information for 5 seconds of data.
@@ -66,3 +69,4 @@ Initial README and commit
 
 # To-Do
 - Fill baud automatically and allow custom by textbox (when COM ui)
+- PNG +WITH+ transparency

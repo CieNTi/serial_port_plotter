@@ -31,6 +31,7 @@
 #include <QtSerialPort/QtSerialPort>
 #include <QSerialPortInfo>
 #include "helpwindow.hpp"
+#include "qcustomplot/qcustomplot.h"
 
 #define START_MSG       '$'
 #define END_MSG         ';'
@@ -40,7 +41,7 @@
 #define UNDEFINED       3
 
 #define CUSTOM_LINE_COLORS   14
-#define GCP_CUSTOM_LINE_COLORS 3
+#define GCP_CUSTOM_LINE_COLORS 4
 
 namespace Ui {
     class MainWindow;
@@ -72,6 +73,10 @@ private slots:
     void on_resetPlotButton_clicked();                                                    // Resets plot to initial zoom and coordinates
     void onMouseMoveInPlot(QMouseEvent *event);                                           // Displays coordinates of mouse pointer when clicked in plot in status bar
     void on_spinPoints_valueChanged(int arg1);                                            // Spin box controls how many data points are collected and displayed
+
+    /* Used when a channel is selected (plot or legend) */
+    void channel_selection (void);
+    void legend_double_click (QCPLegend *legend, QCPAbstractLegendItem *item, QMouseEvent *event);
 
     void on_actionHow_to_use_triggered();
 
