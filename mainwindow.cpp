@@ -32,44 +32,53 @@
  * @param parent
  */
 MainWindow::MainWindow (QWidget *parent) :
-    QMainWindow (parent),
-    ui (new Ui::MainWindow),
+  QMainWindow (parent),
+  ui (new Ui::MainWindow),
 
-    /* Populate colors */
-    line_colors (
-      {
-        /* For channel data (matlab parula palette) */
-        QColor ("#0072bd"), /**< 0: blue */
-        QColor ("#d95319"), /**< 1: orange */
-        QColor ("#edb120"), /**< 2: yellow */
-        QColor ("#7e2f8e"), /**< 3: purple */
-        QColor ("#77ac30"), /**< 4: green */
-        QColor ("#4dbeee"), /**< 5: light-blue */
-        QColor ("#a2142f"), /**< 6: red */
-      }),
-    gui_colors (
-      {
-        /* Monochromatic for axes and ui */
-        QColor (48,  47,  47,  255), /**<  7: qdark ui dark/background color */
-        QColor (80,  80,  80,  255), /**<  8: qdark ui medium/grid color */
-        QColor (170, 170, 170, 255)  /**<  9: qdark ui light/text color */
-      }),
+  /* Populate colors */
+  line_colors (
+    {
+      /* For channel data (gruvbox palette) */
+      /* Light */
+      QColor ("#fb4934"),
+      QColor ("#b8bb26"),
+      QColor ("#fabd2f"),
+      QColor ("#83a598"),
+      QColor ("#d3869b"),
+      QColor ("#8ec07c"),
+      QColor ("#fe8019"),
+      /* Light */
+      QColor ("#cc241d"),
+      QColor ("#98971a"),
+      QColor ("#d79921"),
+      QColor ("#458588"),
+      QColor ("#b16286"),
+      QColor ("#689d6a"),
+      QColor ("#d65d0e"),
+    }),
+  gui_colors (
+    {
+      /* Monochromatic for axes and ui */
+      QColor (48,  47,  47,  255), /**<  7: qdark ui dark/background color */
+      QColor (80,  80,  80,  255), /**<  8: qdark ui medium/grid color */
+      QColor (170, 170, 170, 255)  /**<  9: qdark ui light/text color */
+    }),
 
-    /* Main vars */
-    connected (false),
-    plotting (false),
-    dataPointNumber (0),
-    serialPort (NULL),
-    STATE (WAIT_START),
-    NUMBER_OF_POINTS (500)
+  /* Main vars */
+  connected (false),
+  plotting (false),
+  dataPointNumber (0),
+  serialPort (NULL),
+  STATE (WAIT_START),
+  NUMBER_OF_POINTS (500)
 {
-    ui->setupUi (this);
+  ui->setupUi (this);
 
-    /* Init UI and populate UI controls */
-    createUI();
+  /* Init UI and populate UI controls */
+  createUI();
 
-    /* Setup plot area and connect controls slots */
-    setupPlot();
+  /* Setup plot area and connect controls slots */
+  setupPlot();
 }
 
 /**

@@ -39,7 +39,7 @@
 #define IN_MESSAGE      2
 #define UNDEFINED       3
 
-#define CUSTOM_LINE_COLORS   7
+#define CUSTOM_LINE_COLORS   14
 #define GCP_CUSTOM_LINE_COLORS 3
 
 namespace Ui {
