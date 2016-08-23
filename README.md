@@ -47,6 +47,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Original qdarkstyle resources (icons are now working)
 - Manifest and all Windows related/recommended configs
 - [Line Icon Set] in 3 colors
+- Inno Setup file with auto-pack .bat file (1st attempt)
 
 ### Changed
 - Resources structure
@@ -70,3 +71,4 @@ Initial README and commit
 # To-Do
 - Fill baud automatically and allow custom by textbox (when COM ui)
 - PNG +WITH+ transparency
+- Port list refresh
