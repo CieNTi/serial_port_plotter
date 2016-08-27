@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Serial Port Plotter"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "CieNTi"
 #define MyAppURL "https://github.com/CieNTi/serial_port_plotter"
 #define MyAppExeName "serial_port_plotter.exe"
@@ -23,7 +23,7 @@ DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=res\lgplv3.rtf
 OutputDir=.\build\installer
-OutputBaseFilename=serial_port_plotter_v{#MyAppVersion}_installer
+OutputBaseFilename=serial_port_plotter-{#MyAppVersion}-installer
 SetupIconFile=res\icons\exe_icon.ico
 Compression=lzma
 SolidCompression=yes

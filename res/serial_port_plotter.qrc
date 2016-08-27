@@ -383,6 +383,7 @@
     <qresource prefix="/serial_port_plotter">
         <!-- Lynny icon set (black over transparent) -->
         <file alias="play_dis.png">icons/lynny-2x/Play.png</file>
+        <file alias="pause_dis.png">icons/lynny-2x/Pause.png</file>
         <file alias="stop_dis.png">icons/lynny-2x/Stop.png</file>
         <file alias="help_dis.png">icons/lynny-2x/Help.png</file>
         <!--
@@ -675,7 +676,6 @@
         <file>icons/lynny-2x/Paper Euros 1.png</file>
         <file>icons/lynny-2x/Paper Euros 2.png</file>
         <file>icons/lynny-2x/Paper Shredder.png</file>
-        <file>icons/lynny-2x/Pause.png</file>
         <file>icons/lynny-2x/Pencil.png</file>
         <file>icons/lynny-2x/Phone 1.png</file>
         <file>icons/lynny-2x/Phone 2.png</file>
@@ -837,6 +837,7 @@
         -->
         <!-- Lynny icon set (qdark text color over transparent variant) -->
         <file alias="play_nor.png">icons/lynny-2x_text/Play.png</file>
+        <file alias="pause_nor.png">icons/lynny-2x_text/Pause.png</file>
         <file alias="stop_nor.png">icons/lynny-2x_text/Stop.png</file>
         <file alias="help_nor.png">icons/lynny-2x_text/Help.png</file>
         <!--
@@ -1129,7 +1130,6 @@
         <file>icons/lynny-2x_text/Paper Euros 1.png</file>
         <file>icons/lynny-2x_text/Paper Euros 2.png</file>
         <file>icons/lynny-2x_text/Paper Shredder.png</file>
-        <file>icons/lynny-2x_text/Pause.png</file>
         <file>icons/lynny-2x_text/Pencil.png</file>
         <file>icons/lynny-2x_text/Phone 1.png</file>
         <file>icons/lynny-2x_text/Phone 2.png</file>
@@ -1291,6 +1291,7 @@
         -->
         <!-- Lynny icon set (white over transparent variant) -->
         <file alias="play_act.png">icons/lynny-2x_white/Play.png</file>
+        <file alias="pause_act.png">icons/lynny-2x_white/Pause.png</file>
         <file alias="stop_act.png">icons/lynny-2x_white/Stop.png</file>
         <file alias="help_act.png">icons/lynny-2x_white/Help.png</file>
         <!--
@@ -1583,7 +1584,6 @@
         <file>icons/lynny-2x_white/Paper Euros 1.png</file>
         <file>icons/lynny-2x_white/Paper Euros 2.png</file>
         <file>icons/lynny-2x_white/Paper Shredder.png</file>
-        <file>icons/lynny-2x_white/Pause.png</file>
         <file>icons/lynny-2x_white/Pencil.png</file>
         <file>icons/lynny-2x_white/Phone 1.png</file>
         <file>icons/lynny-2x_white/Phone 2.png</file>
@@ -1743,5 +1743,5 @@
         <file>icons/lynny-2x_white/Zoom In.png</file>
         <file>icons/lynny-2x_white/Zoom Out.png</file>
         -->
-</qresource>
+    </qresource>
 </RCC>

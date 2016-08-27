@@ -564,6 +564,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionConnect"/>
+   <addaction name="actionPause_Plot"/>
    <addaction name="actionDisconnect"/>
    <addaction name="separator"/>
    <addaction name="actionHow_to_use"/>
@@ -585,6 +586,28 @@
    </property>
    <property name="toolTip">
     <string>Connect to COM port</string>
+   </property>
+  </action>
+  <action name="actionPause_Plot">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/pause_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/pause_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/pause_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/pause_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/pause_act.png</activeoff>
+     <activeon>:/serial_port_plotter/pause_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/pause_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/pause_act.png</selectedon>:/serial_port_plotter/pause_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause plot</string>
    </property>
   </action>
   <action name="actionDisconnect">

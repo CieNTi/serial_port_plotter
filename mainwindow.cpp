@@ -93,6 +93,8 @@ MainWindow::MainWindow (QWidget *parent) :
 
 }
 
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /**
  * @brief Destructor
  */
@@ -114,8 +116,7 @@ void MainWindow::createUI()
     /* Check if there are any ports at all; if not, disable controls and return */
     if (QSerialPortInfo::availablePorts().size() == 0)
       {
-        enableControls (false);
-        ui->connectButton->setEnabled (false);
+        enable_com_controls (false);
         ui->statusBar->showMessage ("No ports detected.");
         ui->savePNGButton->setEnabled (false);
         return;
@@ -226,16 +227,22 @@ void MainWindow::setupPlot()
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
- * @brief Enable/disable controls
+ * @brief Enable/disable COM controls
  * @param enable true enable, false disable
  */
-void MainWindow::enableControls(bool enable)
+void MainWindow::enable_com_controls (bool enable)
 {
-    ui->comboBaud->setEnabled(enable);                                                    // Disable controls in the GUI
-    ui->comboData->setEnabled(enable);
-    ui->comboParity->setEnabled(enable);
-    ui->comboPort->setEnabled(enable);
-    ui->comboStop->setEnabled(enable);
+  /* Com port properties */
+  ui->comboBaud->setEnabled (enable);
+  ui->comboData->setEnabled (enable);
+  ui->comboParity->setEnabled (enable);
+  ui->comboPort->setEnabled (enable);
+  ui->comboStop->setEnabled (enable);
+
+  /* Toolbar elements */
+  ui->actionConnect->setEnabled (enable);
+  ui->actionPause_Plot->setEnabled (!enable);
+  ui->actionDisconnect->setEnabled (!enable);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -247,123 +254,29 @@ void MainWindow::enableControls(bool enable)
  * @param parity
  * @param stopBits
  */
-void MainWindow::openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits)
+void MainWindow::openPort (QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits)
 {
     serialPort = new QSerialPort(portInfo, 0);                                            // Create a new serial port
 
-    connect(this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));                 // Connect port signals to GUI slots
-    connect(this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
-    connect(this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
-    connect(this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
-    connect(serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
+    connect (this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));                 // Connect port signals to GUI slots
+    connect (this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
+    connect (this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
+    connect (this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
+    connect (serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
 
-    if(serialPort->open(QIODevice::ReadWrite) ) {
-        serialPort->setBaudRate(baudRate);
-        serialPort->setParity(parity);
-        serialPort->setDataBits(dataBits);
-        serialPort->setStopBits(stopBits);
+    if (serialPort->open (QIODevice::ReadWrite))
+      {
+        serialPort->setBaudRate (baudRate);
+        serialPort->setParity (parity);
+        serialPort->setDataBits (dataBits);
+        serialPort->setStopBits (stopBits);
         emit portOpenOK();
-    } else {
+      }
+    else
+      {
         emit portOpenedFail();
         qDebug() << serialPort->errorString();
-    }
-
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/**
- * @brief Port Combo Box index changed slot; displays info for selected port when combo box is changed
- * @param arg1
- */
-void MainWindow::on_comboPort_currentIndexChanged(const QString &arg1)
-{
-    QSerialPortInfo selectedPort(arg1);                                                   // Dislplay info for selected port
-    ui->statusBar->showMessage(selectedPort.description());
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-/******************************************************************************************************************/
-/* Connect Button clicked slot; handles connect and disconnect */
-/******************************************************************************************************************/
-void MainWindow::on_connectButton_clicked()
-{
-    if(connected) {                                                                       // If application is connected, disconnect
-        serialPort->close();                                                              // Close serial port
-        emit portClosed();                                                                // Notify application
-        delete serialPort;                                                                // Delete the pointer
-        serialPort = NULL;                                                                // Assign NULL to dangling pointer
-        ui->connectButton->setText("Connect");                                            // Change Connect button text, to indicate disconnected
-        ui->statusBar->showMessage("Disconnected!");                                      // Show message in status bar
-        connected = false;                                                                // Set connected status flag to false
-        plotting = false;                                                                 // Not plotting anymore
-        receivedData.clear();                                                             // Clear received string
-        ui->stopPlotButton->setEnabled(false);                                            // Take care of controls
-        ui->savePNGButton->setEnabled(false);
-        enableControls(true);
-    } else {                                                                              // If application is not connected, connect
-                                                                                          // Get parameters from controls first
-        QSerialPortInfo portInfo(ui->comboPort->currentText());                           // Temporary object, needed to create QSerialPort
-        int baudRate = ui->comboBaud->currentText().toInt();                              // Get baud rate from combo box
-        int dataBitsIndex = ui->comboData->currentIndex();                                // Get index of data bits combo box
-        int parityIndex = ui->comboParity->currentIndex();                                // Get index of parity combo box
-        int stopBitsIndex = ui->comboStop->currentIndex();                                // Get index of stop bits combo box
-        QSerialPort::DataBits dataBits;
-        QSerialPort::Parity parity;
-        QSerialPort::StopBits stopBits;
-
-        if(dataBitsIndex == 0) {                                                          // Set data bits according to the selected index
-            dataBits = QSerialPort::Data8;
-        } else {
-            dataBits = QSerialPort::Data7;
-        }
-
-        if(parityIndex == 0) {                                                            // Set parity according to the selected index
-            parity = QSerialPort::NoParity;
-        } else if(parityIndex == 1) {
-            parity = QSerialPort::OddParity;
-        } else {
-            parity = QSerialPort::EvenParity;
-        }
-
-        if(stopBitsIndex == 0) {                                                          // Set stop bits according to the selected index
-             stopBits = QSerialPort::OneStop;
-        } else {
-            stopBits = QSerialPort::TwoStop;
-        }
-
-        serialPort = new QSerialPort(portInfo, 0);                                        // Use local instance of QSerialPort; does not crash
-        openPort(portInfo, baudRate, dataBits, parity, stopBits);                         // Open serial port and connect its signals
-    }
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/**
- * @brief Slot for port opened successfully
- */
-void MainWindow::portOpenedSuccess()
-{
-    //qDebug() << "Port opened signal received!";
-    setupPlot();                                                                          // Create the QCustomPlot area
-    ui->connectButton->setText("Disconnect");                                             // Change buttons
-    ui->statusBar->showMessage("Connected!");
-    enableControls(false);                                                                // Disable controls if port is open
-    ui->stopPlotButton->setText("Stop Plot");                                             // Enable button for stopping plot
-    ui->stopPlotButton->setEnabled(true);
-    ui->savePNGButton->setEnabled(true);                                                  // Enable button for saving plot
-    updateTimer.start(20);                                                                // Slot is refreshed 20 times per second
-    connected = true;                                                                     // Set flags
-    plotting = true;
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/**
- * @brief Slot for fail to open the port
- */
-void MainWindow::portOpenedFail()
-{
-    //qDebug() << "Port cannot be open signal received!";
-    ui->statusBar->showMessage("Cannot open port!");
+      }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -375,11 +288,50 @@ void MainWindow::onPortClosed()
     //qDebug() << "Port closed signal received!";
     updateTimer.stop();
     connected = false;
-    disconnect(serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
-    disconnect(this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));             // Disconnect port signals to GUI slots
-    disconnect(this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
-    disconnect(this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
-    disconnect(this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
+    plotting = false;
+
+    disconnect (serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
+    disconnect (this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));             // Disconnect port signals to GUI slots
+    disconnect (this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
+    disconnect (this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
+    disconnect (this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Port Combo Box index changed slot; displays info for selected port when combo box is changed
+ * @param arg1
+ */
+void MainWindow::on_comboPort_currentIndexChanged (const QString &arg1)
+{
+    QSerialPortInfo selectedPort (arg1);                                                   // Dislplay info for selected port
+    ui->statusBar->showMessage (selectedPort.description());
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Slot for port opened successfully
+ */
+void MainWindow::portOpenedSuccess()
+{
+    //qDebug() << "Port opened signal received!";
+    setupPlot();                                                                          // Create the QCustomPlot area
+    ui->statusBar->showMessage ("Connected!");
+    enable_com_controls (false);                                                                // Disable controls if port is open
+
+    updateTimer.start (20);                                                                // Slot is refreshed 20 times per second
+    connected = true;                                                                      // Set flags
+    plotting = true;
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Slot for fail to open the port
+ */
+void MainWindow::portOpenedFail()
+{
+    //qDebug() << "Port cannot be open signal received!";
+    ui->statusBar->showMessage ("Cannot open port!");
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -567,7 +519,7 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
  */
 void MainWindow::on_savePNGButton_clicked()
 {
-    ui->plot->savePng (QString::number(dataPointNumber) + ".png");
+    ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -651,10 +603,10 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
  * @brief Spin box controls how many data points are collected and displayed
  * @param arg1
  */
-void MainWindow::on_spinPoints_valueChanged(int arg1)
+void MainWindow::on_spinPoints_valueChanged (int arg1)
 {
-    NUMBER_OF_POINTS = arg1;
-    ui->plot->replot();
+  NUMBER_OF_POINTS = arg1;
+  ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -663,8 +615,94 @@ void MainWindow::on_spinPoints_valueChanged(int arg1)
  */
 void MainWindow::on_actionHow_to_use_triggered()
 {
-    helpWindow = new HelpWindow(this);
-    helpWindow->setWindowTitle("How to use this application");
-    helpWindow->show();
+  helpWindow = new HelpWindow (this);
+  helpWindow->setWindowTitle ("How to use this application");
+  helpWindow->show();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+void MainWindow::on_actionConnect_triggered()
+{
+  if (connected)
+    {
+      /* Is connected, resume plot if paused */
+
+    }
+  else
+    {
+      /* If application is not connected, connect */
+      /* Get parameters from controls first */
+      QSerialPortInfo portInfo (ui->comboPort->currentText());                          // Temporary object, needed to create QSerialPort
+      int baudRate = ui->comboBaud->currentText().toInt();                              // Get baud rate from combo box
+      int dataBitsIndex = ui->comboData->currentIndex();                                // Get index of data bits combo box
+      int parityIndex = ui->comboParity->currentIndex();                                // Get index of parity combo box
+      int stopBitsIndex = ui->comboStop->currentIndex();                                // Get index of stop bits combo box
+      QSerialPort::DataBits dataBits;
+      QSerialPort::Parity parity;
+      QSerialPort::StopBits stopBits;
+
+      /* Set data bits according to the selected index */
+      switch (dataBitsIndex)
+        {
+        case 0:
+          dataBits = QSerialPort::Data8;
+          break;
+        default:
+          dataBits = QSerialPort::Data7;
+        }
+
+      /* Set parity according to the selected index */
+      switch (parityIndex)
+        {
+        case 0:
+          parity = QSerialPort::NoParity;
+          break;
+        case 1:
+          parity = QSerialPort::OddParity;
+          break;
+        default:
+          parity = QSerialPort::EvenParity;
+        }
+
+      /* Set stop bits according to the selected index */
+      switch (stopBitsIndex)
+        {
+        case 0:
+          stopBits = QSerialPort::OneStop;
+          break;
+        default:
+          stopBits = QSerialPort::TwoStop;
+        }
+
+      /* Use local instance of QSerialPort; does not crash */
+      serialPort = new QSerialPort (portInfo, 0);
+
+      /* Open serial port and connect its signals */
+      openPort (portInfo, baudRate, dataBits, parity, stopBits);
+  }
+}
+
+void MainWindow::on_actionDisconnect_triggered()
+{
+  if (connected)
+    {
+      serialPort->close();                                                              // Close serial port
+      emit portClosed();                                                                // Notify application
+      delete serialPort;                                                                // Delete the pointer
+      serialPort = NULL;                                                                // Assign NULL to dangling pointer
+
+      ui->statusBar->showMessage ("Disconnected!");
+
+      connected = false;                                                                // Set connected status flag to false
+      ui->actionConnect->setEnabled (true);
+
+      plotting = false;                                                                 // Not plotting anymore
+      ui->actionPause_Plot->setEnabled (false);
+      ui->actionDisconnect->setEnabled (false);
+
+      receivedData.clear();                                                             // Clear received string
+
+      ui->savePNGButton->setEnabled (false);
+      enable_com_controls (true);
+    }
+}

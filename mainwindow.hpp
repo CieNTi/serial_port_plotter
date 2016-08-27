@@ -57,7 +57,6 @@ public:
 
 private slots:
     void on_comboPort_currentIndexChanged(const QString &arg1);                           // Slot displays message on status bar
-    void on_connectButton_clicked();                                                      // Manages connect/disconnect
     void portOpenedSuccess();                                                             // Called when port opens OK
     void portOpenedFail();                                                                // Called when port fails to open
     void onPortClosed();                                                                  // Called when closing the port
@@ -78,6 +77,8 @@ private slots:
     void channel_selection (void);
     void legend_double_click (QCPLegend *legend, QCPAbstractLegendItem *item, QMouseEvent *event);
 
+    void on_actionConnect_triggered();
+    void on_actionDisconnect_triggered();
     void on_actionHow_to_use_triggered();
 
 signals:
@@ -111,7 +112,7 @@ private:
     HelpWindow *helpWindow;
 
     void createUI();                                                                      // Populate the controls
-    void enableControls(bool enable);                                                     // Enable/disable controls
+    void enable_com_controls (bool enable);                                               // Enable/disable controls
     void setupPlot();                                                                     // Setup the QCustomPlot
                                                                                           // Open the inside serial port with these parameters
     void openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits);
