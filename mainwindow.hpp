@@ -61,7 +61,6 @@ private slots:
     void portOpenedFail();                                                                // Called when port fails to open
     void onPortClosed();                                                                  // Called when closing the port
     void replot();                                                                        // Slot for repainting the plot
-    void on_stopPlotButton_clicked();                                                     // Starts and stops plotting
     void onNewDataArrived(QStringList newData);                                           // Slot for new data from serial port
     void on_spinAxesMin_valueChanged(int arg1);                                           // Changing lower limit for the plot
     void on_spinAxesMax_valueChanged(int arg1);                                           // Changing upper limit for the plot
@@ -80,8 +79,10 @@ private slots:
     void on_actionConnect_triggered();
     void on_actionDisconnect_triggered();
     void on_actionHow_to_use_triggered();
+    void on_actionPause_Plot_triggered();
+    void on_actionClear_triggered();
 
-signals:
+  signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open
     void portClosed();                                                                    // Emitted when port is closed

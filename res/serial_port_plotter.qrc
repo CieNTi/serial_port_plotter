@@ -5,10 +5,10 @@
     </qresource>
     <qresource prefix="/serial_port_plotter">
         <!-- Situ Herrera's Line Icon Set (black over transparent) -->
+        <!--
         <file>icons/line_icon_set/amplified-speaker.png</file>
         <file>icons/line_icon_set/play-button.png</file>
         <file>icons/line_icon_set/stop-button.png</file>
-        <!--
         <file>icons/line_icon_set/battery.png</file>
         <file>icons/line_icon_set/battery-charging-status.png</file>
         <file>icons/line_icon_set/brightness.png</file>
@@ -130,10 +130,10 @@
         <file>icons/line_icon_set/world.png</file>
         -->
         <!-- Situ Herrera's Line Icon Set (qdark text color over transparent variant) -->
+        <!--
         <file>icons/line_icon_set_text/amplified-speaker.png</file>
         <file>icons/line_icon_set_text/play-button.png</file>
         <file>icons/line_icon_set_text/stop-button.png</file>
-        <!--
         <file>icons/line_icon_set_text/battery.png</file>
         <file>icons/line_icon_set_text/battery-charging-status.png</file>
         <file>icons/line_icon_set_text/brightness.png</file>
@@ -255,10 +255,10 @@
         <file>icons/line_icon_set_text/world.png</file>
         -->
         <!-- Situ Herrera's Line Icon Set (white over transparent variant) -->
+        <!--
         <file>icons/line_icon_set_white/amplified-speaker.png</file>
         <file>icons/line_icon_set_white/play-button.png</file>
         <file>icons/line_icon_set_white/stop-button.png</file>
-        <!--
         <file>icons/line_icon_set_white/battery.png</file>
         <file>icons/line_icon_set_white/battery-charging-status.png</file>
         <file>icons/line_icon_set_white/brightness.png</file>
@@ -385,6 +385,7 @@
         <file alias="play_dis.png">icons/lynny-2x/Play.png</file>
         <file alias="pause_dis.png">icons/lynny-2x/Pause.png</file>
         <file alias="stop_dis.png">icons/lynny-2x/Stop.png</file>
+        <file alias="clear_dis.png">icons/lynny-2x/No Entry.png</file>
         <file alias="help_dis.png">icons/lynny-2x/Help.png</file>
         <!--
         <file>icons/lynny-2x/Add.png</file>
@@ -652,7 +653,6 @@
         <file>icons/lynny-2x/Newspaper.png</file>
         <file>icons/lynny-2x/Newspapers.png</file>
         <file>icons/lynny-2x/Next.png</file>
-        <file>icons/lynny-2x/No Entry.png</file>
         <file>icons/lynny-2x/Note.png</file>
         <file>icons/lynny-2x/Notepad.png</file>
         <file>icons/lynny-2x/Old Building.png</file>
@@ -839,6 +839,7 @@
         <file alias="play_nor.png">icons/lynny-2x_text/Play.png</file>
         <file alias="pause_nor.png">icons/lynny-2x_text/Pause.png</file>
         <file alias="stop_nor.png">icons/lynny-2x_text/Stop.png</file>
+        <file alias="clear_nor.png">icons/lynny-2x_text/No Entry.png</file>
         <file alias="help_nor.png">icons/lynny-2x_text/Help.png</file>
         <!--
         <file>icons/lynny-2x_text/Add.png</file>
@@ -1106,7 +1107,6 @@
         <file>icons/lynny-2x_text/Newspaper.png</file>
         <file>icons/lynny-2x_text/Newspapers.png</file>
         <file>icons/lynny-2x_text/Next.png</file>
-        <file>icons/lynny-2x_text/No Entry.png</file>
         <file>icons/lynny-2x_text/Note.png</file>
         <file>icons/lynny-2x_text/Notepad.png</file>
         <file>icons/lynny-2x_text/Old Building.png</file>
@@ -1293,6 +1293,7 @@
         <file alias="play_act.png">icons/lynny-2x_white/Play.png</file>
         <file alias="pause_act.png">icons/lynny-2x_white/Pause.png</file>
         <file alias="stop_act.png">icons/lynny-2x_white/Stop.png</file>
+        <file alias="clear_act.png">icons/lynny-2x_white/No Entry.png</file>
         <file alias="help_act.png">icons/lynny-2x_white/Help.png</file>
         <!--
         <file>icons/lynny-2x_white/Add.png</file>
@@ -1560,7 +1561,6 @@
         <file>icons/lynny-2x_white/Newspaper.png</file>
         <file>icons/lynny-2x_white/Newspapers.png</file>
         <file>icons/lynny-2x_white/Next.png</file>
-        <file>icons/lynny-2x_white/No Entry.png</file>
         <file>icons/lynny-2x_white/Note.png</file>
         <file>icons/lynny-2x_white/Notepad.png</file>
         <file>icons/lynny-2x_white/Old Building.png</file>

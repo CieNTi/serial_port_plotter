@@ -166,9 +166,6 @@ void MainWindow::setupPlot()
     /* Background for the plot area */
     ui->plot->setBackground (gui_colors[0]);
 
-    /* Plot button is disabled initially */
-    ui->stopPlotButton->setEnabled (false);
-
     /* Used for higher performance (see QCustomPlot real time example) */
     ui->plot->setNotAntialiasedElements (QCP::aeAll);
     QFont font;
@@ -340,27 +337,11 @@ void MainWindow::portOpenedFail()
  */
 void MainWindow::replot()
 {
-    if(connected) {
-        ui->plot->xAxis->setRange(dataPointNumber - NUMBER_OF_POINTS, dataPointNumber);
+    if(connected)
+      {
+        ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
         ui->plot->replot();
-    }
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/**
- * @brief Stop Plot Button
- */
-void MainWindow::on_stopPlotButton_clicked()
-{
-    if(plotting) {                                                                        // Stop plotting
-        updateTimer.stop();                                                               // Stop updating plot timer
-        plotting = false;
-        ui->stopPlotButton->setText("Start Plot");
-    } else {                                                                              // Start plotting
-        updateTimer.start();                                                              // Start updating plot timer
-        plotting = true;
-        ui->stopPlotButton->setText("Stop Plot");
-    }
+      }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -432,7 +413,7 @@ void MainWindow::onNewDataArrived(QStringList newData)
  */
 void MainWindow::on_spinAxesMin_valueChanged(int arg1)
 {
-    ui->plot->yAxis->setRangeLower(arg1);
+    ui->plot->yAxis->setRangeLower (arg1);
     ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -443,7 +424,7 @@ void MainWindow::on_spinAxesMin_valueChanged(int arg1)
  */
 void MainWindow::on_spinAxesMax_valueChanged(int arg1)
 {
-    ui->plot->yAxis->setRangeUpper(arg1);
+    ui->plot->yAxis->setRangeUpper (arg1);
     ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -520,18 +501,6 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
 void MainWindow::on_savePNGButton_clicked()
 {
     ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
-}
-/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/**
- * @brief Reset the zoom of the plot to the initial values
- */
-void MainWindow::on_resetPlotButton_clicked()
-{
-    ui->plot->yAxis->setRange(0, 4095);
-    ui->plot->xAxis->setRange(dataPointNumber - NUMBER_OF_POINTS, dataPointNumber);
-    ui->plot->yAxis->setTickStep(500);
-    ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -621,12 +590,22 @@ void MainWindow::on_actionHow_to_use_triggered()
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/**
+ * @brief Connects to COM port or restarts plotting
+ */
 void MainWindow::on_actionConnect_triggered()
 {
   if (connected)
     {
-      /* Is connected, resume plot if paused */
-
+      /* Is connected, restart if paused */
+      if (!plotting)
+        {                                                                              // Start plotting
+          updateTimer.start();                                                              // Start updating plot timer
+          plotting = true;
+          ui->actionConnect->setEnabled (false);
+          ui->actionPause_Plot->setEnabled (true);
+          ui->statusBar->showMessage ("Plot restarted!");
+        }
     }
   else
     {
@@ -681,7 +660,27 @@ void MainWindow::on_actionConnect_triggered()
       openPort (portInfo, baudRate, dataBits, parity, stopBits);
   }
 }
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/**
+ * @brief Keep COM port open but pause plotting
+ */
+void MainWindow::on_actionPause_Plot_triggered()
+{
+  if (plotting)
+    {
+      updateTimer.stop();                                                               // Stop updating plot timer
+      plotting = false;
+      ui->actionConnect->setEnabled (true);
+      ui->actionPause_Plot->setEnabled (false);
+      ui->statusBar->showMessage ("Plot paused, new data will be ignored");
+    }
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Closes COM port and stop plotting
+ */
 void MainWindow::on_actionDisconnect_triggered()
 {
   if (connected)
@@ -705,4 +704,11 @@ void MainWindow::on_actionDisconnect_triggered()
       ui->savePNGButton->setEnabled (false);
       enable_com_controls (true);
     }
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+void MainWindow::on_actionClear_triggered()
+{
+  emit setupPlot();
+  ui->plot->replot();
 }

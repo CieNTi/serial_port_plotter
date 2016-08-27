@@ -235,25 +235,6 @@
              </item>
             </layout>
            </item>
-           <item>
-            <widget class="QPushButton" name="connectButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Connect</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
         </layout>
@@ -482,35 +463,9 @@
             </layout>
            </item>
            <item>
-            <widget class="QPushButton" name="resetPlotButton">
-             <property name="text">
-              <string>Reset Plot</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QPushButton" name="savePNGButton">
              <property name="text">
               <string>Save PNG</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="stopPlotButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Stop Plot</string>
              </property>
             </widget>
            </item>
@@ -566,6 +521,8 @@
    <addaction name="actionConnect"/>
    <addaction name="actionPause_Plot"/>
    <addaction name="actionDisconnect"/>
+   <addaction name="separator"/>
+   <addaction name="actionClear"/>
    <addaction name="separator"/>
    <addaction name="actionHow_to_use"/>
   </widget>
@@ -630,6 +587,28 @@
    </property>
    <property name="toolTip">
     <string>Disconnect COM port</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/clear_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/clear_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/clear_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/clear_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/clear_act.png</activeoff>
+     <activeon>:/serial_port_plotter/clear_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/clear_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/clear_act.png</selectedon>:/serial_port_plotter/clear_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear plot data and reset plot area</string>
    </property>
   </action>
   <action name="actionHow_to_use">
