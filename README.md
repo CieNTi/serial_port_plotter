@@ -14,7 +14,7 @@ This is a Windows application that displays real time data from serial port. The
 
 # Screenshot
 
-![Serial Port Plotter screenshot](res/screen_v1.1.0.png)
+![Serial Port Plotter screenshot](res/screen_0.png)
 
 # How to use the application
 
@@ -49,6 +49,10 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased] - 2016-08-28
+### Added
+- Negative numbers support ([cap we](https://developer.mbed.org/users/capwe/) FIX at [mbed forums](https://developer.mbed.org/comments/perm/22672/))
+
 ## [1.1.0] - 2016-08-28
 ### Added
 - Original qdarkstyle resources (icons are working now)
@@ -71,7 +75,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.0] - 2014-08-31
 ### Added
-- Original [Borislav Kereziev](b.kereziev@gmail.com) work commit [source](https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/)
+- Original [Borislav Kereziev](mailto:b.kereziev@gmail.com) work commit [source](https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/)
 
 [1.1.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.1.0
 [1.0.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.0.0
