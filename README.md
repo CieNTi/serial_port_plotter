@@ -14,7 +14,7 @@ This is a Windows application that displays real time data from serial port. The
 
 # Screenshot
 
-![Serial Port Plotter screenshot](res/screen_v1.1.0.png)
+![Serial Port Plotter screenshot](res/screen_0.png)
 
 # How to use the application
 
