@@ -297,10 +297,13 @@
                 </size>
                </property>
                <property name="minimum">
-                <number>10</number>
+                <number>0</number>
                </property>
                <property name="maximum">
-                <number>100000</number>
+                <number>999999999</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
                </property>
                <property name="value">
                 <number>1000</number>
@@ -608,7 +611,7 @@
     <string>Clear</string>
    </property>
    <property name="toolTip">
-    <string>Clear plot data and reset plot area</string>
+    <string>Clear plot data</string>
    </property>
   </action>
   <action name="actionHow_to_use">

@@ -68,9 +68,9 @@ private slots:
     //void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
     void on_spinYStep_valueChanged(int arg1);                                             // Spin box for changing Y axis tick step
     void on_savePNGButton_clicked();                                                      // Button for saving JPG
-    void on_resetPlotButton_clicked();                                                    // Resets plot to initial zoom and coordinates
-    void onMouseMoveInPlot(QMouseEvent *event);                                           // Displays coordinates of mouse pointer when clicked in plot in status bar
-    void on_spinPoints_valueChanged(int arg1);                                            // Spin box controls how many data points are collected and displayed
+    void onMouseMoveInPlot (QMouseEvent *event);                                          // Displays coordinates of mouse pointer when clicked in plot in status bar
+    void on_spinPoints_valueChanged (int arg1);                                           // Spin box controls how many data points are collected and displayed
+    void on_mouse_wheel_in_plot (QWheelEvent *event);                                     // Makes wheel mouse works while plotting
 
     /* Used when a channel is selected (plot or legend) */
     void channel_selection (void);
@@ -99,6 +99,8 @@ private:
     bool connected;                                                                       // Status connection variable
     bool plotting;                                                                        // Status plotting variable
     int dataPointNumber;                                                                  // Keep track of data points
+    /* Channels of data (number of graphs) */
+    int channels;
 
     /* Data format */
     int data_format;

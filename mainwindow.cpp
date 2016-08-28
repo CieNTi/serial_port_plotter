@@ -69,6 +69,7 @@ MainWindow::MainWindow (QWidget *parent) :
   connected (false),
   plotting (false),
   dataPointNumber (0),
+  channels(0),
   serialPort (NULL),
   STATE (WAIT_START),
   NUMBER_OF_POINTS (500)
@@ -80,6 +81,9 @@ MainWindow::MainWindow (QWidget *parent) :
 
   /* Setup plot area and connect controls slots */
   setupPlot();
+
+  /* Wheel over plot when plotting */
+  connect (ui->plot, SIGNAL (mouseWheel (QWheelEvent*)), this, SLOT (on_mouse_wheel_in_plot (QWheelEvent*)));
 
   /* Slot for printing coordinates */
   connect (ui->plot, SIGNAL (mouseMove (QMouseEvent*)), this, SLOT (onMouseMoveInPlot (QMouseEvent*)));
@@ -184,7 +188,7 @@ void MainWindow::setupPlot()
     ui->plot->xAxis->setTickLabelColor (gui_colors[2]);
     ui->plot->xAxis->setTickLabelFont (font);
     /* Range */
-    ui->plot->xAxis->setRange (0, ui->spinPoints->value());
+    ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
     ui->plot->xAxis->setAutoTickCount (12);
 
     /* Y Axis */
@@ -205,7 +209,7 @@ void MainWindow::setupPlot()
 
     /* User interactions Drag and Zoom are allowed only on X axis, Y is fixed manually by UI control */
     ui->plot->setInteraction (QCP::iRangeDrag, true);
-    ui->plot->setInteraction (QCP::iRangeZoom, true);
+    //ui->plot->setInteraction (QCP::iRangeZoom, true);
     ui->plot->setInteraction (QCP::iSelectPlottables, true);
     ui->plot->setInteraction (QCP::iSelectLegend, true);
     ui->plot->axisRect()->setRangeDrag (Qt::Horizontal);
@@ -337,11 +341,8 @@ void MainWindow::portOpenedFail()
  */
 void MainWindow::replot()
 {
-    if(connected)
-      {
-        ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
-        ui->plot->replot();
-      }
+  ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
+  ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -368,9 +369,10 @@ void MainWindow::onNewDataArrived(QStringList newData)
               {
                 /* Add new channel data */
                 ui->plot->addGraph();
-                ui->plot->graph()->setPen (line_colors[channel % CUSTOM_LINE_COLORS]);
-                ui->plot->graph()->setName (QString("Channel %1").arg(channel));
-                ui->plot->legend->item (channel)->setTextColor (line_colors[channel % CUSTOM_LINE_COLORS]);
+                ui->plot->graph()->setPen (line_colors[channels % CUSTOM_LINE_COLORS]);
+                ui->plot->graph()->setName (QString("Channel %1").arg(channels));
+                ui->plot->legend->item (channels)->setTextColor (line_colors[channels % CUSTOM_LINE_COLORS]);
+                channels++;
               }
 
             /* [TODO] Method selection and plotting */
@@ -384,8 +386,6 @@ void MainWindow::onNewDataArrived(QStringList newData)
               {
                 /* Add data to Graph 0 */
                 ui->plot->graph (channel)->addData (dataPointNumber, newData[channel].toInt());
-                /* Remove data from graph 0 */
-                //ui->plot->graph (0)->removeDataBefore (dataPointNumber - NUMBER_OF_POINTS);
                 /* Increment data number and channel */
                 channel++;
               }
@@ -519,6 +519,19 @@ void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
+ * @brief Send plot wheelmouse to spinbox
+ * @param event
+ */
+void MainWindow::on_mouse_wheel_in_plot (QWheelEvent *event)
+{
+  QWheelEvent inverted_event = QWheelEvent(event->posF(), event->globalPosF(),
+                                           -event->pixelDelta(), -event->angleDelta(),
+                                           0, Qt::Vertical, event->buttons(), event->modifiers());
+  QApplication::sendEvent (ui->spinPoints, &inverted_event);
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
  * @brief Select both line and legend (channel)
  * @param plottable
  * @param event
@@ -574,7 +587,7 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
  */
 void MainWindow::on_spinPoints_valueChanged (int arg1)
 {
-  NUMBER_OF_POINTS = arg1;
+  ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
   ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -707,8 +720,20 @@ void MainWindow::on_actionDisconnect_triggered()
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/**
+ * @brief Clear all channels data and reset plot area
+ *
+ * This function will not delete the channel itself (legend will stay)
+ */
 void MainWindow::on_actionClear_triggered()
 {
+  int i = 0;
+  for (i = 0; i < channels; i++)
+    {
+      ui->plot->graph (i)->clearData();
+    }
+  dataPointNumber = 0;
   emit setupPlot();
   ui->plot->replot();
 }
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
