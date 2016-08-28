@@ -456,9 +456,11 @@ void MainWindow::readData()
                         emit newData(incomingData);                                       // Emit signal for data received with the list
                         break;
                     }
-                    else if(isdigit(temp[i]) || isspace(temp[i]) ) {                      // If examined char is a digit, and not '$' or ';', append it to temporary string
+                    else if (isdigit (temp[i]) || isspace (temp[i]) || temp[i] =='-')
+                      {
+                        /* If examined char is a digit, and not '$' or ';', append it to temporary string */
                         receivedData.append(temp[i]);
-                    }
+                      }
                     break;
                 default: break;
                 }
