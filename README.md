@@ -7,7 +7,7 @@ This is a Windows application that displays real time data from serial port. The
 - 14 available line colors (cyclic)
 - No data point limit: All received data is kept so user can explore old data
 - Exports to PNG
-- Zooming and dragging using the mouse wheel (X axis only, when paused)
+- Zooming and dragging using the mouse wheel (X axis only)
 - Moving around the plot displays the X and Y values of the graph in the status bar
 - Channel's name legend (double-click to modify)
 - Channel selection (click on legend's text)
@@ -52,6 +52,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - *Line Icon Set* icons in 3 colors
 - *Lynny* icons in 3 colors
 - Inno Setup file with auto-pack .bat file (installer tested on WinXP-32b and Win10-64b)
+- Play/Pause/Stop, Clear and Help toolbar buttons
 
 ### Changed
 - Resources structure
