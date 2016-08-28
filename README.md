@@ -20,6 +20,10 @@ This is a Windows application that displays real time data from serial port. The
 
 Just send your integer data over the serial port. The application expects certain format so it can differentiate between values. Each message you send must start with '$' and end with ';' (semi-colon) and the integers inside need to be space-separated. The Help button displays comprehensive instructions.
 
+Use the mouse wheel over controls to change its values and use it over plot area to zoom.
+
+When stopped/paused, plot area can be dragged.
+
 # Send data over the serial port
 
 ```c
@@ -45,7 +49,7 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.0] - 2016-08-24
+## [1.1.0] - 2016-08-28
 ### Added
 - Original qdarkstyle resources (icons are working now)
 - Manifest and all Windows related/recommended configs
