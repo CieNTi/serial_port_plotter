@@ -235,25 +235,6 @@
              </item>
             </layout>
            </item>
-           <item>
-            <widget class="QPushButton" name="connectButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Connect</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
         </layout>
@@ -280,48 +261,6 @@
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0">
           <layout class="QVBoxLayout" name="plotControlsLayout">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <item>
-              <widget class="QLabel" name="labelAxes">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>AXES</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="comboAxes">
-               <property name="minimumSize">
-                <size>
-                 <width>69</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>69</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="currentIndex">
-                <number>-1</number>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_10">
              <item>
@@ -358,13 +297,16 @@
                 </size>
                </property>
                <property name="minimum">
-                <number>10</number>
+                <number>0</number>
                </property>
                <property name="maximum">
-                <number>1000</number>
+                <number>999999999</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
                </property>
                <property name="value">
-                <number>500</number>
+                <number>1000</number>
                </property>
               </widget>
              </item>
@@ -412,10 +354,10 @@
                 <number>10000</number>
                </property>
                <property name="singleStep">
-                <number>10</number>
+                <number>1</number>
                </property>
                <property name="value">
-                <number>500</number>
+                <number>10</number>
                </property>
               </widget>
              </item>
@@ -464,6 +406,9 @@
                </property>
                <property name="singleStep">
                 <number>10</number>
+               </property>
+               <property name="value">
+                <number>-5</number>
                </property>
               </widget>
              </item>
@@ -514,42 +459,16 @@
                 <number>10</number>
                </property>
                <property name="value">
-                <number>4095</number>
+                <number>260</number>
                </property>
               </widget>
              </item>
             </layout>
            </item>
            <item>
-            <widget class="QPushButton" name="resetPlotButton">
+            <widget class="QPushButton" name="savePNGButton">
              <property name="text">
-              <string>Reset Plot</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="saveJPGButton">
-             <property name="text">
-              <string>Save JPG</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="stopPlotButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Stop Plot</string>
+              <string>Save PNG</string>
              </property>
             </widget>
            </item>
@@ -583,26 +502,132 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>843</width>
-     <height>20</height>
-    </rect>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
    </property>
-   <widget class="QMenu" name="menuHelo">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionHow_to_use"/>
-   </widget>
-   <addaction name="menuHelo"/>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConnect"/>
+   <addaction name="actionPause_Plot"/>
+   <addaction name="actionDisconnect"/>
+   <addaction name="separator"/>
+   <addaction name="actionClear"/>
+   <addaction name="separator"/>
+   <addaction name="actionHow_to_use"/>
   </widget>
-  <action name="actionHow_to_use">
+  <action name="actionConnect">
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/play_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/play_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/play_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/play_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/play_act.png</activeoff>
+     <activeon>:/serial_port_plotter/play_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/play_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/play_act.png</selectedon>:/serial_port_plotter/play_nor.png</iconset>
+   </property>
    <property name="text">
-    <string>How to use </string>
+    <string>Connect</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect to COM port</string>
+   </property>
+  </action>
+  <action name="actionPause_Plot">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/pause_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/pause_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/pause_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/pause_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/pause_act.png</activeoff>
+     <activeon>:/serial_port_plotter/pause_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/pause_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/pause_act.png</selectedon>:/serial_port_plotter/pause_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause plot</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/stop_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/stop_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/stop_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/stop_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/stop_act.png</activeoff>
+     <activeon>:/serial_port_plotter/stop_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/stop_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/stop_act.png</selectedon>:/serial_port_plotter/stop_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+   <property name="toolTip">
+    <string>Disconnect COM port</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/clear_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/clear_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/clear_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/clear_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/clear_act.png</activeoff>
+     <activeon>:/serial_port_plotter/clear_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/clear_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/clear_act.png</selectedon>:/serial_port_plotter/clear_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear plot data</string>
+   </property>
+  </action>
+  <action name="actionHow_to_use">
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/help_nor.png</normaloff>
+     <normalon>:/serial_port_plotter/help_nor.png</normalon>
+     <disabledoff>:/serial_port_plotter/help_dis.png</disabledoff>
+     <disabledon>:/serial_port_plotter/help_dis.png</disabledon>
+     <activeoff>:/serial_port_plotter/help_act.png</activeoff>
+     <activeon>:/serial_port_plotter/help_act.png</activeon>
+     <selectedoff>:/serial_port_plotter/help_act.png</selectedoff>
+     <selectedon>:/serial_port_plotter/help_act.png</selectedon>:/serial_port_plotter/help_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>How to use</string>
    </property>
   </action>
  </widget>
@@ -611,10 +636,12 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header location="global">qcustomplot.h</header>
+   <header location="global">qcustomplot/qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res/serial_port_plotter.qrc"/>
+ </resources>
  <connections/>
 </ui>

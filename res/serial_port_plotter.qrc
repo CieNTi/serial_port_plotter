@@ -1,0 +1,1747 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/serial_port_plotter">
+        <file>icons/serial_port_icon.icns</file>
+        <file>styles/style.qss</file>
+    </qresource>
+    <qresource prefix="/serial_port_plotter">
+        <!-- Situ Herrera's Line Icon Set (black over transparent) -->
+        <!--
+        <file>icons/line_icon_set/amplified-speaker.png</file>
+        <file>icons/line_icon_set/play-button.png</file>
+        <file>icons/line_icon_set/stop-button.png</file>
+        <file>icons/line_icon_set/battery.png</file>
+        <file>icons/line_icon_set/battery-charging-status.png</file>
+        <file>icons/line_icon_set/brightness.png</file>
+        <file>icons/line_icon_set/calendar.png</file>
+        <file>icons/line_icon_set/camera.png</file>
+        <file>icons/line_icon_set/cassette.png</file>
+        <file>icons/line_icon_set/cd.png</file>
+        <file>icons/line_icon_set/chains.png</file>
+        <file>icons/line_icon_set/check.png</file>
+        <file>icons/line_icon_set/cinema-reel-video-camera.png</file>
+        <file>icons/line_icon_set/circles.png</file>
+        <file>icons/line_icon_set/circular-arrow.png</file>
+        <file>icons/line_icon_set/circular-design.png</file>
+        <file>icons/line_icon_set/circular-design-with-crown.png</file>
+        <file>icons/line_icon_set/clock.png</file>
+        <file>icons/line_icon_set/cloud.png</file>
+        <file>icons/line_icon_set/cloud-with-thunderbolt.png</file>
+        <file>icons/line_icon_set/cloudy.png</file>
+        <file>icons/line_icon_set/coffee-cup.png</file>
+        <file>icons/line_icon_set/cogwheel.png</file>
+        <file>icons/line_icon_set/compact-disc.png</file>
+        <file>icons/line_icon_set/compass.png</file>
+        <file>icons/line_icon_set/crop-tool.png</file>
+        <file>icons/line_icon_set/cross.png</file>
+        <file>icons/line_icon_set/crown.png</file>
+        <file>icons/line_icon_set/curve-arrows.png</file>
+        <file>icons/line_icon_set/design.png</file>
+        <file>icons/line_icon_set/diamond.png</file>
+        <file>icons/line_icon_set/document.png</file>
+        <file>icons/line_icon_set/dollar-symbol.png</file>
+        <file>icons/line_icon_set/door-hanger.png</file>
+        <file>icons/line_icon_set/double-arrow.png</file>
+        <file>icons/line_icon_set/double-arrow-1.png</file>
+        <file>icons/line_icon_set/double-arrows.png</file>
+        <file>icons/line_icon_set/downloading.png</file>
+        <file>icons/line_icon_set/eject-button.png</file>
+        <file>icons/line_icon_set/envelope.png</file>
+        <file>icons/line_icon_set/eye.png</file>
+        <file>icons/line_icon_set/fast-forward-button.png</file>
+        <file>icons/line_icon_set/fast-forward-button-1.png</file>
+        <file>icons/line_icon_set/file.png</file>
+        <file>icons/line_icon_set/film-camera.png</file>
+        <file>icons/line_icon_set/fire.png</file>
+        <file>icons/line_icon_set/flag.png</file>
+        <file>icons/line_icon_set/folder.png</file>
+        <file>icons/line_icon_set/four-squares.png</file>
+        <file>icons/line_icon_set/full-battery.png</file>
+        <file>icons/line_icon_set/half-battery.png</file>
+        <file>icons/line_icon_set/headphones.png</file>
+        <file>icons/line_icon_set/heart.png</file>
+        <file>icons/line_icon_set/home.png</file>
+        <file>icons/line_icon_set/leaf.png</file>
+        <file>icons/line_icon_set/left-arrow.png</file>
+        <file>icons/line_icon_set/left-arrow-1.png</file>
+        <file>icons/line_icon_set/light-bulb.png</file>
+        <file>icons/line_icon_set/line-chart.png</file>
+        <file>icons/line_icon_set/low-battery.png</file>
+        <file>icons/line_icon_set/magnification-lens.png</file>
+        <file>icons/line_icon_set/map.png</file>
+        <file>icons/line_icon_set/mathematical-operations.png</file>
+        <file>icons/line_icon_set/microphone.png</file>
+        <file>icons/line_icon_set/molecular-structure.png</file>
+        <file>icons/line_icon_set/multiple-line.png</file>
+        <file>icons/line_icon_set/music-controller.png</file>
+        <file>icons/line_icon_set/mute-button.png</file>
+        <file>icons/line_icon_set/newspaper-page.png</file>
+        <file>icons/line_icon_set/no-protection.png</file>
+        <file>icons/line_icon_set/padlock.png</file>
+        <file>icons/line_icon_set/padlock-1.png</file>
+        <file>icons/line_icon_set/paint-brush.png</file>
+        <file>icons/line_icon_set/paper-bag.png</file>
+        <file>icons/line_icon_set/paperclip.png</file>
+        <file>icons/line_icon_set/paper-plane.png</file>
+        <file>icons/line_icon_set/paper-tray.png</file>
+        <file>icons/line_icon_set/pencil.png</file>
+        <file>icons/line_icon_set/phone-auricular.png</file>
+        <file>icons/line_icon_set/picture.png</file>
+        <file>icons/line_icon_set/placeholder.png</file>
+        <file>icons/line_icon_set/quaver.png</file>
+        <file>icons/line_icon_set/rain.png</file>
+        <file>icons/line_icon_set/religion-stained-glass.png</file>
+        <file>icons/line_icon_set/rewind-button.png</file>
+        <file>icons/line_icon_set/rewind-button-1.png</file>
+        <file>icons/line_icon_set/right-arrow.png</file>
+        <file>icons/line_icon_set/right-arrow-1.png</file>
+        <file>icons/line_icon_set/round-socket.png</file>
+        <file>icons/line_icon_set/scissors.png</file>
+        <file>icons/line_icon_set/screen.png</file>
+        <file>icons/line_icon_set/screen-1.png</file>
+        <file>icons/line_icon_set/select.png</file>
+        <file>icons/line_icon_set/shield.png</file>
+        <file>icons/line_icon_set/shopping-cart.png</file>
+        <file>icons/line_icon_set/shuffle.png</file>
+        <file>icons/line_icon_set/signal.png</file>
+        <file>icons/line_icon_set/smartphone.png</file>
+        <file>icons/line_icon_set/snowflake.png</file>
+        <file>icons/line_icon_set/spand-arrows.png</file>
+        <file>icons/line_icon_set/speaker.png</file>
+        <file>icons/line_icon_set/speech-balloon.png</file>
+        <file>icons/line_icon_set/speech-balloon-1.png</file>
+        <file>icons/line_icon_set/speech-balloons.png</file>
+        <file>icons/line_icon_set/square.png</file>
+        <file>icons/line_icon_set/square-1.png</file>
+        <file>icons/line_icon_set/squares.png</file>
+        <file>icons/line_icon_set/stamp.png</file>
+        <file>icons/line_icon_set/star.png</file>
+        <file>icons/line_icon_set/symbol.png</file>
+        <file>icons/line_icon_set/tag.png</file>
+        <file>icons/line_icon_set/target.png</file>
+        <file>icons/line_icon_set/telephone-receiver.png</file>
+        <file>icons/line_icon_set/thunderbolt.png</file>
+        <file>icons/line_icon_set/trash.png</file>
+        <file>icons/line_icon_set/trophy.png</file>
+        <file>icons/line_icon_set/t-shirt.png</file>
+        <file>icons/line_icon_set/umbrella.png</file>
+        <file>icons/line_icon_set/user.png</file>
+        <file>icons/line_icon_set/user-1.png</file>
+        <file>icons/line_icon_set/wallet.png</file>
+        <file>icons/line_icon_set/world.png</file>
+        -->
+        <!-- Situ Herrera's Line Icon Set (qdark text color over transparent variant) -->
+        <!--
+        <file>icons/line_icon_set_text/amplified-speaker.png</file>
+        <file>icons/line_icon_set_text/play-button.png</file>
+        <file>icons/line_icon_set_text/stop-button.png</file>
+        <file>icons/line_icon_set_text/battery.png</file>
+        <file>icons/line_icon_set_text/battery-charging-status.png</file>
+        <file>icons/line_icon_set_text/brightness.png</file>
+        <file>icons/line_icon_set_text/calendar.png</file>
+        <file>icons/line_icon_set_text/camera.png</file>
+        <file>icons/line_icon_set_text/cassette.png</file>
+        <file>icons/line_icon_set_text/cd.png</file>
+        <file>icons/line_icon_set_text/chains.png</file>
+        <file>icons/line_icon_set_text/check.png</file>
+        <file>icons/line_icon_set_text/cinema-reel-video-camera.png</file>
+        <file>icons/line_icon_set_text/circles.png</file>
+        <file>icons/line_icon_set_text/circular-arrow.png</file>
+        <file>icons/line_icon_set_text/circular-design.png</file>
+        <file>icons/line_icon_set_text/circular-design-with-crown.png</file>
+        <file>icons/line_icon_set_text/clock.png</file>
+        <file>icons/line_icon_set_text/cloud.png</file>
+        <file>icons/line_icon_set_text/cloud-with-thunderbolt.png</file>
+        <file>icons/line_icon_set_text/cloudy.png</file>
+        <file>icons/line_icon_set_text/coffee-cup.png</file>
+        <file>icons/line_icon_set_text/cogwheel.png</file>
+        <file>icons/line_icon_set_text/compact-disc.png</file>
+        <file>icons/line_icon_set_text/compass.png</file>
+        <file>icons/line_icon_set_text/crop-tool.png</file>
+        <file>icons/line_icon_set_text/cross.png</file>
+        <file>icons/line_icon_set_text/crown.png</file>
+        <file>icons/line_icon_set_text/curve-arrows.png</file>
+        <file>icons/line_icon_set_text/design.png</file>
+        <file>icons/line_icon_set_text/diamond.png</file>
+        <file>icons/line_icon_set_text/document.png</file>
+        <file>icons/line_icon_set_text/dollar-symbol.png</file>
+        <file>icons/line_icon_set_text/door-hanger.png</file>
+        <file>icons/line_icon_set_text/double-arrow.png</file>
+        <file>icons/line_icon_set_text/double-arrow-1.png</file>
+        <file>icons/line_icon_set_text/double-arrows.png</file>
+        <file>icons/line_icon_set_text/downloading.png</file>
+        <file>icons/line_icon_set_text/eject-button.png</file>
+        <file>icons/line_icon_set_text/envelope.png</file>
+        <file>icons/line_icon_set_text/eye.png</file>
+        <file>icons/line_icon_set_text/fast-forward-button.png</file>
+        <file>icons/line_icon_set_text/fast-forward-button-1.png</file>
+        <file>icons/line_icon_set_text/file.png</file>
+        <file>icons/line_icon_set_text/film-camera.png</file>
+        <file>icons/line_icon_set_text/fire.png</file>
+        <file>icons/line_icon_set_text/flag.png</file>
+        <file>icons/line_icon_set_text/folder.png</file>
+        <file>icons/line_icon_set_text/four-squares.png</file>
+        <file>icons/line_icon_set_text/full-battery.png</file>
+        <file>icons/line_icon_set_text/half-battery.png</file>
+        <file>icons/line_icon_set_text/headphones.png</file>
+        <file>icons/line_icon_set_text/heart.png</file>
+        <file>icons/line_icon_set_text/home.png</file>
+        <file>icons/line_icon_set_text/leaf.png</file>
+        <file>icons/line_icon_set_text/left-arrow.png</file>
+        <file>icons/line_icon_set_text/left-arrow-1.png</file>
+        <file>icons/line_icon_set_text/light-bulb.png</file>
+        <file>icons/line_icon_set_text/line-chart.png</file>
+        <file>icons/line_icon_set_text/low-battery.png</file>
+        <file>icons/line_icon_set_text/magnification-lens.png</file>
+        <file>icons/line_icon_set_text/map.png</file>
+        <file>icons/line_icon_set_text/mathematical-operations.png</file>
+        <file>icons/line_icon_set_text/microphone.png</file>
+        <file>icons/line_icon_set_text/molecular-structure.png</file>
+        <file>icons/line_icon_set_text/multiple-line.png</file>
+        <file>icons/line_icon_set_text/music-controller.png</file>
+        <file>icons/line_icon_set_text/mute-button.png</file>
+        <file>icons/line_icon_set_text/newspaper-page.png</file>
+        <file>icons/line_icon_set_text/no-protection.png</file>
+        <file>icons/line_icon_set_text/padlock.png</file>
+        <file>icons/line_icon_set_text/padlock-1.png</file>
+        <file>icons/line_icon_set_text/paint-brush.png</file>
+        <file>icons/line_icon_set_text/paper-bag.png</file>
+        <file>icons/line_icon_set_text/paperclip.png</file>
+        <file>icons/line_icon_set_text/paper-plane.png</file>
+        <file>icons/line_icon_set_text/paper-tray.png</file>
+        <file>icons/line_icon_set_text/pencil.png</file>
+        <file>icons/line_icon_set_text/phone-auricular.png</file>
+        <file>icons/line_icon_set_text/picture.png</file>
+        <file>icons/line_icon_set_text/placeholder.png</file>
+        <file>icons/line_icon_set_text/quaver.png</file>
+        <file>icons/line_icon_set_text/rain.png</file>
+        <file>icons/line_icon_set_text/religion-stained-glass.png</file>
+        <file>icons/line_icon_set_text/rewind-button.png</file>
+        <file>icons/line_icon_set_text/rewind-button-1.png</file>
+        <file>icons/line_icon_set_text/right-arrow.png</file>
+        <file>icons/line_icon_set_text/right-arrow-1.png</file>
+        <file>icons/line_icon_set_text/round-socket.png</file>
+        <file>icons/line_icon_set_text/scissors.png</file>
+        <file>icons/line_icon_set_text/screen.png</file>
+        <file>icons/line_icon_set_text/screen-1.png</file>
+        <file>icons/line_icon_set_text/select.png</file>
+        <file>icons/line_icon_set_text/shield.png</file>
+        <file>icons/line_icon_set_text/shopping-cart.png</file>
+        <file>icons/line_icon_set_text/shuffle.png</file>
+        <file>icons/line_icon_set_text/signal.png</file>
+        <file>icons/line_icon_set_text/smartphone.png</file>
+        <file>icons/line_icon_set_text/snowflake.png</file>
+        <file>icons/line_icon_set_text/spand-arrows.png</file>
+        <file>icons/line_icon_set_text/speaker.png</file>
+        <file>icons/line_icon_set_text/speech-balloon.png</file>
+        <file>icons/line_icon_set_text/speech-balloon-1.png</file>
+        <file>icons/line_icon_set_text/speech-balloons.png</file>
+        <file>icons/line_icon_set_text/square.png</file>
+        <file>icons/line_icon_set_text/square-1.png</file>
+        <file>icons/line_icon_set_text/squares.png</file>
+        <file>icons/line_icon_set_text/stamp.png</file>
+        <file>icons/line_icon_set_text/star.png</file>
+        <file>icons/line_icon_set_text/symbol.png</file>
+        <file>icons/line_icon_set_text/tag.png</file>
+        <file>icons/line_icon_set_text/target.png</file>
+        <file>icons/line_icon_set_text/telephone-receiver.png</file>
+        <file>icons/line_icon_set_text/thunderbolt.png</file>
+        <file>icons/line_icon_set_text/trash.png</file>
+        <file>icons/line_icon_set_text/trophy.png</file>
+        <file>icons/line_icon_set_text/t-shirt.png</file>
+        <file>icons/line_icon_set_text/umbrella.png</file>
+        <file>icons/line_icon_set_text/user.png</file>
+        <file>icons/line_icon_set_text/user-1.png</file>
+        <file>icons/line_icon_set_text/wallet.png</file>
+        <file>icons/line_icon_set_text/world.png</file>
+        -->
+        <!-- Situ Herrera's Line Icon Set (white over transparent variant) -->
+        <!--
+        <file>icons/line_icon_set_white/amplified-speaker.png</file>
+        <file>icons/line_icon_set_white/play-button.png</file>
+        <file>icons/line_icon_set_white/stop-button.png</file>
+        <file>icons/line_icon_set_white/battery.png</file>
+        <file>icons/line_icon_set_white/battery-charging-status.png</file>
+        <file>icons/line_icon_set_white/brightness.png</file>
+        <file>icons/line_icon_set_white/calendar.png</file>
+        <file>icons/line_icon_set_white/camera.png</file>
+        <file>icons/line_icon_set_white/cassette.png</file>
+        <file>icons/line_icon_set_white/cd.png</file>
+        <file>icons/line_icon_set_white/chains.png</file>
+        <file>icons/line_icon_set_white/check.png</file>
+        <file>icons/line_icon_set_white/cinema-reel-video-camera.png</file>
+        <file>icons/line_icon_set_white/circles.png</file>
+        <file>icons/line_icon_set_white/circular-arrow.png</file>
+        <file>icons/line_icon_set_white/circular-design.png</file>
+        <file>icons/line_icon_set_white/circular-design-with-crown.png</file>
+        <file>icons/line_icon_set_white/clock.png</file>
+        <file>icons/line_icon_set_white/cloud.png</file>
+        <file>icons/line_icon_set_white/cloud-with-thunderbolt.png</file>
+        <file>icons/line_icon_set_white/cloudy.png</file>
+        <file>icons/line_icon_set_white/coffee-cup.png</file>
+        <file>icons/line_icon_set_white/cogwheel.png</file>
+        <file>icons/line_icon_set_white/compact-disc.png</file>
+        <file>icons/line_icon_set_white/compass.png</file>
+        <file>icons/line_icon_set_white/crop-tool.png</file>
+        <file>icons/line_icon_set_white/cross.png</file>
+        <file>icons/line_icon_set_white/crown.png</file>
+        <file>icons/line_icon_set_white/curve-arrows.png</file>
+        <file>icons/line_icon_set_white/design.png</file>
+        <file>icons/line_icon_set_white/diamond.png</file>
+        <file>icons/line_icon_set_white/document.png</file>
+        <file>icons/line_icon_set_white/dollar-symbol.png</file>
+        <file>icons/line_icon_set_white/door-hanger.png</file>
+        <file>icons/line_icon_set_white/double-arrow.png</file>
+        <file>icons/line_icon_set_white/double-arrow-1.png</file>
+        <file>icons/line_icon_set_white/double-arrows.png</file>
+        <file>icons/line_icon_set_white/downloading.png</file>
+        <file>icons/line_icon_set_white/eject-button.png</file>
+        <file>icons/line_icon_set_white/envelope.png</file>
+        <file>icons/line_icon_set_white/eye.png</file>
+        <file>icons/line_icon_set_white/fast-forward-button.png</file>
+        <file>icons/line_icon_set_white/fast-forward-button-1.png</file>
+        <file>icons/line_icon_set_white/file.png</file>
+        <file>icons/line_icon_set_white/film-camera.png</file>
+        <file>icons/line_icon_set_white/fire.png</file>
+        <file>icons/line_icon_set_white/flag.png</file>
+        <file>icons/line_icon_set_white/folder.png</file>
+        <file>icons/line_icon_set_white/four-squares.png</file>
+        <file>icons/line_icon_set_white/full-battery.png</file>
+        <file>icons/line_icon_set_white/half-battery.png</file>
+        <file>icons/line_icon_set_white/headphones.png</file>
+        <file>icons/line_icon_set_white/heart.png</file>
+        <file>icons/line_icon_set_white/home.png</file>
+        <file>icons/line_icon_set_white/leaf.png</file>
+        <file>icons/line_icon_set_white/left-arrow.png</file>
+        <file>icons/line_icon_set_white/left-arrow-1.png</file>
+        <file>icons/line_icon_set_white/light-bulb.png</file>
+        <file>icons/line_icon_set_white/line-chart.png</file>
+        <file>icons/line_icon_set_white/low-battery.png</file>
+        <file>icons/line_icon_set_white/magnification-lens.png</file>
+        <file>icons/line_icon_set_white/map.png</file>
+        <file>icons/line_icon_set_white/mathematical-operations.png</file>
+        <file>icons/line_icon_set_white/microphone.png</file>
+        <file>icons/line_icon_set_white/molecular-structure.png</file>
+        <file>icons/line_icon_set_white/multiple-line.png</file>
+        <file>icons/line_icon_set_white/music-controller.png</file>
+        <file>icons/line_icon_set_white/mute-button.png</file>
+        <file>icons/line_icon_set_white/newspaper-page.png</file>
+        <file>icons/line_icon_set_white/no-protection.png</file>
+        <file>icons/line_icon_set_white/padlock.png</file>
+        <file>icons/line_icon_set_white/padlock-1.png</file>
+        <file>icons/line_icon_set_white/paint-brush.png</file>
+        <file>icons/line_icon_set_white/paper-bag.png</file>
+        <file>icons/line_icon_set_white/paperclip.png</file>
+        <file>icons/line_icon_set_white/paper-plane.png</file>
+        <file>icons/line_icon_set_white/paper-tray.png</file>
+        <file>icons/line_icon_set_white/pencil.png</file>
+        <file>icons/line_icon_set_white/phone-auricular.png</file>
+        <file>icons/line_icon_set_white/picture.png</file>
+        <file>icons/line_icon_set_white/placeholder.png</file>
+        <file>icons/line_icon_set_white/quaver.png</file>
+        <file>icons/line_icon_set_white/rain.png</file>
+        <file>icons/line_icon_set_white/religion-stained-glass.png</file>
+        <file>icons/line_icon_set_white/rewind-button.png</file>
+        <file>icons/line_icon_set_white/rewind-button-1.png</file>
+        <file>icons/line_icon_set_white/right-arrow.png</file>
+        <file>icons/line_icon_set_white/right-arrow-1.png</file>
+        <file>icons/line_icon_set_white/round-socket.png</file>
+        <file>icons/line_icon_set_white/scissors.png</file>
+        <file>icons/line_icon_set_white/screen.png</file>
+        <file>icons/line_icon_set_white/screen-1.png</file>
+        <file>icons/line_icon_set_white/select.png</file>
+        <file>icons/line_icon_set_white/shield.png</file>
+        <file>icons/line_icon_set_white/shopping-cart.png</file>
+        <file>icons/line_icon_set_white/shuffle.png</file>
+        <file>icons/line_icon_set_white/signal.png</file>
+        <file>icons/line_icon_set_white/smartphone.png</file>
+        <file>icons/line_icon_set_white/snowflake.png</file>
+        <file>icons/line_icon_set_white/spand-arrows.png</file>
+        <file>icons/line_icon_set_white/speaker.png</file>
+        <file>icons/line_icon_set_white/speech-balloon.png</file>
+        <file>icons/line_icon_set_white/speech-balloon-1.png</file>
+        <file>icons/line_icon_set_white/speech-balloons.png</file>
+        <file>icons/line_icon_set_white/square.png</file>
+        <file>icons/line_icon_set_white/square-1.png</file>
+        <file>icons/line_icon_set_white/squares.png</file>
+        <file>icons/line_icon_set_white/stamp.png</file>
+        <file>icons/line_icon_set_white/star.png</file>
+        <file>icons/line_icon_set_white/symbol.png</file>
+        <file>icons/line_icon_set_white/tag.png</file>
+        <file>icons/line_icon_set_white/target.png</file>
+        <file>icons/line_icon_set_white/telephone-receiver.png</file>
+        <file>icons/line_icon_set_white/thunderbolt.png</file>
+        <file>icons/line_icon_set_white/trash.png</file>
+        <file>icons/line_icon_set_white/trophy.png</file>
+        <file>icons/line_icon_set_white/t-shirt.png</file>
+        <file>icons/line_icon_set_white/umbrella.png</file>
+        <file>icons/line_icon_set_white/user.png</file>
+        <file>icons/line_icon_set_white/user-1.png</file>
+        <file>icons/line_icon_set_white/wallet.png</file>
+        <file>icons/line_icon_set_white/world.png</file>
+        -->
+    </qresource>
+    <qresource prefix="/serial_port_plotter">
+        <!-- Lynny icon set (black over transparent) -->
+        <file alias="play_dis.png">icons/lynny-2x/Play.png</file>
+        <file alias="pause_dis.png">icons/lynny-2x/Pause.png</file>
+        <file alias="stop_dis.png">icons/lynny-2x/Stop.png</file>
+        <file alias="clear_dis.png">icons/lynny-2x/No Entry.png</file>
+        <file alias="help_dis.png">icons/lynny-2x/Help.png</file>
+        <!--
+        <file>icons/lynny-2x/Add.png</file>
+        <file>icons/lynny-2x/Address Book.png</file>
+        <file>icons/lynny-2x/Admission Ticket.png</file>
+        <file>icons/lynny-2x/Admission Tickets.png</file>
+        <file>icons/lynny-2x/Airplay Logo.png</file>
+        <file>icons/lynny-2x/Android.png</file>
+        <file>icons/lynny-2x/At Symbol.png</file>
+        <file>icons/lynny-2x/Atlas.png</file>
+        <file>icons/lynny-2x/Atom.png</file>
+        <file>icons/lynny-2x/Audio 0.png</file>
+        <file>icons/lynny-2x/Audio 1.png</file>
+        <file>icons/lynny-2x/Audio 2.png</file>
+        <file>icons/lynny-2x/Audio 3.png</file>
+        <file>icons/lynny-2x/Audio Muted.png</file>
+        <file>icons/lynny-2x/Bandaid.png</file>
+        <file>icons/lynny-2x/Bar Chart.png</file>
+        <file>icons/lynny-2x/Barcode Scan.png</file>
+        <file>icons/lynny-2x/Barcode Search.png</file>
+        <file>icons/lynny-2x/Barcode.png</file>
+        <file>icons/lynny-2x/Battery 1.png</file>
+        <file>icons/lynny-2x/Battery 2.png</file>
+        <file>icons/lynny-2x/Battery 3.png</file>
+        <file>icons/lynny-2x/Battery 4.png</file>
+        <file>icons/lynny-2x/Battery 5.png</file>
+        <file>icons/lynny-2x/Battery Charging.png</file>
+        <file>icons/lynny-2x/Beaker 1.png</file>
+        <file>icons/lynny-2x/Beaker 2.png</file>
+        <file>icons/lynny-2x/Beaker 3.png</file>
+        <file>icons/lynny-2x/Bell.png</file>
+        <file>icons/lynny-2x/Billboard 1.png</file>
+        <file>icons/lynny-2x/Billboard 2.png</file>
+        <file>icons/lynny-2x/Binoculars.png</file>
+        <file>icons/lynny-2x/Bitcoin Coin.png</file>
+        <file>icons/lynny-2x/Bitcoin Coins.png</file>
+        <file>icons/lynny-2x/Bluetooth.png</file>
+        <file>icons/lynny-2x/Bone.png</file>
+        <file>icons/lynny-2x/Book.png</file>
+        <file>icons/lynny-2x/Bookmark 1.png</file>
+        <file>icons/lynny-2x/Bookmark 2.png</file>
+        <file>icons/lynny-2x/Bookshelf.png</file>
+        <file>icons/lynny-2x/Boom Box.png</file>
+        <file>icons/lynny-2x/Bottle.png</file>
+        <file>icons/lynny-2x/Bow Tie.png</file>
+        <file>icons/lynny-2x/Box Download.png</file>
+        <file>icons/lynny-2x/Box Upload.png</file>
+        <file>icons/lynny-2x/Box with More.png</file>
+        <file>icons/lynny-2x/Box with Papers.png</file>
+        <file>icons/lynny-2x/Box with Video Files.png</file>
+        <file>icons/lynny-2x/Box.png</file>
+        <file>icons/lynny-2x/Briefcase.png</file>
+        <file>icons/lynny-2x/Broken Heart 1.png</file>
+        <file>icons/lynny-2x/Broken Heart 2.png</file>
+        <file>icons/lynny-2x/Browser with Compass.png</file>
+        <file>icons/lynny-2x/Browser.png</file>
+        <file>icons/lynny-2x/Browsers.png</file>
+        <file>icons/lynny-2x/Building.png</file>
+        <file>icons/lynny-2x/Calculator.png</file>
+        <file>icons/lynny-2x/Calendar 1.png</file>
+        <file>icons/lynny-2x/Calendar 2.png</file>
+        <file>icons/lynny-2x/Camera with Film Strip.png</file>
+        <file>icons/lynny-2x/Camera with Polaroid.png</file>
+        <file>icons/lynny-2x/Camera with Wide Angle.png</file>
+        <file>icons/lynny-2x/Camera.png</file>
+        <file>icons/lynny-2x/Cameras.png</file>
+        <file>icons/lynny-2x/Cash Register.png</file>
+        <file>icons/lynny-2x/Celsius.png</file>
+        <file>icons/lynny-2x/Chat Bubble Dots.png</file>
+        <file>icons/lynny-2x/Chat Bubble.png</file>
+        <file>icons/lynny-2x/Chat Bubbles.png</file>
+        <file>icons/lynny-2x/Checkmark 1.png</file>
+        <file>icons/lynny-2x/Checkmark 2.png</file>
+        <file>icons/lynny-2x/Chromecast Logo.png</file>
+        <file>icons/lynny-2x/Circle Outline Down.png</file>
+        <file>icons/lynny-2x/Circle Outline Up.png</file>
+        <file>icons/lynny-2x/Circle Outline with Dot.png</file>
+        <file>icons/lynny-2x/Circle Outline.png</file>
+        <file>icons/lynny-2x/Clipboard.png</file>
+        <file>icons/lynny-2x/Clock 1.png</file>
+        <file>icons/lynny-2x/Clock 2.png</file>
+        <file>icons/lynny-2x/Cloud 1.png</file>
+        <file>icons/lynny-2x/Cloud 2.png</file>
+        <file>icons/lynny-2x/Cloud Download.png</file>
+        <file>icons/lynny-2x/Cloud Sync.png</file>
+        <file>icons/lynny-2x/Cloud Upload.png</file>
+        <file>icons/lynny-2x/Cloud with Lightning.png</file>
+        <file>icons/lynny-2x/Cloud with Rain 1.png</file>
+        <file>icons/lynny-2x/Cloud with Rain 2.png</file>
+        <file>icons/lynny-2x/Cloud with Rain 3.png</file>
+        <file>icons/lynny-2x/Cloud with Rain Lightning.png</file>
+        <file>icons/lynny-2x/Cloud with Snow.png</file>
+        <file>icons/lynny-2x/Cloud with Sun.png</file>
+        <file>icons/lynny-2x/Command Line.png</file>
+        <file>icons/lynny-2x/Compass.png</file>
+        <file>icons/lynny-2x/Contact Card 1.png</file>
+        <file>icons/lynny-2x/Contact Card 2.png</file>
+        <file>icons/lynny-2x/Contact Cards 1.png</file>
+        <file>icons/lynny-2x/Contact Cards 2.png</file>
+        <file>icons/lynny-2x/Credit Card.png</file>
+        <file>icons/lynny-2x/Credit Cards.png</file>
+        <file>icons/lynny-2x/Crossbones.png</file>
+        <file>icons/lynny-2x/Curved Arrow Down.png</file>
+        <file>icons/lynny-2x/Curved Arrow Left.png</file>
+        <file>icons/lynny-2x/Curved Arrow Right.png</file>
+        <file>icons/lynny-2x/Curved Arrow Up.png</file>
+        <file>icons/lynny-2x/Desk.png</file>
+        <file>icons/lynny-2x/Desktop Download.png</file>
+        <file>icons/lynny-2x/Desktop Left.png</file>
+        <file>icons/lynny-2x/Desktop Right.png</file>
+        <file>icons/lynny-2x/Desktop Sync.png</file>
+        <file>icons/lynny-2x/Desktop Upload.png</file>
+        <file>icons/lynny-2x/Desktop.png</file>
+        <file>icons/lynny-2x/Diamond.png</file>
+        <file>icons/lynny-2x/DLNA Logo.png</file>
+        <file>icons/lynny-2x/Dollar Coin.png</file>
+        <file>icons/lynny-2x/Dollar Coins.png</file>
+        <file>icons/lynny-2x/Down Arrow 1.png</file>
+        <file>icons/lynny-2x/Down Arrow 2.png</file>
+        <file>icons/lynny-2x/Down Arrow 3.png</file>
+        <file>icons/lynny-2x/Down Arrow 4.png</file>
+        <file>icons/lynny-2x/Down Arrow 5.png</file>
+        <file>icons/lynny-2x/Down Arrow 6.png</file>
+        <file>icons/lynny-2x/Download 1.png</file>
+        <file>icons/lynny-2x/Download 2.png</file>
+        <file>icons/lynny-2x/Drawers 1.png</file>
+        <file>icons/lynny-2x/Drawers 2.png</file>
+        <file>icons/lynny-2x/Drawers 3.png</file>
+        <file>icons/lynny-2x/Dribbble Circle.png</file>
+        <file>icons/lynny-2x/Dribbble Square.png</file>
+        <file>icons/lynny-2x/Dropbox Circle.png</file>
+        <file>icons/lynny-2x/Dropbox Square.png</file>
+        <file>icons/lynny-2x/Droplet.png</file>
+        <file>icons/lynny-2x/Eject.png</file>
+        <file>icons/lynny-2x/Envelope.png</file>
+        <file>icons/lynny-2x/Envelopes.png</file>
+        <file>icons/lynny-2x/Error.png</file>
+        <file>icons/lynny-2x/Euro Coin.png</file>
+        <file>icons/lynny-2x/Euro Coins.png</file>
+        <file>icons/lynny-2x/Exit 1.png</file>
+        <file>icons/lynny-2x/Exit 2.png</file>
+        <file>icons/lynny-2x/Eye.png</file>
+        <file>icons/lynny-2x/Facebook Circle.png</file>
+        <file>icons/lynny-2x/Facebook Square.png</file>
+        <file>icons/lynny-2x/Fahrenheit.png</file>
+        <file>icons/lynny-2x/Fast Forward.png</file>
+        <file>icons/lynny-2x/File Type AI.png</file>
+        <file>icons/lynny-2x/File Type GIF.png</file>
+        <file>icons/lynny-2x/File Type JPG.png</file>
+        <file>icons/lynny-2x/File Type PDF.png</file>
+        <file>icons/lynny-2x/File Type PNG.png</file>
+        <file>icons/lynny-2x/File Type PSD.png</file>
+        <file>icons/lynny-2x/Filter Add.png</file>
+        <file>icons/lynny-2x/Filter Remove.png</file>
+        <file>icons/lynny-2x/Filter.png</file>
+        <file>icons/lynny-2x/Finder.png</file>
+        <file>icons/lynny-2x/Flag 1.png</file>
+        <file>icons/lynny-2x/Flag 2.png</file>
+        <file>icons/lynny-2x/Floppy Disk 1.png</file>
+        <file>icons/lynny-2x/Floppy Disk 2.png</file>
+        <file>icons/lynny-2x/Folder More.png</file>
+        <file>icons/lynny-2x/Folder Search.png</file>
+        <file>icons/lynny-2x/Folder.png</file>
+        <file>icons/lynny-2x/Folders.png</file>
+        <file>icons/lynny-2x/Forked Path.png</file>
+        <file>icons/lynny-2x/Full Screen Reverse.png</file>
+        <file>icons/lynny-2x/Full Screen.png</file>
+        <file>icons/lynny-2x/Game Controler.png</file>
+        <file>icons/lynny-2x/Gift.png</file>
+        <file>icons/lynny-2x/Global Connection.png</file>
+        <file>icons/lynny-2x/Globe 1.png</file>
+        <file>icons/lynny-2x/Globe 2.png</file>
+        <file>icons/lynny-2x/Globe with Arrows.png</file>
+        <file>icons/lynny-2x/Globes.png</file>
+        <file>icons/lynny-2x/Google Plus Circle.png</file>
+        <file>icons/lynny-2x/Google Plus Square.png</file>
+        <file>icons/lynny-2x/Graduation.png</file>
+        <file>icons/lynny-2x/Grid 1.png</file>
+        <file>icons/lynny-2x/Grid 10.png</file>
+        <file>icons/lynny-2x/Grid 11.png</file>
+        <file>icons/lynny-2x/Grid 12.png</file>
+        <file>icons/lynny-2x/Grid 2.png</file>
+        <file>icons/lynny-2x/Grid 3.png</file>
+        <file>icons/lynny-2x/Grid 4.png</file>
+        <file>icons/lynny-2x/Grid 5.png</file>
+        <file>icons/lynny-2x/Grid 6.png</file>
+        <file>icons/lynny-2x/Grid 7.png</file>
+        <file>icons/lynny-2x/Grid 8.png</file>
+        <file>icons/lynny-2x/Grid 9.png</file>
+        <file>icons/lynny-2x/Handbag.png</file>
+        <file>icons/lynny-2x/Hard Drive.png</file>
+        <file>icons/lynny-2x/Headphones 1.png</file>
+        <file>icons/lynny-2x/Headphones 2.png</file>
+        <file>icons/lynny-2x/Headphones 3.png</file>
+        <file>icons/lynny-2x/Health Circle.png</file>
+        <file>icons/lynny-2x/Health Square.png</file>
+        <file>icons/lynny-2x/Heart.png</file>
+        <file>icons/lynny-2x/Home.png</file>
+        <file>icons/lynny-2x/Inbox Download.png</file>
+        <file>icons/lynny-2x/Inbox Full.png</file>
+        <file>icons/lynny-2x/Inbox Upload.png</file>
+        <file>icons/lynny-2x/Inbox.png</file>
+        <file>icons/lynny-2x/Inboxes.png</file>
+        <file>icons/lynny-2x/Infinite.png</file>
+        <file>icons/lynny-2x/Info.png</file>
+        <file>icons/lynny-2x/Instagram Circle.png</file>
+        <file>icons/lynny-2x/Instagram Square.png</file>
+        <file>icons/lynny-2x/Key 1.png</file>
+        <file>icons/lynny-2x/Key 2.png</file>
+        <file>icons/lynny-2x/Keyboard Down.png</file>
+        <file>icons/lynny-2x/Keyboard Up.png</file>
+        <file>icons/lynny-2x/Keyboard.png</file>
+        <file>icons/lynny-2x/Laptop.png</file>
+        <file>icons/lynny-2x/Left Arrow 1.png</file>
+        <file>icons/lynny-2x/Left Arrow 2.png</file>
+        <file>icons/lynny-2x/Left Arrow 3.png</file>
+        <file>icons/lynny-2x/Left Arrow 4.png</file>
+        <file>icons/lynny-2x/Left Arrow 5.png</file>
+        <file>icons/lynny-2x/Left Arrow 6.png</file>
+        <file>icons/lynny-2x/Life Preserver.png</file>
+        <file>icons/lynny-2x/Lightning Bolt.png</file>
+        <file>icons/lynny-2x/LinkedIn Circle.png</file>
+        <file>icons/lynny-2x/LinkedIn Square.png</file>
+        <file>icons/lynny-2x/List 1.png</file>
+        <file>icons/lynny-2x/List 2.png</file>
+        <file>icons/lynny-2x/List 3.png</file>
+        <file>icons/lynny-2x/Location Pin 1.png</file>
+        <file>icons/lynny-2x/Location Pin 2.png</file>
+        <file>icons/lynny-2x/Location Pin 3.png</file>
+        <file>icons/lynny-2x/Location Target.png</file>
+        <file>icons/lynny-2x/Lock.png</file>
+        <file>icons/lynny-2x/Magnify Glass.png</file>
+        <file>icons/lynny-2x/Mail.png</file>
+        <file>icons/lynny-2x/Mails.png</file>
+        <file>icons/lynny-2x/Map 1.png</file>
+        <file>icons/lynny-2x/Map 2.png</file>
+        <file>icons/lynny-2x/Medicine Bottle.png</file>
+        <file>icons/lynny-2x/Megaphone 1.png</file>
+        <file>icons/lynny-2x/Megaphone 2.png</file>
+        <file>icons/lynny-2x/Megaphone 3.png</file>
+        <file>icons/lynny-2x/Microphone 2.png</file>
+        <file>icons/lynny-2x/Microphone.png</file>
+        <file>icons/lynny-2x/Mobile.png</file>
+        <file>icons/lynny-2x/Moon Cycle 1.png</file>
+        <file>icons/lynny-2x/Moon Cycle 2.png</file>
+        <file>icons/lynny-2x/Moon Cycle 3.png</file>
+        <file>icons/lynny-2x/Moon Cycle 4.png</file>
+        <file>icons/lynny-2x/Moon Cycle 5.png</file>
+        <file>icons/lynny-2x/Moon Cycle 6.png</file>
+        <file>icons/lynny-2x/Moon Cycle 7.png</file>
+        <file>icons/lynny-2x/Moon Cycle 8.png</file>
+        <file>icons/lynny-2x/Moon with Craters.png</file>
+        <file>icons/lynny-2x/Moon.png</file>
+        <file>icons/lynny-2x/More 1.png</file>
+        <file>icons/lynny-2x/More 2.png</file>
+        <file>icons/lynny-2x/Mouse.png</file>
+        <file>icons/lynny-2x/Move.png</file>
+        <file>icons/lynny-2x/Music Note 1.png</file>
+        <file>icons/lynny-2x/Music Note 2.png</file>
+        <file>icons/lynny-2x/Music Note in a Circle.png</file>
+        <file>icons/lynny-2x/Music Note in a Square 1.png</file>
+        <file>icons/lynny-2x/Music Note in a Square 2.png</file>
+        <file>icons/lynny-2x/Music Note in a Square 3.png</file>
+        <file>icons/lynny-2x/Neck Tie.png</file>
+        <file>icons/lynny-2x/Newspaper.png</file>
+        <file>icons/lynny-2x/Newspapers.png</file>
+        <file>icons/lynny-2x/Next.png</file>
+        <file>icons/lynny-2x/Note.png</file>
+        <file>icons/lynny-2x/Notepad.png</file>
+        <file>icons/lynny-2x/Old Building.png</file>
+        <file>icons/lynny-2x/Old TV.png</file>
+        <file>icons/lynny-2x/Orbit.png</file>
+        <file>icons/lynny-2x/OS Windows.png</file>
+        <file>icons/lynny-2x/OS X.png</file>
+        <file>icons/lynny-2x/Page 1.png</file>
+        <file>icons/lynny-2x/Page 2.png</file>
+        <file>icons/lynny-2x/Pages 1.png</file>
+        <file>icons/lynny-2x/Pages 2.png</file>
+        <file>icons/lynny-2x/Paper Airplane.png</file>
+        <file>icons/lynny-2x/Paper Bitcoin 1.png</file>
+        <file>icons/lynny-2x/Paper Bitcoin 2.png</file>
+        <file>icons/lynny-2x/Paper Bitcoin.png</file>
+        <file>icons/lynny-2x/Paper Clip.png</file>
+        <file>icons/lynny-2x/Paper Dollar.png</file>
+        <file>icons/lynny-2x/Paper Dollars 1.png</file>
+        <file>icons/lynny-2x/Paper Dollars 2.png</file>
+        <file>icons/lynny-2x/Paper Euro.png</file>
+        <file>icons/lynny-2x/Paper Euros 1.png</file>
+        <file>icons/lynny-2x/Paper Euros 2.png</file>
+        <file>icons/lynny-2x/Paper Shredder.png</file>
+        <file>icons/lynny-2x/Pencil.png</file>
+        <file>icons/lynny-2x/Phone 1.png</file>
+        <file>icons/lynny-2x/Phone 2.png</file>
+        <file>icons/lynny-2x/Photo List.png</file>
+        <file>icons/lynny-2x/Photo.png</file>
+        <file>icons/lynny-2x/Photos 2.png</file>
+        <file>icons/lynny-2x/Photos 3.png</file>
+        <file>icons/lynny-2x/Photos.png</file>
+        <file>icons/lynny-2x/Pie Chart.png</file>
+        <file>icons/lynny-2x/Pill.png</file>
+        <file>icons/lynny-2x/Pinterest Circle.png</file>
+        <file>icons/lynny-2x/Pinterest Square.png</file>
+        <file>icons/lynny-2x/Podcasts 1.png</file>
+        <file>icons/lynny-2x/Podcasts 2.png</file>
+        <file>icons/lynny-2x/Popout.png</file>
+        <file>icons/lynny-2x/Posicle.png</file>
+        <file>icons/lynny-2x/Power.png</file>
+        <file>icons/lynny-2x/Presentation 1.png</file>
+        <file>icons/lynny-2x/Presentation 2.png</file>
+        <file>icons/lynny-2x/Presentation 3.png</file>
+        <file>icons/lynny-2x/Presentation 4.png</file>
+        <file>icons/lynny-2x/Presentation 5.png</file>
+        <file>icons/lynny-2x/Printer.png</file>
+        <file>icons/lynny-2x/Radar.png</file>
+        <file>icons/lynny-2x/Radio.png</file>
+        <file>icons/lynny-2x/Rainbow.png</file>
+        <file>icons/lynny-2x/README.md</file>
+        <file>icons/lynny-2x/Receipt.png</file>
+        <file>icons/lynny-2x/Receipts.png</file>
+        <file>icons/lynny-2x/Record Player.png</file>
+        <file>icons/lynny-2x/Record.png</file>
+        <file>icons/lynny-2x/Refresh 1.png</file>
+        <file>icons/lynny-2x/Refresh 2.png</file>
+        <file>icons/lynny-2x/Refresh 3.png</file>
+        <file>icons/lynny-2x/Refresh 4.png</file>
+        <file>icons/lynny-2x/Remove.png</file>
+        <file>icons/lynny-2x/Right Angle Arrow 1.png</file>
+        <file>icons/lynny-2x/Right Angle Arrow 2.png</file>
+        <file>icons/lynny-2x/Right Arrow 1.png</file>
+        <file>icons/lynny-2x/Right Arrow 2.png</file>
+        <file>icons/lynny-2x/Right Arrow 3.png</file>
+        <file>icons/lynny-2x/Right Arrow 4.png</file>
+        <file>icons/lynny-2x/Right Arrow 5.png</file>
+        <file>icons/lynny-2x/Right Arrow 6.png</file>
+        <file>icons/lynny-2x/Road Signs.png</file>
+        <file>icons/lynny-2x/Rocket.png</file>
+        <file>icons/lynny-2x/Router.png</file>
+        <file>icons/lynny-2x/RSS 1.png</file>
+        <file>icons/lynny-2x/RSS 2.png</file>
+        <file>icons/lynny-2x/Safe.png</file>
+        <file>icons/lynny-2x/Scissors.png</file>
+        <file>icons/lynny-2x/Server Connections.png</file>
+        <file>icons/lynny-2x/Servers.png</file>
+        <file>icons/lynny-2x/Settings 1.png</file>
+        <file>icons/lynny-2x/Settings 2.png</file>
+        <file>icons/lynny-2x/Settings 3.png</file>
+        <file>icons/lynny-2x/Share 2.png</file>
+        <file>icons/lynny-2x/Share 3.png</file>
+        <file>icons/lynny-2x/Share.png</file>
+        <file>icons/lynny-2x/Sheild.png</file>
+        <file>icons/lynny-2x/Shopping Bag.png</file>
+        <file>icons/lynny-2x/Shopping Bags.png</file>
+        <file>icons/lynny-2x/Shopping Basket In.png</file>
+        <file>icons/lynny-2x/Shopping Basket Left.png</file>
+        <file>icons/lynny-2x/Shopping Basket Minus.png</file>
+        <file>icons/lynny-2x/Shopping Basket Out.png</file>
+        <file>icons/lynny-2x/Shopping Basket Plus.png</file>
+        <file>icons/lynny-2x/Shopping Basket Right.png</file>
+        <file>icons/lynny-2x/Shopping Basket.png</file>
+        <file>icons/lynny-2x/Shopping Cart In.png</file>
+        <file>icons/lynny-2x/Shopping Cart Left.png</file>
+        <file>icons/lynny-2x/Shopping Cart Minus.png</file>
+        <file>icons/lynny-2x/Shopping Cart Out.png</file>
+        <file>icons/lynny-2x/Shopping Cart Plus.png</file>
+        <file>icons/lynny-2x/Shopping Cart Right.png</file>
+        <file>icons/lynny-2x/Shopping Cart.png</file>
+        <file>icons/lynny-2x/Shuffle.png</file>
+        <file>icons/lynny-2x/Sign Post.png</file>
+        <file>icons/lynny-2x/Square Outline Down.png</file>
+        <file>icons/lynny-2x/Square Outline Up.png</file>
+        <file>icons/lynny-2x/Square Outline with Cube.png</file>
+        <file>icons/lynny-2x/Square Outline.png</file>
+        <file>icons/lynny-2x/Stack 1.png</file>
+        <file>icons/lynny-2x/Stack 2.png</file>
+        <file>icons/lynny-2x/Star in Circle.png</file>
+        <file>icons/lynny-2x/Star.png</file>
+        <file>icons/lynny-2x/Stars.png</file>
+        <file>icons/lynny-2x/Storefront.png</file>
+        <file>icons/lynny-2x/Suitcase.png</file>
+        <file>icons/lynny-2x/Suitcases.png</file>
+        <file>icons/lynny-2x/Sun.png</file>
+        <file>icons/lynny-2x/Sunrise.png</file>
+        <file>icons/lynny-2x/Sunset.png</file>
+        <file>icons/lynny-2x/Tablet.png</file>
+        <file>icons/lynny-2x/Tag.png</file>
+        <file>icons/lynny-2x/Tags.png</file>
+        <file>icons/lynny-2x/Target.png</file>
+        <file>icons/lynny-2x/Tea Cup.png</file>
+        <file>icons/lynny-2x/Test Tube.png</file>
+        <file>icons/lynny-2x/Text Align Center.png</file>
+        <file>icons/lynny-2x/Text Align Justify.png</file>
+        <file>icons/lynny-2x/Text Align Left.png</file>
+        <file>icons/lynny-2x/Text Align Right.png</file>
+        <file>icons/lynny-2x/Thermometer.png</file>
+        <file>icons/lynny-2x/Toggles 1.png</file>
+        <file>icons/lynny-2x/Toggles 2.png</file>
+        <file>icons/lynny-2x/Toggles 3.png</file>
+        <file>icons/lynny-2x/Top Charts.png</file>
+        <file>icons/lynny-2x/Top Hat with Cane.png</file>
+        <file>icons/lynny-2x/Trash Full.png</file>
+        <file>icons/lynny-2x/Trash.png</file>
+        <file>icons/lynny-2x/Tree.png</file>
+        <file>icons/lynny-2x/Tumblr Circle.png</file>
+        <file>icons/lynny-2x/Tumblr Square.png</file>
+        <file>icons/lynny-2x/Turn Ahead.png</file>
+        <file>icons/lynny-2x/TV Fuzz.png</file>
+        <file>icons/lynny-2x/TV.png</file>
+        <file>icons/lynny-2x/Twitter Circle.png</file>
+        <file>icons/lynny-2x/Twitter Square.png</file>
+        <file>icons/lynny-2x/Umbrella.png</file>
+        <file>icons/lynny-2x/Unlock.png</file>
+        <file>icons/lynny-2x/Up Arrow 1.png</file>
+        <file>icons/lynny-2x/Up Arrow 2.png</file>
+        <file>icons/lynny-2x/Up Arrow 3.png</file>
+        <file>icons/lynny-2x/Up Arrow 4.png</file>
+        <file>icons/lynny-2x/Up Arrow 5.png</file>
+        <file>icons/lynny-2x/Up Arrow 6.png</file>
+        <file>icons/lynny-2x/User Female.png</file>
+        <file>icons/lynny-2x/User Male.png</file>
+        <file>icons/lynny-2x/Users 1.png</file>
+        <file>icons/lynny-2x/Users 2.png</file>
+        <file>icons/lynny-2x/Video 1.png</file>
+        <file>icons/lynny-2x/Video 2.png</file>
+        <file>icons/lynny-2x/Video Camera 1.png</file>
+        <file>icons/lynny-2x/Video Camera 2.png</file>
+        <file>icons/lynny-2x/Video Camera 3.png</file>
+        <file>icons/lynny-2x/Video Camera 4.png</file>
+        <file>icons/lynny-2x/Videos.png</file>
+        <file>icons/lynny-2x/Vimeo Circle.png</file>
+        <file>icons/lynny-2x/Vimeo Square.png</file>
+        <file>icons/lynny-2x/Wallet 1.png</file>
+        <file>icons/lynny-2x/Wallet 2.png</file>
+        <file>icons/lynny-2x/Wallet 3.png</file>
+        <file>icons/lynny-2x/Warning.png</file>
+        <file>icons/lynny-2x/WiFi Logo.png</file>
+        <file>icons/lynny-2x/Wind.png</file>
+        <file>icons/lynny-2x/Wine Glass.png</file>
+        <file>icons/lynny-2x/WordPress Circle.png</file>
+        <file>icons/lynny-2x/WordPress Square.png</file>
+        <file>icons/lynny-2x/Wrench.png</file>
+        <file>icons/lynny-2x/Write.png</file>
+        <file>icons/lynny-2x/X.png</file>
+        <file>icons/lynny-2x/Yahoo Circle.png</file>
+        <file>icons/lynny-2x/Yahoo Square.png</file>
+        <file>icons/lynny-2x/YouTube Circle.png</file>
+        <file>icons/lynny-2x/YouTube Square.png</file>
+        <file>icons/lynny-2x/Zoom In.png</file>
+        <file>icons/lynny-2x/Zoom Out.png</file>
+        -->
+        <!-- Lynny icon set (qdark text color over transparent variant) -->
+        <file alias="play_nor.png">icons/lynny-2x_text/Play.png</file>
+        <file alias="pause_nor.png">icons/lynny-2x_text/Pause.png</file>
+        <file alias="stop_nor.png">icons/lynny-2x_text/Stop.png</file>
+        <file alias="clear_nor.png">icons/lynny-2x_text/No Entry.png</file>
+        <file alias="help_nor.png">icons/lynny-2x_text/Help.png</file>
+        <!--
+        <file>icons/lynny-2x_text/Add.png</file>
+        <file>icons/lynny-2x_text/Address Book.png</file>
+        <file>icons/lynny-2x_text/Admission Ticket.png</file>
+        <file>icons/lynny-2x_text/Admission Tickets.png</file>
+        <file>icons/lynny-2x_text/Airplay Logo.png</file>
+        <file>icons/lynny-2x_text/Android.png</file>
+        <file>icons/lynny-2x_text/At Symbol.png</file>
+        <file>icons/lynny-2x_text/Atlas.png</file>
+        <file>icons/lynny-2x_text/Atom.png</file>
+        <file>icons/lynny-2x_text/Audio 0.png</file>
+        <file>icons/lynny-2x_text/Audio 1.png</file>
+        <file>icons/lynny-2x_text/Audio 2.png</file>
+        <file>icons/lynny-2x_text/Audio 3.png</file>
+        <file>icons/lynny-2x_text/Audio Muted.png</file>
+        <file>icons/lynny-2x_text/Bandaid.png</file>
+        <file>icons/lynny-2x_text/Bar Chart.png</file>
+        <file>icons/lynny-2x_text/Barcode Scan.png</file>
+        <file>icons/lynny-2x_text/Barcode Search.png</file>
+        <file>icons/lynny-2x_text/Barcode.png</file>
+        <file>icons/lynny-2x_text/Battery 1.png</file>
+        <file>icons/lynny-2x_text/Battery 2.png</file>
+        <file>icons/lynny-2x_text/Battery 3.png</file>
+        <file>icons/lynny-2x_text/Battery 4.png</file>
+        <file>icons/lynny-2x_text/Battery 5.png</file>
+        <file>icons/lynny-2x_text/Battery Charging.png</file>
+        <file>icons/lynny-2x_text/Beaker 1.png</file>
+        <file>icons/lynny-2x_text/Beaker 2.png</file>
+        <file>icons/lynny-2x_text/Beaker 3.png</file>
+        <file>icons/lynny-2x_text/Bell.png</file>
+        <file>icons/lynny-2x_text/Billboard 1.png</file>
+        <file>icons/lynny-2x_text/Billboard 2.png</file>
+        <file>icons/lynny-2x_text/Binoculars.png</file>
+        <file>icons/lynny-2x_text/Bitcoin Coin.png</file>
+        <file>icons/lynny-2x_text/Bitcoin Coins.png</file>
+        <file>icons/lynny-2x_text/Bluetooth.png</file>
+        <file>icons/lynny-2x_text/Bone.png</file>
+        <file>icons/lynny-2x_text/Book.png</file>
+        <file>icons/lynny-2x_text/Bookmark 1.png</file>
+        <file>icons/lynny-2x_text/Bookmark 2.png</file>
+        <file>icons/lynny-2x_text/Bookshelf.png</file>
+        <file>icons/lynny-2x_text/Boom Box.png</file>
+        <file>icons/lynny-2x_text/Bottle.png</file>
+        <file>icons/lynny-2x_text/Bow Tie.png</file>
+        <file>icons/lynny-2x_text/Box Download.png</file>
+        <file>icons/lynny-2x_text/Box Upload.png</file>
+        <file>icons/lynny-2x_text/Box with More.png</file>
+        <file>icons/lynny-2x_text/Box with Papers.png</file>
+        <file>icons/lynny-2x_text/Box with Video Files.png</file>
+        <file>icons/lynny-2x_text/Box.png</file>
+        <file>icons/lynny-2x_text/Briefcase.png</file>
+        <file>icons/lynny-2x_text/Broken Heart 1.png</file>
+        <file>icons/lynny-2x_text/Broken Heart 2.png</file>
+        <file>icons/lynny-2x_text/Browser with Compass.png</file>
+        <file>icons/lynny-2x_text/Browser.png</file>
+        <file>icons/lynny-2x_text/Browsers.png</file>
+        <file>icons/lynny-2x_text/Building.png</file>
+        <file>icons/lynny-2x_text/Calculator.png</file>
+        <file>icons/lynny-2x_text/Calendar 1.png</file>
+        <file>icons/lynny-2x_text/Calendar 2.png</file>
+        <file>icons/lynny-2x_text/Camera with Film Strip.png</file>
+        <file>icons/lynny-2x_text/Camera with Polaroid.png</file>
+        <file>icons/lynny-2x_text/Camera with Wide Angle.png</file>
+        <file>icons/lynny-2x_text/Camera.png</file>
+        <file>icons/lynny-2x_text/Cameras.png</file>
+        <file>icons/lynny-2x_text/Cash Register.png</file>
+        <file>icons/lynny-2x_text/Celsius.png</file>
+        <file>icons/lynny-2x_text/Chat Bubble Dots.png</file>
+        <file>icons/lynny-2x_text/Chat Bubble.png</file>
+        <file>icons/lynny-2x_text/Chat Bubbles.png</file>
+        <file>icons/lynny-2x_text/Checkmark 1.png</file>
+        <file>icons/lynny-2x_text/Checkmark 2.png</file>
+        <file>icons/lynny-2x_text/Chromecast Logo.png</file>
+        <file>icons/lynny-2x_text/Circle Outline Down.png</file>
+        <file>icons/lynny-2x_text/Circle Outline Up.png</file>
+        <file>icons/lynny-2x_text/Circle Outline with Dot.png</file>
+        <file>icons/lynny-2x_text/Circle Outline.png</file>
+        <file>icons/lynny-2x_text/Clipboard.png</file>
+        <file>icons/lynny-2x_text/Clock 1.png</file>
+        <file>icons/lynny-2x_text/Clock 2.png</file>
+        <file>icons/lynny-2x_text/Cloud 1.png</file>
+        <file>icons/lynny-2x_text/Cloud 2.png</file>
+        <file>icons/lynny-2x_text/Cloud Download.png</file>
+        <file>icons/lynny-2x_text/Cloud Sync.png</file>
+        <file>icons/lynny-2x_text/Cloud Upload.png</file>
+        <file>icons/lynny-2x_text/Cloud with Lightning.png</file>
+        <file>icons/lynny-2x_text/Cloud with Rain 1.png</file>
+        <file>icons/lynny-2x_text/Cloud with Rain 2.png</file>
+        <file>icons/lynny-2x_text/Cloud with Rain 3.png</file>
+        <file>icons/lynny-2x_text/Cloud with Rain Lightning.png</file>
+        <file>icons/lynny-2x_text/Cloud with Snow.png</file>
+        <file>icons/lynny-2x_text/Cloud with Sun.png</file>
+        <file>icons/lynny-2x_text/Command Line.png</file>
+        <file>icons/lynny-2x_text/Compass.png</file>
+        <file>icons/lynny-2x_text/Contact Card 1.png</file>
+        <file>icons/lynny-2x_text/Contact Card 2.png</file>
+        <file>icons/lynny-2x_text/Contact Cards 1.png</file>
+        <file>icons/lynny-2x_text/Contact Cards 2.png</file>
+        <file>icons/lynny-2x_text/Credit Card.png</file>
+        <file>icons/lynny-2x_text/Credit Cards.png</file>
+        <file>icons/lynny-2x_text/Crossbones.png</file>
+        <file>icons/lynny-2x_text/Curved Arrow Down.png</file>
+        <file>icons/lynny-2x_text/Curved Arrow Left.png</file>
+        <file>icons/lynny-2x_text/Curved Arrow Right.png</file>
+        <file>icons/lynny-2x_text/Curved Arrow Up.png</file>
+        <file>icons/lynny-2x_text/Desk.png</file>
+        <file>icons/lynny-2x_text/Desktop Download.png</file>
+        <file>icons/lynny-2x_text/Desktop Left.png</file>
+        <file>icons/lynny-2x_text/Desktop Right.png</file>
+        <file>icons/lynny-2x_text/Desktop Sync.png</file>
+        <file>icons/lynny-2x_text/Desktop Upload.png</file>
+        <file>icons/lynny-2x_text/Desktop.png</file>
+        <file>icons/lynny-2x_text/Diamond.png</file>
+        <file>icons/lynny-2x_text/DLNA Logo.png</file>
+        <file>icons/lynny-2x_text/Dollar Coin.png</file>
+        <file>icons/lynny-2x_text/Dollar Coins.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 1.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 2.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 3.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 4.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 5.png</file>
+        <file>icons/lynny-2x_text/Down Arrow 6.png</file>
+        <file>icons/lynny-2x_text/Download 1.png</file>
+        <file>icons/lynny-2x_text/Download 2.png</file>
+        <file>icons/lynny-2x_text/Drawers 1.png</file>
+        <file>icons/lynny-2x_text/Drawers 2.png</file>
+        <file>icons/lynny-2x_text/Drawers 3.png</file>
+        <file>icons/lynny-2x_text/Dribbble Circle.png</file>
+        <file>icons/lynny-2x_text/Dribbble Square.png</file>
+        <file>icons/lynny-2x_text/Dropbox Circle.png</file>
+        <file>icons/lynny-2x_text/Dropbox Square.png</file>
+        <file>icons/lynny-2x_text/Droplet.png</file>
+        <file>icons/lynny-2x_text/Eject.png</file>
+        <file>icons/lynny-2x_text/Envelope.png</file>
+        <file>icons/lynny-2x_text/Envelopes.png</file>
+        <file>icons/lynny-2x_text/Error.png</file>
+        <file>icons/lynny-2x_text/Euro Coin.png</file>
+        <file>icons/lynny-2x_text/Euro Coins.png</file>
+        <file>icons/lynny-2x_text/Exit 1.png</file>
+        <file>icons/lynny-2x_text/Exit 2.png</file>
+        <file>icons/lynny-2x_text/Eye.png</file>
+        <file>icons/lynny-2x_text/Facebook Circle.png</file>
+        <file>icons/lynny-2x_text/Facebook Square.png</file>
+        <file>icons/lynny-2x_text/Fahrenheit.png</file>
+        <file>icons/lynny-2x_text/Fast Forward.png</file>
+        <file>icons/lynny-2x_text/File Type AI.png</file>
+        <file>icons/lynny-2x_text/File Type GIF.png</file>
+        <file>icons/lynny-2x_text/File Type JPG.png</file>
+        <file>icons/lynny-2x_text/File Type PDF.png</file>
+        <file>icons/lynny-2x_text/File Type PNG.png</file>
+        <file>icons/lynny-2x_text/File Type PSD.png</file>
+        <file>icons/lynny-2x_text/Filter Add.png</file>
+        <file>icons/lynny-2x_text/Filter Remove.png</file>
+        <file>icons/lynny-2x_text/Filter.png</file>
+        <file>icons/lynny-2x_text/Finder.png</file>
+        <file>icons/lynny-2x_text/Flag 1.png</file>
+        <file>icons/lynny-2x_text/Flag 2.png</file>
+        <file>icons/lynny-2x_text/Floppy Disk 1.png</file>
+        <file>icons/lynny-2x_text/Floppy Disk 2.png</file>
+        <file>icons/lynny-2x_text/Folder More.png</file>
+        <file>icons/lynny-2x_text/Folder Search.png</file>
+        <file>icons/lynny-2x_text/Folder.png</file>
+        <file>icons/lynny-2x_text/Folders.png</file>
+        <file>icons/lynny-2x_text/Forked Path.png</file>
+        <file>icons/lynny-2x_text/Full Screen Reverse.png</file>
+        <file>icons/lynny-2x_text/Full Screen.png</file>
+        <file>icons/lynny-2x_text/Game Controler.png</file>
+        <file>icons/lynny-2x_text/Gift.png</file>
+        <file>icons/lynny-2x_text/Global Connection.png</file>
+        <file>icons/lynny-2x_text/Globe 1.png</file>
+        <file>icons/lynny-2x_text/Globe 2.png</file>
+        <file>icons/lynny-2x_text/Globe with Arrows.png</file>
+        <file>icons/lynny-2x_text/Globes.png</file>
+        <file>icons/lynny-2x_text/Google Plus Circle.png</file>
+        <file>icons/lynny-2x_text/Google Plus Square.png</file>
+        <file>icons/lynny-2x_text/Graduation.png</file>
+        <file>icons/lynny-2x_text/Grid 1.png</file>
+        <file>icons/lynny-2x_text/Grid 10.png</file>
+        <file>icons/lynny-2x_text/Grid 11.png</file>
+        <file>icons/lynny-2x_text/Grid 12.png</file>
+        <file>icons/lynny-2x_text/Grid 2.png</file>
+        <file>icons/lynny-2x_text/Grid 3.png</file>
+        <file>icons/lynny-2x_text/Grid 4.png</file>
+        <file>icons/lynny-2x_text/Grid 5.png</file>
+        <file>icons/lynny-2x_text/Grid 6.png</file>
+        <file>icons/lynny-2x_text/Grid 7.png</file>
+        <file>icons/lynny-2x_text/Grid 8.png</file>
+        <file>icons/lynny-2x_text/Grid 9.png</file>
+        <file>icons/lynny-2x_text/Handbag.png</file>
+        <file>icons/lynny-2x_text/Hard Drive.png</file>
+        <file>icons/lynny-2x_text/Headphones 1.png</file>
+        <file>icons/lynny-2x_text/Headphones 2.png</file>
+        <file>icons/lynny-2x_text/Headphones 3.png</file>
+        <file>icons/lynny-2x_text/Health Circle.png</file>
+        <file>icons/lynny-2x_text/Health Square.png</file>
+        <file>icons/lynny-2x_text/Heart.png</file>
+        <file>icons/lynny-2x_text/Home.png</file>
+        <file>icons/lynny-2x_text/Inbox Download.png</file>
+        <file>icons/lynny-2x_text/Inbox Full.png</file>
+        <file>icons/lynny-2x_text/Inbox Upload.png</file>
+        <file>icons/lynny-2x_text/Inbox.png</file>
+        <file>icons/lynny-2x_text/Inboxes.png</file>
+        <file>icons/lynny-2x_text/Infinite.png</file>
+        <file>icons/lynny-2x_text/Info.png</file>
+        <file>icons/lynny-2x_text/Instagram Circle.png</file>
+        <file>icons/lynny-2x_text/Instagram Square.png</file>
+        <file>icons/lynny-2x_text/Key 1.png</file>
+        <file>icons/lynny-2x_text/Key 2.png</file>
+        <file>icons/lynny-2x_text/Keyboard Down.png</file>
+        <file>icons/lynny-2x_text/Keyboard Up.png</file>
+        <file>icons/lynny-2x_text/Keyboard.png</file>
+        <file>icons/lynny-2x_text/Laptop.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 1.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 2.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 3.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 4.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 5.png</file>
+        <file>icons/lynny-2x_text/Left Arrow 6.png</file>
+        <file>icons/lynny-2x_text/Life Preserver.png</file>
+        <file>icons/lynny-2x_text/Lightning Bolt.png</file>
+        <file>icons/lynny-2x_text/LinkedIn Circle.png</file>
+        <file>icons/lynny-2x_text/LinkedIn Square.png</file>
+        <file>icons/lynny-2x_text/List 1.png</file>
+        <file>icons/lynny-2x_text/List 2.png</file>
+        <file>icons/lynny-2x_text/List 3.png</file>
+        <file>icons/lynny-2x_text/Location Pin 1.png</file>
+        <file>icons/lynny-2x_text/Location Pin 2.png</file>
+        <file>icons/lynny-2x_text/Location Pin 3.png</file>
+        <file>icons/lynny-2x_text/Location Target.png</file>
+        <file>icons/lynny-2x_text/Lock.png</file>
+        <file>icons/lynny-2x_text/Magnify Glass.png</file>
+        <file>icons/lynny-2x_text/Mail.png</file>
+        <file>icons/lynny-2x_text/Mails.png</file>
+        <file>icons/lynny-2x_text/Map 1.png</file>
+        <file>icons/lynny-2x_text/Map 2.png</file>
+        <file>icons/lynny-2x_text/Medicine Bottle.png</file>
+        <file>icons/lynny-2x_text/Megaphone 1.png</file>
+        <file>icons/lynny-2x_text/Megaphone 2.png</file>
+        <file>icons/lynny-2x_text/Megaphone 3.png</file>
+        <file>icons/lynny-2x_text/Microphone 2.png</file>
+        <file>icons/lynny-2x_text/Microphone.png</file>
+        <file>icons/lynny-2x_text/Mobile.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 1.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 2.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 3.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 4.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 5.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 6.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 7.png</file>
+        <file>icons/lynny-2x_text/Moon Cycle 8.png</file>
+        <file>icons/lynny-2x_text/Moon with Craters.png</file>
+        <file>icons/lynny-2x_text/Moon.png</file>
+        <file>icons/lynny-2x_text/More 1.png</file>
+        <file>icons/lynny-2x_text/More 2.png</file>
+        <file>icons/lynny-2x_text/Mouse.png</file>
+        <file>icons/lynny-2x_text/Move.png</file>
+        <file>icons/lynny-2x_text/Music Note 1.png</file>
+        <file>icons/lynny-2x_text/Music Note 2.png</file>
+        <file>icons/lynny-2x_text/Music Note in a Circle.png</file>
+        <file>icons/lynny-2x_text/Music Note in a Square 1.png</file>
+        <file>icons/lynny-2x_text/Music Note in a Square 2.png</file>
+        <file>icons/lynny-2x_text/Music Note in a Square 3.png</file>
+        <file>icons/lynny-2x_text/Neck Tie.png</file>
+        <file>icons/lynny-2x_text/Newspaper.png</file>
+        <file>icons/lynny-2x_text/Newspapers.png</file>
+        <file>icons/lynny-2x_text/Next.png</file>
+        <file>icons/lynny-2x_text/Note.png</file>
+        <file>icons/lynny-2x_text/Notepad.png</file>
+        <file>icons/lynny-2x_text/Old Building.png</file>
+        <file>icons/lynny-2x_text/Old TV.png</file>
+        <file>icons/lynny-2x_text/Orbit.png</file>
+        <file>icons/lynny-2x_text/OS Windows.png</file>
+        <file>icons/lynny-2x_text/OS X.png</file>
+        <file>icons/lynny-2x_text/Page 1.png</file>
+        <file>icons/lynny-2x_text/Page 2.png</file>
+        <file>icons/lynny-2x_text/Pages 1.png</file>
+        <file>icons/lynny-2x_text/Pages 2.png</file>
+        <file>icons/lynny-2x_text/Paper Airplane.png</file>
+        <file>icons/lynny-2x_text/Paper Bitcoin 1.png</file>
+        <file>icons/lynny-2x_text/Paper Bitcoin 2.png</file>
+        <file>icons/lynny-2x_text/Paper Bitcoin.png</file>
+        <file>icons/lynny-2x_text/Paper Clip.png</file>
+        <file>icons/lynny-2x_text/Paper Dollar.png</file>
+        <file>icons/lynny-2x_text/Paper Dollars 1.png</file>
+        <file>icons/lynny-2x_text/Paper Dollars 2.png</file>
+        <file>icons/lynny-2x_text/Paper Euro.png</file>
+        <file>icons/lynny-2x_text/Paper Euros 1.png</file>
+        <file>icons/lynny-2x_text/Paper Euros 2.png</file>
+        <file>icons/lynny-2x_text/Paper Shredder.png</file>
+        <file>icons/lynny-2x_text/Pencil.png</file>
+        <file>icons/lynny-2x_text/Phone 1.png</file>
+        <file>icons/lynny-2x_text/Phone 2.png</file>
+        <file>icons/lynny-2x_text/Photo List.png</file>
+        <file>icons/lynny-2x_text/Photo.png</file>
+        <file>icons/lynny-2x_text/Photos 2.png</file>
+        <file>icons/lynny-2x_text/Photos 3.png</file>
+        <file>icons/lynny-2x_text/Photos.png</file>
+        <file>icons/lynny-2x_text/Pie Chart.png</file>
+        <file>icons/lynny-2x_text/Pill.png</file>
+        <file>icons/lynny-2x_text/Pinterest Circle.png</file>
+        <file>icons/lynny-2x_text/Pinterest Square.png</file>
+        <file>icons/lynny-2x_text/Podcasts 1.png</file>
+        <file>icons/lynny-2x_text/Podcasts 2.png</file>
+        <file>icons/lynny-2x_text/Popout.png</file>
+        <file>icons/lynny-2x_text/Posicle.png</file>
+        <file>icons/lynny-2x_text/Power.png</file>
+        <file>icons/lynny-2x_text/Presentation 1.png</file>
+        <file>icons/lynny-2x_text/Presentation 2.png</file>
+        <file>icons/lynny-2x_text/Presentation 3.png</file>
+        <file>icons/lynny-2x_text/Presentation 4.png</file>
+        <file>icons/lynny-2x_text/Presentation 5.png</file>
+        <file>icons/lynny-2x_text/Printer.png</file>
+        <file>icons/lynny-2x_text/Radar.png</file>
+        <file>icons/lynny-2x_text/Radio.png</file>
+        <file>icons/lynny-2x_text/Rainbow.png</file>
+        <file>icons/lynny-2x_text/README.md</file>
+        <file>icons/lynny-2x_text/Receipt.png</file>
+        <file>icons/lynny-2x_text/Receipts.png</file>
+        <file>icons/lynny-2x_text/Record Player.png</file>
+        <file>icons/lynny-2x_text/Record.png</file>
+        <file>icons/lynny-2x_text/Refresh 1.png</file>
+        <file>icons/lynny-2x_text/Refresh 2.png</file>
+        <file>icons/lynny-2x_text/Refresh 3.png</file>
+        <file>icons/lynny-2x_text/Refresh 4.png</file>
+        <file>icons/lynny-2x_text/Remove.png</file>
+        <file>icons/lynny-2x_text/Right Angle Arrow 1.png</file>
+        <file>icons/lynny-2x_text/Right Angle Arrow 2.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 1.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 2.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 3.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 4.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 5.png</file>
+        <file>icons/lynny-2x_text/Right Arrow 6.png</file>
+        <file>icons/lynny-2x_text/Road Signs.png</file>
+        <file>icons/lynny-2x_text/Rocket.png</file>
+        <file>icons/lynny-2x_text/Router.png</file>
+        <file>icons/lynny-2x_text/RSS 1.png</file>
+        <file>icons/lynny-2x_text/RSS 2.png</file>
+        <file>icons/lynny-2x_text/Safe.png</file>
+        <file>icons/lynny-2x_text/Scissors.png</file>
+        <file>icons/lynny-2x_text/Server Connections.png</file>
+        <file>icons/lynny-2x_text/Servers.png</file>
+        <file>icons/lynny-2x_text/Settings 1.png</file>
+        <file>icons/lynny-2x_text/Settings 2.png</file>
+        <file>icons/lynny-2x_text/Settings 3.png</file>
+        <file>icons/lynny-2x_text/Share 2.png</file>
+        <file>icons/lynny-2x_text/Share 3.png</file>
+        <file>icons/lynny-2x_text/Share.png</file>
+        <file>icons/lynny-2x_text/Sheild.png</file>
+        <file>icons/lynny-2x_text/Shopping Bag.png</file>
+        <file>icons/lynny-2x_text/Shopping Bags.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket In.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket Left.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket Minus.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket Out.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket Plus.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket Right.png</file>
+        <file>icons/lynny-2x_text/Shopping Basket.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart In.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart Left.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart Minus.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart Out.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart Plus.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart Right.png</file>
+        <file>icons/lynny-2x_text/Shopping Cart.png</file>
+        <file>icons/lynny-2x_text/Shuffle.png</file>
+        <file>icons/lynny-2x_text/Sign Post.png</file>
+        <file>icons/lynny-2x_text/Square Outline Down.png</file>
+        <file>icons/lynny-2x_text/Square Outline Up.png</file>
+        <file>icons/lynny-2x_text/Square Outline with Cube.png</file>
+        <file>icons/lynny-2x_text/Square Outline.png</file>
+        <file>icons/lynny-2x_text/Stack 1.png</file>
+        <file>icons/lynny-2x_text/Stack 2.png</file>
+        <file>icons/lynny-2x_text/Star in Circle.png</file>
+        <file>icons/lynny-2x_text/Star.png</file>
+        <file>icons/lynny-2x_text/Stars.png</file>
+        <file>icons/lynny-2x_text/Storefront.png</file>
+        <file>icons/lynny-2x_text/Suitcase.png</file>
+        <file>icons/lynny-2x_text/Suitcases.png</file>
+        <file>icons/lynny-2x_text/Sun.png</file>
+        <file>icons/lynny-2x_text/Sunrise.png</file>
+        <file>icons/lynny-2x_text/Sunset.png</file>
+        <file>icons/lynny-2x_text/Tablet.png</file>
+        <file>icons/lynny-2x_text/Tag.png</file>
+        <file>icons/lynny-2x_text/Tags.png</file>
+        <file>icons/lynny-2x_text/Target.png</file>
+        <file>icons/lynny-2x_text/Tea Cup.png</file>
+        <file>icons/lynny-2x_text/Test Tube.png</file>
+        <file>icons/lynny-2x_text/Text Align Center.png</file>
+        <file>icons/lynny-2x_text/Text Align Justify.png</file>
+        <file>icons/lynny-2x_text/Text Align Left.png</file>
+        <file>icons/lynny-2x_text/Text Align Right.png</file>
+        <file>icons/lynny-2x_text/Thermometer.png</file>
+        <file>icons/lynny-2x_text/Toggles 1.png</file>
+        <file>icons/lynny-2x_text/Toggles 2.png</file>
+        <file>icons/lynny-2x_text/Toggles 3.png</file>
+        <file>icons/lynny-2x_text/Top Charts.png</file>
+        <file>icons/lynny-2x_text/Top Hat with Cane.png</file>
+        <file>icons/lynny-2x_text/Trash Full.png</file>
+        <file>icons/lynny-2x_text/Trash.png</file>
+        <file>icons/lynny-2x_text/Tree.png</file>
+        <file>icons/lynny-2x_text/Tumblr Circle.png</file>
+        <file>icons/lynny-2x_text/Tumblr Square.png</file>
+        <file>icons/lynny-2x_text/Turn Ahead.png</file>
+        <file>icons/lynny-2x_text/TV Fuzz.png</file>
+        <file>icons/lynny-2x_text/TV.png</file>
+        <file>icons/lynny-2x_text/Twitter Circle.png</file>
+        <file>icons/lynny-2x_text/Twitter Square.png</file>
+        <file>icons/lynny-2x_text/Umbrella.png</file>
+        <file>icons/lynny-2x_text/Unlock.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 1.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 2.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 3.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 4.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 5.png</file>
+        <file>icons/lynny-2x_text/Up Arrow 6.png</file>
+        <file>icons/lynny-2x_text/User Female.png</file>
+        <file>icons/lynny-2x_text/User Male.png</file>
+        <file>icons/lynny-2x_text/Users 1.png</file>
+        <file>icons/lynny-2x_text/Users 2.png</file>
+        <file>icons/lynny-2x_text/Video 1.png</file>
+        <file>icons/lynny-2x_text/Video 2.png</file>
+        <file>icons/lynny-2x_text/Video Camera 1.png</file>
+        <file>icons/lynny-2x_text/Video Camera 2.png</file>
+        <file>icons/lynny-2x_text/Video Camera 3.png</file>
+        <file>icons/lynny-2x_text/Video Camera 4.png</file>
+        <file>icons/lynny-2x_text/Videos.png</file>
+        <file>icons/lynny-2x_text/Vimeo Circle.png</file>
+        <file>icons/lynny-2x_text/Vimeo Square.png</file>
+        <file>icons/lynny-2x_text/Wallet 1.png</file>
+        <file>icons/lynny-2x_text/Wallet 2.png</file>
+        <file>icons/lynny-2x_text/Wallet 3.png</file>
+        <file>icons/lynny-2x_text/Warning.png</file>
+        <file>icons/lynny-2x_text/WiFi Logo.png</file>
+        <file>icons/lynny-2x_text/Wind.png</file>
+        <file>icons/lynny-2x_text/Wine Glass.png</file>
+        <file>icons/lynny-2x_text/WordPress Circle.png</file>
+        <file>icons/lynny-2x_text/WordPress Square.png</file>
+        <file>icons/lynny-2x_text/Wrench.png</file>
+        <file>icons/lynny-2x_text/Write.png</file>
+        <file>icons/lynny-2x_text/X.png</file>
+        <file>icons/lynny-2x_text/Yahoo Circle.png</file>
+        <file>icons/lynny-2x_text/Yahoo Square.png</file>
+        <file>icons/lynny-2x_text/YouTube Circle.png</file>
+        <file>icons/lynny-2x_text/YouTube Square.png</file>
+        <file>icons/lynny-2x_text/Zoom In.png</file>
+        <file>icons/lynny-2x_text/Zoom Out.png</file>
+        -->
+        <!-- Lynny icon set (white over transparent variant) -->
+        <file alias="play_act.png">icons/lynny-2x_white/Play.png</file>
+        <file alias="pause_act.png">icons/lynny-2x_white/Pause.png</file>
+        <file alias="stop_act.png">icons/lynny-2x_white/Stop.png</file>
+        <file alias="clear_act.png">icons/lynny-2x_white/No Entry.png</file>
+        <file alias="help_act.png">icons/lynny-2x_white/Help.png</file>
+        <!--
+        <file>icons/lynny-2x_white/Add.png</file>
+        <file>icons/lynny-2x_white/Address Book.png</file>
+        <file>icons/lynny-2x_white/Admission Ticket.png</file>
+        <file>icons/lynny-2x_white/Admission Tickets.png</file>
+        <file>icons/lynny-2x_white/Airplay Logo.png</file>
+        <file>icons/lynny-2x_white/Android.png</file>
+        <file>icons/lynny-2x_white/At Symbol.png</file>
+        <file>icons/lynny-2x_white/Atlas.png</file>
+        <file>icons/lynny-2x_white/Atom.png</file>
+        <file>icons/lynny-2x_white/Audio 0.png</file>
+        <file>icons/lynny-2x_white/Audio 1.png</file>
+        <file>icons/lynny-2x_white/Audio 2.png</file>
+        <file>icons/lynny-2x_white/Audio 3.png</file>
+        <file>icons/lynny-2x_white/Audio Muted.png</file>
+        <file>icons/lynny-2x_white/Bandaid.png</file>
+        <file>icons/lynny-2x_white/Bar Chart.png</file>
+        <file>icons/lynny-2x_white/Barcode Scan.png</file>
+        <file>icons/lynny-2x_white/Barcode Search.png</file>
+        <file>icons/lynny-2x_white/Barcode.png</file>
+        <file>icons/lynny-2x_white/Battery 1.png</file>
+        <file>icons/lynny-2x_white/Battery 2.png</file>
+        <file>icons/lynny-2x_white/Battery 3.png</file>
+        <file>icons/lynny-2x_white/Battery 4.png</file>
+        <file>icons/lynny-2x_white/Battery 5.png</file>
+        <file>icons/lynny-2x_white/Battery Charging.png</file>
+        <file>icons/lynny-2x_white/Beaker 1.png</file>
+        <file>icons/lynny-2x_white/Beaker 2.png</file>
+        <file>icons/lynny-2x_white/Beaker 3.png</file>
+        <file>icons/lynny-2x_white/Bell.png</file>
+        <file>icons/lynny-2x_white/Billboard 1.png</file>
+        <file>icons/lynny-2x_white/Billboard 2.png</file>
+        <file>icons/lynny-2x_white/Binoculars.png</file>
+        <file>icons/lynny-2x_white/Bitcoin Coin.png</file>
+        <file>icons/lynny-2x_white/Bitcoin Coins.png</file>
+        <file>icons/lynny-2x_white/Bluetooth.png</file>
+        <file>icons/lynny-2x_white/Bone.png</file>
+        <file>icons/lynny-2x_white/Book.png</file>
+        <file>icons/lynny-2x_white/Bookmark 1.png</file>
+        <file>icons/lynny-2x_white/Bookmark 2.png</file>
+        <file>icons/lynny-2x_white/Bookshelf.png</file>
+        <file>icons/lynny-2x_white/Boom Box.png</file>
+        <file>icons/lynny-2x_white/Bottle.png</file>
+        <file>icons/lynny-2x_white/Bow Tie.png</file>
+        <file>icons/lynny-2x_white/Box Download.png</file>
+        <file>icons/lynny-2x_white/Box Upload.png</file>
+        <file>icons/lynny-2x_white/Box with More.png</file>
+        <file>icons/lynny-2x_white/Box with Papers.png</file>
+        <file>icons/lynny-2x_white/Box with Video Files.png</file>
+        <file>icons/lynny-2x_white/Box.png</file>
+        <file>icons/lynny-2x_white/Briefcase.png</file>
+        <file>icons/lynny-2x_white/Broken Heart 1.png</file>
+        <file>icons/lynny-2x_white/Broken Heart 2.png</file>
+        <file>icons/lynny-2x_white/Browser with Compass.png</file>
+        <file>icons/lynny-2x_white/Browser.png</file>
+        <file>icons/lynny-2x_white/Browsers.png</file>
+        <file>icons/lynny-2x_white/Building.png</file>
+        <file>icons/lynny-2x_white/Calculator.png</file>
+        <file>icons/lynny-2x_white/Calendar 1.png</file>
+        <file>icons/lynny-2x_white/Calendar 2.png</file>
+        <file>icons/lynny-2x_white/Camera with Film Strip.png</file>
+        <file>icons/lynny-2x_white/Camera with Polaroid.png</file>
+        <file>icons/lynny-2x_white/Camera with Wide Angle.png</file>
+        <file>icons/lynny-2x_white/Camera.png</file>
+        <file>icons/lynny-2x_white/Cameras.png</file>
+        <file>icons/lynny-2x_white/Cash Register.png</file>
+        <file>icons/lynny-2x_white/Celsius.png</file>
+        <file>icons/lynny-2x_white/Chat Bubble Dots.png</file>
+        <file>icons/lynny-2x_white/Chat Bubble.png</file>
+        <file>icons/lynny-2x_white/Chat Bubbles.png</file>
+        <file>icons/lynny-2x_white/Checkmark 1.png</file>
+        <file>icons/lynny-2x_white/Checkmark 2.png</file>
+        <file>icons/lynny-2x_white/Chromecast Logo.png</file>
+        <file>icons/lynny-2x_white/Circle Outline Down.png</file>
+        <file>icons/lynny-2x_white/Circle Outline Up.png</file>
+        <file>icons/lynny-2x_white/Circle Outline with Dot.png</file>
+        <file>icons/lynny-2x_white/Circle Outline.png</file>
+        <file>icons/lynny-2x_white/Clipboard.png</file>
+        <file>icons/lynny-2x_white/Clock 1.png</file>
+        <file>icons/lynny-2x_white/Clock 2.png</file>
+        <file>icons/lynny-2x_white/Cloud 1.png</file>
+        <file>icons/lynny-2x_white/Cloud 2.png</file>
+        <file>icons/lynny-2x_white/Cloud Download.png</file>
+        <file>icons/lynny-2x_white/Cloud Sync.png</file>
+        <file>icons/lynny-2x_white/Cloud Upload.png</file>
+        <file>icons/lynny-2x_white/Cloud with Lightning.png</file>
+        <file>icons/lynny-2x_white/Cloud with Rain 1.png</file>
+        <file>icons/lynny-2x_white/Cloud with Rain 2.png</file>
+        <file>icons/lynny-2x_white/Cloud with Rain 3.png</file>
+        <file>icons/lynny-2x_white/Cloud with Rain Lightning.png</file>
+        <file>icons/lynny-2x_white/Cloud with Snow.png</file>
+        <file>icons/lynny-2x_white/Cloud with Sun.png</file>
+        <file>icons/lynny-2x_white/Command Line.png</file>
+        <file>icons/lynny-2x_white/Compass.png</file>
+        <file>icons/lynny-2x_white/Contact Card 1.png</file>
+        <file>icons/lynny-2x_white/Contact Card 2.png</file>
+        <file>icons/lynny-2x_white/Contact Cards 1.png</file>
+        <file>icons/lynny-2x_white/Contact Cards 2.png</file>
+        <file>icons/lynny-2x_white/Credit Card.png</file>
+        <file>icons/lynny-2x_white/Credit Cards.png</file>
+        <file>icons/lynny-2x_white/Crossbones.png</file>
+        <file>icons/lynny-2x_white/Curved Arrow Down.png</file>
+        <file>icons/lynny-2x_white/Curved Arrow Left.png</file>
+        <file>icons/lynny-2x_white/Curved Arrow Right.png</file>
+        <file>icons/lynny-2x_white/Curved Arrow Up.png</file>
+        <file>icons/lynny-2x_white/Desk.png</file>
+        <file>icons/lynny-2x_white/Desktop Download.png</file>
+        <file>icons/lynny-2x_white/Desktop Left.png</file>
+        <file>icons/lynny-2x_white/Desktop Right.png</file>
+        <file>icons/lynny-2x_white/Desktop Sync.png</file>
+        <file>icons/lynny-2x_white/Desktop Upload.png</file>
+        <file>icons/lynny-2x_white/Desktop.png</file>
+        <file>icons/lynny-2x_white/Diamond.png</file>
+        <file>icons/lynny-2x_white/DLNA Logo.png</file>
+        <file>icons/lynny-2x_white/Dollar Coin.png</file>
+        <file>icons/lynny-2x_white/Dollar Coins.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 1.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 2.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 3.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 4.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 5.png</file>
+        <file>icons/lynny-2x_white/Down Arrow 6.png</file>
+        <file>icons/lynny-2x_white/Download 1.png</file>
+        <file>icons/lynny-2x_white/Download 2.png</file>
+        <file>icons/lynny-2x_white/Drawers 1.png</file>
+        <file>icons/lynny-2x_white/Drawers 2.png</file>
+        <file>icons/lynny-2x_white/Drawers 3.png</file>
+        <file>icons/lynny-2x_white/Dribbble Circle.png</file>
+        <file>icons/lynny-2x_white/Dribbble Square.png</file>
+        <file>icons/lynny-2x_white/Dropbox Circle.png</file>
+        <file>icons/lynny-2x_white/Dropbox Square.png</file>
+        <file>icons/lynny-2x_white/Droplet.png</file>
+        <file>icons/lynny-2x_white/Eject.png</file>
+        <file>icons/lynny-2x_white/Envelope.png</file>
+        <file>icons/lynny-2x_white/Envelopes.png</file>
+        <file>icons/lynny-2x_white/Error.png</file>
+        <file>icons/lynny-2x_white/Euro Coin.png</file>
+        <file>icons/lynny-2x_white/Euro Coins.png</file>
+        <file>icons/lynny-2x_white/Exit 1.png</file>
+        <file>icons/lynny-2x_white/Exit 2.png</file>
+        <file>icons/lynny-2x_white/Eye.png</file>
+        <file>icons/lynny-2x_white/Facebook Circle.png</file>
+        <file>icons/lynny-2x_white/Facebook Square.png</file>
+        <file>icons/lynny-2x_white/Fahrenheit.png</file>
+        <file>icons/lynny-2x_white/Fast Forward.png</file>
+        <file>icons/lynny-2x_white/File Type AI.png</file>
+        <file>icons/lynny-2x_white/File Type GIF.png</file>
+        <file>icons/lynny-2x_white/File Type JPG.png</file>
+        <file>icons/lynny-2x_white/File Type PDF.png</file>
+        <file>icons/lynny-2x_white/File Type PNG.png</file>
+        <file>icons/lynny-2x_white/File Type PSD.png</file>
+        <file>icons/lynny-2x_white/Filter Add.png</file>
+        <file>icons/lynny-2x_white/Filter Remove.png</file>
+        <file>icons/lynny-2x_white/Filter.png</file>
+        <file>icons/lynny-2x_white/Finder.png</file>
+        <file>icons/lynny-2x_white/Flag 1.png</file>
+        <file>icons/lynny-2x_white/Flag 2.png</file>
+        <file>icons/lynny-2x_white/Floppy Disk 1.png</file>
+        <file>icons/lynny-2x_white/Floppy Disk 2.png</file>
+        <file>icons/lynny-2x_white/Folder More.png</file>
+        <file>icons/lynny-2x_white/Folder Search.png</file>
+        <file>icons/lynny-2x_white/Folder.png</file>
+        <file>icons/lynny-2x_white/Folders.png</file>
+        <file>icons/lynny-2x_white/Forked Path.png</file>
+        <file>icons/lynny-2x_white/Full Screen Reverse.png</file>
+        <file>icons/lynny-2x_white/Full Screen.png</file>
+        <file>icons/lynny-2x_white/Game Controler.png</file>
+        <file>icons/lynny-2x_white/Gift.png</file>
+        <file>icons/lynny-2x_white/Global Connection.png</file>
+        <file>icons/lynny-2x_white/Globe 1.png</file>
+        <file>icons/lynny-2x_white/Globe 2.png</file>
+        <file>icons/lynny-2x_white/Globe with Arrows.png</file>
+        <file>icons/lynny-2x_white/Globes.png</file>
+        <file>icons/lynny-2x_white/Google Plus Circle.png</file>
+        <file>icons/lynny-2x_white/Google Plus Square.png</file>
+        <file>icons/lynny-2x_white/Graduation.png</file>
+        <file>icons/lynny-2x_white/Grid 1.png</file>
+        <file>icons/lynny-2x_white/Grid 10.png</file>
+        <file>icons/lynny-2x_white/Grid 11.png</file>
+        <file>icons/lynny-2x_white/Grid 12.png</file>
+        <file>icons/lynny-2x_white/Grid 2.png</file>
+        <file>icons/lynny-2x_white/Grid 3.png</file>
+        <file>icons/lynny-2x_white/Grid 4.png</file>
+        <file>icons/lynny-2x_white/Grid 5.png</file>
+        <file>icons/lynny-2x_white/Grid 6.png</file>
+        <file>icons/lynny-2x_white/Grid 7.png</file>
+        <file>icons/lynny-2x_white/Grid 8.png</file>
+        <file>icons/lynny-2x_white/Grid 9.png</file>
+        <file>icons/lynny-2x_white/Handbag.png</file>
+        <file>icons/lynny-2x_white/Hard Drive.png</file>
+        <file>icons/lynny-2x_white/Headphones 1.png</file>
+        <file>icons/lynny-2x_white/Headphones 2.png</file>
+        <file>icons/lynny-2x_white/Headphones 3.png</file>
+        <file>icons/lynny-2x_white/Health Circle.png</file>
+        <file>icons/lynny-2x_white/Health Square.png</file>
+        <file>icons/lynny-2x_white/Heart.png</file>
+        <file>icons/lynny-2x_white/Home.png</file>
+        <file>icons/lynny-2x_white/Inbox Download.png</file>
+        <file>icons/lynny-2x_white/Inbox Full.png</file>
+        <file>icons/lynny-2x_white/Inbox Upload.png</file>
+        <file>icons/lynny-2x_white/Inbox.png</file>
+        <file>icons/lynny-2x_white/Inboxes.png</file>
+        <file>icons/lynny-2x_white/Infinite.png</file>
+        <file>icons/lynny-2x_white/Info.png</file>
+        <file>icons/lynny-2x_white/Instagram Circle.png</file>
+        <file>icons/lynny-2x_white/Instagram Square.png</file>
+        <file>icons/lynny-2x_white/Key 1.png</file>
+        <file>icons/lynny-2x_white/Key 2.png</file>
+        <file>icons/lynny-2x_white/Keyboard Down.png</file>
+        <file>icons/lynny-2x_white/Keyboard Up.png</file>
+        <file>icons/lynny-2x_white/Keyboard.png</file>
+        <file>icons/lynny-2x_white/Laptop.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 1.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 2.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 3.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 4.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 5.png</file>
+        <file>icons/lynny-2x_white/Left Arrow 6.png</file>
+        <file>icons/lynny-2x_white/Life Preserver.png</file>
+        <file>icons/lynny-2x_white/Lightning Bolt.png</file>
+        <file>icons/lynny-2x_white/LinkedIn Circle.png</file>
+        <file>icons/lynny-2x_white/LinkedIn Square.png</file>
+        <file>icons/lynny-2x_white/List 1.png</file>
+        <file>icons/lynny-2x_white/List 2.png</file>
+        <file>icons/lynny-2x_white/List 3.png</file>
+        <file>icons/lynny-2x_white/Location Pin 1.png</file>
+        <file>icons/lynny-2x_white/Location Pin 2.png</file>
+        <file>icons/lynny-2x_white/Location Pin 3.png</file>
+        <file>icons/lynny-2x_white/Location Target.png</file>
+        <file>icons/lynny-2x_white/Lock.png</file>
+        <file>icons/lynny-2x_white/Magnify Glass.png</file>
+        <file>icons/lynny-2x_white/Mail.png</file>
+        <file>icons/lynny-2x_white/Mails.png</file>
+        <file>icons/lynny-2x_white/Map 1.png</file>
+        <file>icons/lynny-2x_white/Map 2.png</file>
+        <file>icons/lynny-2x_white/Medicine Bottle.png</file>
+        <file>icons/lynny-2x_white/Megaphone 1.png</file>
+        <file>icons/lynny-2x_white/Megaphone 2.png</file>
+        <file>icons/lynny-2x_white/Megaphone 3.png</file>
+        <file>icons/lynny-2x_white/Microphone 2.png</file>
+        <file>icons/lynny-2x_white/Microphone.png</file>
+        <file>icons/lynny-2x_white/Mobile.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 1.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 2.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 3.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 4.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 5.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 6.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 7.png</file>
+        <file>icons/lynny-2x_white/Moon Cycle 8.png</file>
+        <file>icons/lynny-2x_white/Moon with Craters.png</file>
+        <file>icons/lynny-2x_white/Moon.png</file>
+        <file>icons/lynny-2x_white/More 1.png</file>
+        <file>icons/lynny-2x_white/More 2.png</file>
+        <file>icons/lynny-2x_white/Mouse.png</file>
+        <file>icons/lynny-2x_white/Move.png</file>
+        <file>icons/lynny-2x_white/Music Note 1.png</file>
+        <file>icons/lynny-2x_white/Music Note 2.png</file>
+        <file>icons/lynny-2x_white/Music Note in a Circle.png</file>
+        <file>icons/lynny-2x_white/Music Note in a Square 1.png</file>
+        <file>icons/lynny-2x_white/Music Note in a Square 2.png</file>
+        <file>icons/lynny-2x_white/Music Note in a Square 3.png</file>
+        <file>icons/lynny-2x_white/Neck Tie.png</file>
+        <file>icons/lynny-2x_white/Newspaper.png</file>
+        <file>icons/lynny-2x_white/Newspapers.png</file>
+        <file>icons/lynny-2x_white/Next.png</file>
+        <file>icons/lynny-2x_white/Note.png</file>
+        <file>icons/lynny-2x_white/Notepad.png</file>
+        <file>icons/lynny-2x_white/Old Building.png</file>
+        <file>icons/lynny-2x_white/Old TV.png</file>
+        <file>icons/lynny-2x_white/Orbit.png</file>
+        <file>icons/lynny-2x_white/OS Windows.png</file>
+        <file>icons/lynny-2x_white/OS X.png</file>
+        <file>icons/lynny-2x_white/Page 1.png</file>
+        <file>icons/lynny-2x_white/Page 2.png</file>
+        <file>icons/lynny-2x_white/Pages 1.png</file>
+        <file>icons/lynny-2x_white/Pages 2.png</file>
+        <file>icons/lynny-2x_white/Paper Airplane.png</file>
+        <file>icons/lynny-2x_white/Paper Bitcoin 1.png</file>
+        <file>icons/lynny-2x_white/Paper Bitcoin 2.png</file>
+        <file>icons/lynny-2x_white/Paper Bitcoin.png</file>
+        <file>icons/lynny-2x_white/Paper Clip.png</file>
+        <file>icons/lynny-2x_white/Paper Dollar.png</file>
+        <file>icons/lynny-2x_white/Paper Dollars 1.png</file>
+        <file>icons/lynny-2x_white/Paper Dollars 2.png</file>
+        <file>icons/lynny-2x_white/Paper Euro.png</file>
+        <file>icons/lynny-2x_white/Paper Euros 1.png</file>
+        <file>icons/lynny-2x_white/Paper Euros 2.png</file>
+        <file>icons/lynny-2x_white/Paper Shredder.png</file>
+        <file>icons/lynny-2x_white/Pencil.png</file>
+        <file>icons/lynny-2x_white/Phone 1.png</file>
+        <file>icons/lynny-2x_white/Phone 2.png</file>
+        <file>icons/lynny-2x_white/Photo List.png</file>
+        <file>icons/lynny-2x_white/Photo.png</file>
+        <file>icons/lynny-2x_white/Photos 2.png</file>
+        <file>icons/lynny-2x_white/Photos 3.png</file>
+        <file>icons/lynny-2x_white/Photos.png</file>
+        <file>icons/lynny-2x_white/Pie Chart.png</file>
+        <file>icons/lynny-2x_white/Pill.png</file>
+        <file>icons/lynny-2x_white/Pinterest Circle.png</file>
+        <file>icons/lynny-2x_white/Pinterest Square.png</file>
+        <file>icons/lynny-2x_white/Podcasts 1.png</file>
+        <file>icons/lynny-2x_white/Podcasts 2.png</file>
+        <file>icons/lynny-2x_white/Popout.png</file>
+        <file>icons/lynny-2x_white/Posicle.png</file>
+        <file>icons/lynny-2x_white/Power.png</file>
+        <file>icons/lynny-2x_white/Presentation 1.png</file>
+        <file>icons/lynny-2x_white/Presentation 2.png</file>
+        <file>icons/lynny-2x_white/Presentation 3.png</file>
+        <file>icons/lynny-2x_white/Presentation 4.png</file>
+        <file>icons/lynny-2x_white/Presentation 5.png</file>
+        <file>icons/lynny-2x_white/Printer.png</file>
+        <file>icons/lynny-2x_white/Radar.png</file>
+        <file>icons/lynny-2x_white/Radio.png</file>
+        <file>icons/lynny-2x_white/Rainbow.png</file>
+        <file>icons/lynny-2x_white/README.md</file>
+        <file>icons/lynny-2x_white/Receipt.png</file>
+        <file>icons/lynny-2x_white/Receipts.png</file>
+        <file>icons/lynny-2x_white/Record Player.png</file>
+        <file>icons/lynny-2x_white/Record.png</file>
+        <file>icons/lynny-2x_white/Refresh 1.png</file>
+        <file>icons/lynny-2x_white/Refresh 2.png</file>
+        <file>icons/lynny-2x_white/Refresh 3.png</file>
+        <file>icons/lynny-2x_white/Refresh 4.png</file>
+        <file>icons/lynny-2x_white/Remove.png</file>
+        <file>icons/lynny-2x_white/Right Angle Arrow 1.png</file>
+        <file>icons/lynny-2x_white/Right Angle Arrow 2.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 1.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 2.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 3.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 4.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 5.png</file>
+        <file>icons/lynny-2x_white/Right Arrow 6.png</file>
+        <file>icons/lynny-2x_white/Road Signs.png</file>
+        <file>icons/lynny-2x_white/Rocket.png</file>
+        <file>icons/lynny-2x_white/Router.png</file>
+        <file>icons/lynny-2x_white/RSS 1.png</file>
+        <file>icons/lynny-2x_white/RSS 2.png</file>
+        <file>icons/lynny-2x_white/Safe.png</file>
+        <file>icons/lynny-2x_white/Scissors.png</file>
+        <file>icons/lynny-2x_white/Server Connections.png</file>
+        <file>icons/lynny-2x_white/Servers.png</file>
+        <file>icons/lynny-2x_white/Settings 1.png</file>
+        <file>icons/lynny-2x_white/Settings 2.png</file>
+        <file>icons/lynny-2x_white/Settings 3.png</file>
+        <file>icons/lynny-2x_white/Share 2.png</file>
+        <file>icons/lynny-2x_white/Share 3.png</file>
+        <file>icons/lynny-2x_white/Share.png</file>
+        <file>icons/lynny-2x_white/Sheild.png</file>
+        <file>icons/lynny-2x_white/Shopping Bag.png</file>
+        <file>icons/lynny-2x_white/Shopping Bags.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket In.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket Left.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket Minus.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket Out.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket Plus.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket Right.png</file>
+        <file>icons/lynny-2x_white/Shopping Basket.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart In.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart Left.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart Minus.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart Out.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart Plus.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart Right.png</file>
+        <file>icons/lynny-2x_white/Shopping Cart.png</file>
+        <file>icons/lynny-2x_white/Shuffle.png</file>
+        <file>icons/lynny-2x_white/Sign Post.png</file>
+        <file>icons/lynny-2x_white/Square Outline Down.png</file>
+        <file>icons/lynny-2x_white/Square Outline Up.png</file>
+        <file>icons/lynny-2x_white/Square Outline with Cube.png</file>
+        <file>icons/lynny-2x_white/Square Outline.png</file>
+        <file>icons/lynny-2x_white/Stack 1.png</file>
+        <file>icons/lynny-2x_white/Stack 2.png</file>
+        <file>icons/lynny-2x_white/Star in Circle.png</file>
+        <file>icons/lynny-2x_white/Star.png</file>
+        <file>icons/lynny-2x_white/Stars.png</file>
+        <file>icons/lynny-2x_white/Storefront.png</file>
+        <file>icons/lynny-2x_white/Suitcase.png</file>
+        <file>icons/lynny-2x_white/Suitcases.png</file>
+        <file>icons/lynny-2x_white/Sun.png</file>
+        <file>icons/lynny-2x_white/Sunrise.png</file>
+        <file>icons/lynny-2x_white/Sunset.png</file>
+        <file>icons/lynny-2x_white/Tablet.png</file>
+        <file>icons/lynny-2x_white/Tag.png</file>
+        <file>icons/lynny-2x_white/Tags.png</file>
+        <file>icons/lynny-2x_white/Target.png</file>
+        <file>icons/lynny-2x_white/Tea Cup.png</file>
+        <file>icons/lynny-2x_white/Test Tube.png</file>
+        <file>icons/lynny-2x_white/Text Align Center.png</file>
+        <file>icons/lynny-2x_white/Text Align Justify.png</file>
+        <file>icons/lynny-2x_white/Text Align Left.png</file>
+        <file>icons/lynny-2x_white/Text Align Right.png</file>
+        <file>icons/lynny-2x_white/Thermometer.png</file>
+        <file>icons/lynny-2x_white/Toggles 1.png</file>
+        <file>icons/lynny-2x_white/Toggles 2.png</file>
+        <file>icons/lynny-2x_white/Toggles 3.png</file>
+        <file>icons/lynny-2x_white/Top Charts.png</file>
+        <file>icons/lynny-2x_white/Top Hat with Cane.png</file>
+        <file>icons/lynny-2x_white/Trash Full.png</file>
+        <file>icons/lynny-2x_white/Trash.png</file>
+        <file>icons/lynny-2x_white/Tree.png</file>
+        <file>icons/lynny-2x_white/Tumblr Circle.png</file>
+        <file>icons/lynny-2x_white/Tumblr Square.png</file>
+        <file>icons/lynny-2x_white/Turn Ahead.png</file>
+        <file>icons/lynny-2x_white/TV Fuzz.png</file>
+        <file>icons/lynny-2x_white/TV.png</file>
+        <file>icons/lynny-2x_white/Twitter Circle.png</file>
+        <file>icons/lynny-2x_white/Twitter Square.png</file>
+        <file>icons/lynny-2x_white/Umbrella.png</file>
+        <file>icons/lynny-2x_white/Unlock.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 1.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 2.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 3.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 4.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 5.png</file>
+        <file>icons/lynny-2x_white/Up Arrow 6.png</file>
+        <file>icons/lynny-2x_white/User Female.png</file>
+        <file>icons/lynny-2x_white/User Male.png</file>
+        <file>icons/lynny-2x_white/Users 1.png</file>
+        <file>icons/lynny-2x_white/Users 2.png</file>
+        <file>icons/lynny-2x_white/Video 1.png</file>
+        <file>icons/lynny-2x_white/Video 2.png</file>
+        <file>icons/lynny-2x_white/Video Camera 1.png</file>
+        <file>icons/lynny-2x_white/Video Camera 2.png</file>
+        <file>icons/lynny-2x_white/Video Camera 3.png</file>
+        <file>icons/lynny-2x_white/Video Camera 4.png</file>
+        <file>icons/lynny-2x_white/Videos.png</file>
+        <file>icons/lynny-2x_white/Vimeo Circle.png</file>
+        <file>icons/lynny-2x_white/Vimeo Square.png</file>
+        <file>icons/lynny-2x_white/Wallet 1.png</file>
+        <file>icons/lynny-2x_white/Wallet 2.png</file>
+        <file>icons/lynny-2x_white/Wallet 3.png</file>
+        <file>icons/lynny-2x_white/Warning.png</file>
+        <file>icons/lynny-2x_white/WiFi Logo.png</file>
+        <file>icons/lynny-2x_white/Wind.png</file>
+        <file>icons/lynny-2x_white/Wine Glass.png</file>
+        <file>icons/lynny-2x_white/WordPress Circle.png</file>
+        <file>icons/lynny-2x_white/WordPress Square.png</file>
+        <file>icons/lynny-2x_white/Wrench.png</file>
+        <file>icons/lynny-2x_white/Write.png</file>
+        <file>icons/lynny-2x_white/X.png</file>
+        <file>icons/lynny-2x_white/Yahoo Circle.png</file>
+        <file>icons/lynny-2x_white/Yahoo Square.png</file>
+        <file>icons/lynny-2x_white/YouTube Circle.png</file>
+        <file>icons/lynny-2x_white/YouTube Square.png</file>
+        <file>icons/lynny-2x_white/Zoom In.png</file>
+        <file>icons/lynny-2x_white/Zoom Out.png</file>
+        -->
+    </qresource>
+</RCC>
