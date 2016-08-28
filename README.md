@@ -78,6 +78,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Original [Borislav Kereziev](mailto:b.kereziev@gmail.com) work commit [source](https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/)
 
+[1.2.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.2.0
 [1.1.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.1.0
 [1.0.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.0.0
 
