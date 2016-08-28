@@ -132,7 +132,7 @@ void MainWindow::createUI()
         ui->comboPort->addItem (port.portName());
       }
 
-    /* Populate baud rate combo box */
+    /* Populate baud rate combo box with standard rates */
     ui->comboBaud->addItem ("1200");
     ui->comboBaud->addItem ("2400");
     ui->comboBaud->addItem ("4800");
@@ -141,6 +141,14 @@ void MainWindow::createUI()
     ui->comboBaud->addItem ("38400");
     ui->comboBaud->addItem ("57600");
     ui->comboBaud->addItem ("115200");
+    /* And some not-so-standard */
+    ui->comboBaud->addItem ("128000");
+    ui->comboBaud->addItem ("153600");
+    ui->comboBaud->addItem ("230400");
+    ui->comboBaud->addItem ("256000");
+    ui->comboBaud->addItem ("460800");
+    ui->comboBaud->addItem ("921600");
+
     /* Select 115200 bits by default */
     ui->comboBaud->setCurrentIndex (7);
 
@@ -355,6 +363,14 @@ void MainWindow::onNewDataArrived(QStringList newData)
     static int data_members = 0;
     static int channel = 0;
     static int i = 0;
+    volatile bool you_shall_NOT_PASS = false;
+
+    /* When a fast baud rate is set (921kbps was the first to starts to bug),
+       this method is called multiple times (2x in the 921k tests), so a flag
+       is used to throttle
+       TO-DO: Separate processes, buffer data (1) and process data (2) */
+    while (you_shall_NOT_PASS) {}
+    you_shall_NOT_PASS = true;
 
     if (plotting)
       {
@@ -404,6 +420,7 @@ void MainWindow::onNewDataArrived(QStringList newData)
             channel = 0;
           }
       }
+    you_shall_NOT_PASS = false;
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
