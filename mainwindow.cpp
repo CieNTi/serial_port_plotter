@@ -413,7 +413,7 @@ void MainWindow::onNewDataArrived(QStringList newData)
             else
               {
                 /* Add data to Graph 0 */
-                ui->plot->graph (channel)->addData (dataPointNumber, newData[channel].toInt());
+                ui->plot->graph (channel)->addData (dataPointNumber, newData[channel].toDouble());
                 /* Increment data number and channel */
                 channel++;
               }
