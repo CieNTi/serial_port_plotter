@@ -62,6 +62,7 @@ private slots:
     void onPortClosed();                                                                  // Called when closing the port
     void replot();                                                                        // Slot for repainting the plot
     void onNewDataArrived(QStringList newData);                                           // Slot for new data from serial port
+    void saveStream(QStringList newData);                                                 // Save the received data to the opened file
     void on_spinAxesMin_valueChanged(int arg1);                                           // Changing lower limit for the plot
     void on_spinAxesMax_valueChanged(int arg1);                                           // Changing upper limit for the plot
     void readData();                                                                      // Slot for inside serial port
@@ -103,7 +104,12 @@ private:
     int channels;
 
     /* Data format */
-    int data_format;
+    int data_format;   
+    
+    //-- CSV file to save data
+    QFile* m_csvFile = null;
+    void openCsvFile(void);
+    void closeCsvFile(void);
 
     QTimer updateTimer;                                                                   // Timer used for replotting the plot
     QTime timeOfFirstData;                                                                // Record the time of the first data point
