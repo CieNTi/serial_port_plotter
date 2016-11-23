@@ -104,6 +104,8 @@ MainWindow::MainWindow (QWidget *parent) :
  */
 MainWindow::~MainWindow()
 {
+    closeCsvFile();
+      
     if (serialPort != NULL)
       {
         delete serialPort;
@@ -272,6 +274,8 @@ void MainWindow::openPort (QSerialPortInfo portInfo, int baudRate, QSerialPort::
     connect (this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
     connect (this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
     connect (serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
+    
+    connect (this, SIGNAL(newData(QStringList)), this, SLOT(saveStream(QStringList)));
 
     if (serialPort->open (QIODevice::ReadWrite))
       {
@@ -298,12 +302,17 @@ void MainWindow::onPortClosed()
     updateTimer.stop();
     connected = false;
     plotting = false;
-
+    
+    //--
+    closeCsvFile();
+    
     disconnect (serialPort, SIGNAL(readyRead()), this, SLOT(readData()));
     disconnect (this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));             // Disconnect port signals to GUI slots
     disconnect (this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
     disconnect (this, SIGNAL(portClosed()), this, SLOT(onPortClosed()));
     disconnect (this, SIGNAL(newData(QStringList)), this, SLOT(onNewDataArrived(QStringList)));
+  
+    disconnect (this, SIGNAL(newData(QStringList)), this, SLOT(saveStream(QStringList)));
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -327,7 +336,10 @@ void MainWindow::portOpenedSuccess()
     setupPlot();                                                                          // Create the QCustomPlot area
     ui->statusBar->showMessage ("Connected!");
     enable_com_controls (false);                                                                // Disable controls if port is open
-
+    
+    //--> Create new CSV file with current date/timestamp 
+    openCsvFile();
+    
     updateTimer.start (20);                                                                // Slot is refreshed 20 times per second
     connected = true;                                                                      // Set flags
     plotting = true;
@@ -754,5 +766,47 @@ void MainWindow::on_actionClear_triggered()
   dataPointNumber = 0;
   emit setupPlot();
   ui->plot->replot();
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Open a new CSV file to save received data
+ *
+ */
+void MainWindow::openCsvFile(void)
+{
+  m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
+  if (!file.open(QIODevice::ReadWrite | QIODevice::Text))
+        return;
+  
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Open a new CSV file to save received data
+ *
+ */
+void MainWindow::closeCsvFile(void)
+{
+  if(!m_csvFile) return;
+  m_csvFile->close();
+  if(m_csvFile) delete m_csvFile;
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Open a new CSV file to save received data
+ *
+ */
+void MainWindow::saveStream(QStringList newData)
+{
+  if(!m_csvFile)
+    return;
+  
+  QTextStream out(m_csvFile);
+  oreach (const QString &str, newData) { 
+    out << str << ";";
+  }
+  out << "\n";
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
