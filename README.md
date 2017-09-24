@@ -49,6 +49,10 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.1] - 2017-09-24
+### Fixed
+- Linux build fails because no `serial_port_plotter_res.o` file was found (Issue #4)
+
 ## [1.2.0] - 2016-08-28
 ### Added
 - Negative numbers support ([cap we](https://developer.mbed.org/users/capwe/) FIX at [mbed forums](https://developer.mbed.org/comments/perm/22672/))

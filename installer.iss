@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Serial Port Plotter"
-#define MyAppVersion "1.2.0"
+#define MyAppVersion "1.2.1"
 #define MyAppPublisher "CieNTi"
 #define MyAppURL "https://github.com/CieNTi/serial_port_plotter"
 #define MyAppExeName "serial_port_plotter.exe"
