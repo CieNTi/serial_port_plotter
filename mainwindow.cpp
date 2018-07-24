@@ -95,6 +95,7 @@ MainWindow::MainWindow (QWidget *parent) :
   /* Connect update timer to replot slot */
   connect (&updateTimer, SIGNAL (timeout()), this, SLOT (replot()));
 
+  m_csvFile = NULL;
 }
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -485,7 +486,7 @@ void MainWindow::readData()
                         emit newData(incomingData);                                       // Emit signal for data received with the list
                         break;
                     }
-                    else if (isdigit (temp[i]) || isspace (temp[i]) || temp[i] =='-')
+                    else if (isdigit (temp[i]) || isspace (temp[i]) || temp[i] =='-' || temp[i] =='.')
                       {
                         /* If examined char is a digit, and not '$' or ';', append it to temporary string */
                         receivedData.append(temp[i]);
@@ -776,7 +777,9 @@ void MainWindow::on_actionClear_triggered()
 void MainWindow::openCsvFile(void)
 {
   m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
-  if (!file.open(QIODevice::ReadWrite | QIODevice::Text))
+  if(!m_csvFile)
+      return;
+  if (!m_csvFile->open(QIODevice::ReadWrite | QIODevice::Text))
         return;
   
 }
@@ -791,6 +794,7 @@ void MainWindow::closeCsvFile(void)
   if(!m_csvFile) return;
   m_csvFile->close();
   if(m_csvFile) delete m_csvFile;
+  m_csvFile = NULL;
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -804,7 +808,7 @@ void MainWindow::saveStream(QStringList newData)
     return;
   
   QTextStream out(m_csvFile);
-  oreach (const QString &str, newData) { 
+  foreach (const QString &str, newData) {
     out << str << ";";
   }
   out << "\n";

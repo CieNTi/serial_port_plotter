@@ -107,7 +107,7 @@ private:
     int data_format;   
     
     //-- CSV file to save data
-    QFile* m_csvFile = null;
+    QFile* m_csvFile = 0;
     void openCsvFile(void);
     void closeCsvFile(void);
 
