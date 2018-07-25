@@ -82,6 +82,7 @@ private slots:
     void on_actionHow_to_use_triggered();
     void on_actionPause_Plot_triggered();
     void on_actionClear_triggered();
+    void on_actionRecord_stream_triggered();
 
   signals:
     void portOpenFail();                                                                  // Emitted when cannot open port

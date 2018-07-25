@@ -338,9 +338,14 @@ void MainWindow::portOpenedSuccess()
     ui->statusBar->showMessage ("Connected!");
     enable_com_controls (false);                                                                // Disable controls if port is open
     
-    //--> Create new CSV file with current date/timestamp 
-    openCsvFile();
-    
+    if(ui->actionRecord_stream->isChecked())
+    {
+        //--> Create new CSV file with current date/timestamp
+        openCsvFile();
+    }
+    /* Lock the save option while recording */
+    ui->actionRecord_stream->setEnabled(false);
+
     updateTimer.start (20);                                                                // Slot is refreshed 20 times per second
     connected = true;                                                                      // Set flags
     plotting = true;
@@ -724,6 +729,22 @@ void MainWindow::on_actionPause_Plot_triggered()
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
+ * @brief Keep COM port open but pause plotting
+ */
+void MainWindow::on_actionRecord_stream_triggered()
+{
+    if (ui->actionRecord_stream->isChecked())
+    {
+      ui->statusBar->showMessage ("Data will be stored in csv file");
+    }
+    else
+    {
+      ui->statusBar->showMessage ("Data will not be stored anymore");
+    }
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
  * @brief Closes COM port and stop plotting
  */
 void MainWindow::on_actionDisconnect_triggered()
@@ -743,7 +764,7 @@ void MainWindow::on_actionDisconnect_triggered()
       plotting = false;                                                                 // Not plotting anymore
       ui->actionPause_Plot->setEnabled (false);
       ui->actionDisconnect->setEnabled (false);
-
+      ui->actionRecord_stream->setEnabled(true);
       receivedData.clear();                                                             // Clear received string
 
       ui->savePNGButton->setEnabled (false);
@@ -806,11 +827,13 @@ void MainWindow::saveStream(QStringList newData)
 {
   if(!m_csvFile)
     return;
-  
-  QTextStream out(m_csvFile);
-  foreach (const QString &str, newData) {
-    out << str << ";";
+  if(ui->actionRecord_stream->isChecked())
+  {
+      QTextStream out(m_csvFile);
+      foreach (const QString &str, newData) {
+        out << str << ",";
+      }
+      out << "\n";
   }
-  out << "\n";
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

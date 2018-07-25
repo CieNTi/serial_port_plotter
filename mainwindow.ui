@@ -528,6 +528,8 @@
    <addaction name="actionClear"/>
    <addaction name="separator"/>
    <addaction name="actionHow_to_use"/>
+   <addaction name="separator"/>
+   <addaction name="actionRecord_stream"/>
   </widget>
   <action name="actionConnect">
    <property name="icon">
@@ -628,6 +630,35 @@
    </property>
    <property name="text">
     <string>How to use</string>
+   </property>
+  </action>
+  <action name="actionRecord_stream">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/icons/line_icon_set/document.png</normaloff>
+     <normalon>:/icons/line_icon_set_text/document.png</normalon>
+     <disabledoff>:/icons/line_icon_set/document.png</disabledoff>:/icons/line_icon_set/document.png</iconset>
+   </property>
+   <property name="text">
+    <string>Record stream</string>
+   </property>
+   <property name="toolTip">
+    <string>Record the incoming data to a .csv file ( shortcut : s )</string>
+   </property>
+   <property name="shortcut">
+    <string/>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
    </property>
   </action>
  </widget>
