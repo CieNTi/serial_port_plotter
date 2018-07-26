@@ -254,6 +254,48 @@
        </spacer>
       </item>
       <item>
+      <widget class="QGroupBox" name="gridGroupBox">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>TEXT CONTROLS</string>
+       </property>
+       <layout class="QGridLayout" name="TextControlsBox">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_TextEditHide">
+            <property name="text">
+             <string>Hide TextBox</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_ShowallData">
+            <property name="text">
+             <string>Show All Incoming Data</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
        <widget class="QGroupBox" name="PlotControlsBox">
         <property name="title">
          <string>PLOT CONTROLS</string>
