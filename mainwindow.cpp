@@ -419,7 +419,7 @@ void MainWindow::onNewDataArrived(QStringList newData)
             else
               {
                 /* Add data to Graph 0 */
-                ui->plot->graph (channel)->addData (dataPointNumber, newData[channel].toDouble());
+                ui->plot->graph(channel)->addData (dataPointNumber, newData[channel].toDouble());
                 /* Increment data number and channel */
                 channel++;
               }
@@ -475,6 +475,9 @@ void MainWindow::readData()
         if(!data.isEmpty()) {                                                             // If the byte array is not empty
             char *temp = data.data();                                                     // Get a '\0'-terminated char* to the data
 
+            if (!filterDisplayedData){
+                ui->textEdit_UartWindow->append(data);
+            }
             for(int i = 0; temp[i] != '\0'; i++) {                                        // Iterate over the char*
                 switch(STATE) {                                                           // Switch the current state of the message
                 case WAIT_START:                                                          // If waiting for start [$], examine each char
@@ -488,6 +491,9 @@ void MainWindow::readData()
                     if(temp[i] == END_MSG) {                                              // If char examined is ;, switch state to END_MSG
                         STATE = WAIT_START;
                         QStringList incomingData = receivedData.split(' ');               // Split string received from port and put it into list
+                        if(filterDisplayedData){
+                            ui->textEdit_UartWindow->append(receivedData);
+                        }
                         emit newData(incomingData);                                       // Emit signal for data received with the list
                         break;
                     }
@@ -638,6 +644,7 @@ void MainWindow::on_actionHow_to_use_triggered()
   helpWindow->setWindowTitle ("How to use this application");
   helpWindow->show();
 }
+
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
@@ -837,3 +844,31 @@ void MainWindow::saveStream(QStringList newData)
   }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+void MainWindow::on_pushButton_TextEditHide_clicked()
+{
+    if(ui->pushButton_TextEditHide->isChecked())
+    {
+        ui->textEdit_UartWindow->setVisible(false);
+        ui->pushButton_TextEditHide->setText("Show TextBox");
+    }
+    else
+    {
+        ui->textEdit_UartWindow->setVisible(true);
+        ui->pushButton_TextEditHide->setText("Hide TextBox");
+    }
+}
+
+void MainWindow::on_pushButton_ShowallData_clicked()
+{
+    if(ui->pushButton_ShowallData->isChecked())
+    {
+        filterDisplayedData = false;
+        ui->pushButton_ShowallData->setText("Filter Incoming Data");
+    }
+    else
+    {
+        filterDisplayedData = true;
+        ui->pushButton_ShowallData->setText("Show All Incoming Data");
+    }
+}

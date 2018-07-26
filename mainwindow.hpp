@@ -84,7 +84,11 @@ private slots:
     void on_actionClear_triggered();
     void on_actionRecord_stream_triggered();
 
-  signals:
+    void on_pushButton_TextEditHide_clicked();
+
+    void on_pushButton_ShowallData_clicked();
+
+signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open
     void portClosed();                                                                    // Emitted when port is closed
@@ -106,7 +110,10 @@ private:
 
     /* Data format */
     int data_format;   
-    
+
+    /* Textbox Related */
+    bool filterDisplayedData = true;
+
     //-- CSV file to save data
     QFile* m_csvFile = 0;
     void openCsvFile(void);
