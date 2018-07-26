@@ -10,7 +10,9 @@ This is a Windows application that displays real time data from serial port. The
 - Moving around the plot displays the X and Y values of the graph in the status bar
 - Channel's name legend (double-click to modify)
 - Channel selection (click on legend's text)
+- Supports positive and negative integers and floats
 - Exports to PNG
+- Exports to CSV
 
 # Screenshot
 
@@ -22,7 +24,11 @@ Just send your integer data over the serial port. The application expects certai
 
 Use the mouse wheel over controls to change its values and use it over plot area to zoom.
 
-When stopped/paused, plot area can be dragged.
+When stopped/paused, plot area can be dragged and file saving can be enabled.
+
+To enable the file saving, click on the document button before starting the plot
+
+![File Save Button](res/screen_1.png)
 
 # Send data over the serial port
 
@@ -32,6 +38,8 @@ printf ("$%d %d;", data1, data2);
 ```
 
 Depending on how much data you want to display, you can adjust the number of data points. For example, if you send data from the serial port of the mbed every 10 ms (100 Hz) and the plotter is set to display 500 points, it will contain information for 5 seconds of data.
+
+The software supports integer and decimal numbers ( float/double )
 
 # Source
 
@@ -49,8 +57,16 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.2] - 2018-07-26
+### Info
+- Project forked from HackInvent since 1.2.1
+### Added
+- UART debug textBox
+- Textbox control ( toggle visible and toggle data filter )
+
 ## [1.2.1] - 2017-09-24
 ### Fixed
+- Support for float/double has been added
 - Linux build fails because no `serial_port_plotter_res.o` file was found (Issue #4)
 
 ## [1.2.0] - 2016-08-28
