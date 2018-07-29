@@ -1,0 +1,638 @@
+/***************************************************************************
+**                                                                        **
+**  Doxygen Style Sheet for QCustomPlot documentation                     **
+**  Copyright (C) by Emanuel Eichhammer                                   **
+**  Website/Contact: http://www.qcustomplot.com/                          **
+**                                                                        **
+****************************************************************************/
+
+body {
+  font: 14px/1.25 "Open Sans", Arial, Helvetica, sans-serif;
+}
+p {
+  margin-left: 0.5em;
+}
+body {
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #333333;
+}
+a:link, a:visited {
+  color: #00732F;
+  text-decoration: none;
+}
+a:hover {
+  color: #45a51c;
+  text-decoration: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table.params tbody tr td.paramname {
+  padding-right: 1em;
+}
+table.params tbody tr td {
+  padding-bottom: 0.4em;
+}
+table.memberdecls {
+  background-color: #F6F6F6;
+  border: 1px solid #E6E6E6;
+  border-collapse: separate;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  font-size: 12px;
+  max-width: 1400px;
+  padding: 1em 1em 0;
+  margin-bottom: 15px;
+}
+table.memberdecls h2 {
+  font-size: 140%;
+  margin: 0 0 0.3em;
+  padding: 0 0 0 0;
+}
+table.memberdecls tr:last-child td.memSeparator {
+    display:none;
+}
+table.memberdecls td.memSeparator {
+    border-bottom: 1px dotted #ccc;
+    height: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+}
+table.memberdecls td {
+  padding: 2px 0;
+}
+div.image {
+  text-align: center;
+}
+div.title {
+  font-size: 160%;
+  font-weight: bold;
+  text-align: center;
+}
+div.memdoc dl dd table {
+  background-color: #F6F6F6;
+  border: 1px solid #E6E6E6;
+  border-collapse: collapse;
+  font-size: 90%;
+}
+div.memdoc dl dd table tbody tr td {
+  padding: 0.25em 0;
+  vertical-align: middle;
+}
+div.memdoc dl dd table tbody tr td em {
+  font-family: monospace;
+  font-style: normal;
+  padding-left: 1em;
+}
+div.memdoc dl dd table.params tbody tr td em {
+  font-family: Arial,Geneva,Helvetica,sans-serif;
+  font-style: italic;
+  padding-left: 0;
+}
+div.memdoc dl dd table tbody tr td p {
+  margin: 0;
+}
+div.memdoc dl dd table tbody tr td p code {
+  margin-right: 2em;
+}
+h1 {
+  font-size: 130%;
+  margin: 1.8em 0 1em;
+}
+h2 {
+  font-size: 120%;
+  margin: 1em 0;
+}
+h3 {
+  font-size: 100%;
+}
+h3.version {
+  font-size: 90%;
+  text-align: center;
+}
+a.headerLink:hover {
+  background-color: #fff;
+  text-decoration: none;
+}
+a.headerLink {
+  background: none repeat scroll 0 0 #f6f6f6;
+  border: 1px solid #ddd;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 2.2em;
+  padding: 0.3em 0.5em;
+  white-space: nowrap;
+}
+div.header {
+  margin-bottom: 1em;
+  vertical-align: middle;
+}
+div.header img {
+  border: medium none;
+  margin: 0 1em 0 6px;
+  vertical-align: middle;
+}
+div#top {
+  margin-bottom: 0.5em;
+}
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #A0A0A0 -moz-use-text-color -moz-use-text-color;
+  border-image: none;
+  border-right: medium none;
+  border-style: solid none none;
+  border-width: 1px medium medium;
+  height: 0;
+  margin: 1.8em 0 1.6em;
+}
+table h2 {
+  margin: 1.3em 0 0.8em;
+  padding: 1.3em 0 0;
+}
+div.navpath {
+  font-size: 160%;
+  font-weight: 700;
+  margin: 0 0 0.8em;
+  text-align: center;
+}
+div.navpath:after {
+  content: " Class Reference";
+}
+div.navpath + div.contents > h1 {
+  display: none;
+}
+div.contents > p > code {
+  background: none repeat scroll 0 0 #F1F1F1;
+  border: 1px solid #E7E7E7;
+  color: #000000;
+  display: block;
+  padding: 0.2em;
+}
+tr.inherit_header > td{
+  font-size: 110%;
+  font-weight: 700;
+  padding: 2em 0 0.3em 0;
+}
+tr.inherit_header > td > img{
+  display: none;
+}
+/*
+td.memItemLeft, td.memItemRight, td.memTemplItemLeft, td.memTemplItemRight, td.memTemplParams {
+  margin: 4px;
+  padding: 1px 0 0 8px;
+}
+*/
+td.memItemLeft, td.memTemplItemLeft, td.memTemplParams {
+  white-space: nowrap;
+}
+td.memItemLeft, td.memTemplItemLeft {
+  width: 10%;
+}
+td.memItemRight .el {
+  font-weight: 700;
+}
+/* hide brief method descriptions in table of methods at top of class pages */
+td.mdescLeft, td.mdescRight {
+  display: none;
+}
+div.memitem {
+  margin: 0 0 2em;
+  padding: 0;
+}
+h2.memtitle {
+  display: none;
+}
+div.memproto {
+  background-color: #F6F6F6;
+  border: 1px solid #E6E6E6;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  font: bold 14px/1.2 Arial,FreeSans,sans-serif;
+  padding: 3px 5px;
+}
+td.fieldname {
+  padding-right: 1em;
+  width: 1%;
+  white-space: nowrap;
+}
+td.fieldname > em {
+  font-family: monospace;
+  font-style: normal;
+  font-size: 0.85em;
+}
+td.fielddoc > p {
+  margin: 0.2em;
+  position: relative;
+  padding-left: 4.4em;
+}
+td.fielddoc div.image {
+  position: relative;
+}
+td.fielddoc img {
+  position: absolute;
+  left: 1em;
+  top: 0;
+}
+td.fielddoc > p > code
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+table.fieldtable {
+  background-color: #f6f6f6;
+  border: 1px solid #e6e6e6;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  padding: 3px 5px;
+  margin-left: 2em;
+  width: 90%;
+  max-width: 60em;
+  padding: 0.5em 0.5em 0;
+  border-collapse: separate;
+}
+table.fieldtable th {
+  background: none repeat scroll 0 0 #e5e5e5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0.3em 0;
+}
+table.fieldtable tr:last-child td {
+  border-bottom: none;
+}
+table.fieldtable td {
+  border-bottom: 1px dotted #ccc;
+}
+div.memdoc {
+}
+table.memname {
+  display: block;
+}
+table.memname * {
+  display: inline;
+}
+table.memname tr + tr {
+  white-space: nowrap;
+}
+table.memname td {
+  white-space: nowrap;
+}
+td.paramname code {
+  font: inherit;
+}
+.memtemplate {
+  color: #606060;
+  font-size: 80%;
+  font-weight: 400;
+  margin-left: 3px;
+}
+.memnav {
+  background-color: #E8EEF2;
+  border: 1px solid #84B0C7;
+  margin: 2px 15px 2px 2px;
+  padding: 2px;
+  text-align: center;
+}
+tr.memlist td {
+  background-color: #EEEEEE;
+  border-color: #FFFFFF;
+  border-style: solid;
+  border-width: 4px 2px;
+  padding: 0.1em 0.3em;
+}
+tr[bgcolor="#f0f0f0"] td {
+  background-color: #EEEEEE;
+  border-color: #FFFFFF;
+  border-style: solid;
+  border-width: 4px 2px;
+  padding: 0.1em 0.3em;
+}
+td.indexkey {
+  font-weight: 700;
+  padding: 1em 0.25em 0.2em 0;
+  text-align: right;
+  vertical-align: top;
+  width: 180px;
+}
+td.indexvalue {
+  padding: 1em 0 0.2em 0.25em;
+  text-align: left;
+  vertical-align: top;
+}
+tr + tr td.indexkey {
+  padding-top: 0.2em;
+}
+tr + tr td.indexvalue {
+  padding-top: 0.2em;
+}
+td.mlabels-right {
+  text-align: right;
+}
+.title span.mlabel {
+  color: #a0a0a0;
+  font-size: 0.7em;
+  font-style: italic;
+}
+span.mlabel {
+  margin-left: 1em;
+}
+div.tabs ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div.tabs li {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+div.tabs li.current {
+  display: block;
+  font-size: 160%;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+div.tabs li.current a {
+  color: #000000;
+}
+div.tabs + div.contents {
+  visibility: hidden;
+}
+div.tabs + div.contents > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  visibility: visible;
+}
+div.tabs + div.contents > ul li {
+  font-weight: 700;
+  margin: 0.1em 0;
+  padding: 0 0 0 2em;
+  text-indent: -2em;
+}
+div.tabs + div.contents > ul a {
+  font-weight: 400;
+}
+div.tabs + div.contents h3 {
+  display: none;
+}
+table.doxtable {
+  width: auto;
+}
+table.doxtable th {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #666666;
+  border-color: #666666 #666666 -moz-use-text-color;
+  border-image: none;
+  border-style: solid solid hidden;
+  border-width: 1px 1px medium;
+  color: #FFFFFF;
+  padding: 4px 4px 5px;
+}
+table.doxtable td {
+  background-color: #F6F6F6;
+  border: 1px solid #E6E6E6;
+  border-collapse: collapse;
+  font-size: 90%;
+}
+dl.see {
+}
+dt {
+  font-weight: 700;
+}
+div.multicol {
+  -moz-column-count: 3;
+  -moz-column-gap: 1em;
+}
+p.startli, p.startdd, p.starttd {
+  margin-top: 2px;
+}
+p.endli {
+  margin-bottom: 0;
+}
+p.enddd {
+  margin-bottom: 4px;
+}
+p.endtd {
+  margin-bottom: 2px;
+}
+caption {
+  font-weight: 700;
+}
+span.legend {
+  font-size: 70%;
+  text-align: center;
+}
+div.qindex, div.navtab {
+  background-color: #E8EEF2;
+  border: 1px solid #84B0C7;
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+}
+div.qindex {
+  line-height: 140%;
+  width: 100%;
+}
+div.navtab {
+  margin-right: 15px;
+}
+a.qindex {
+  font-weight: 700;
+}
+a.qindexHL {
+  background-color: #6666CC;
+  border: 1px double #9295C2;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.contents a.qindexHL:visited {
+  color: #FFFFFF;
+}
+a.code {
+  color: #3030F0;
+}
+a.codeRef {
+  color: #3030F0;
+}
+dl.el {
+  margin-left: -1cm;
+}
+.fragment {
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  font-family: monospace;
+  font-size: 9pt;
+  line-height: 125%;
+  margin: 4px 8px 4px 2px;
+  overflow: auto;
+  padding: 4px 16px;
+  word-wrap: break-word;
+}
+pre.fragment {
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  font-size: 9pt;
+  line-height: 125%;
+  margin: 4px 8px 4px 2px;
+  overflow: auto;
+  padding: 4px 6px;
+  word-wrap: break-word;
+}
+div.fragment div.line {
+  white-space: pre;
+}
+div.ah {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+h2.groupheader {
+  font-weight: 700;
+  font-size: 170%;
+  margin-bottom: 0.8em;
+  margin-left: 0.8em;
+  margin-top: 1.8em;
+}
+div.groupText {
+  font-style: italic;
+  margin-left: 16px;
+}
+p.formulaDsp {
+  text-align: center;
+}
+img.formulaDsp {
+}
+img.formulaInl {
+  vertical-align: middle;
+}
+div.center {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+  text-align: center;
+}
+div.center img {
+  border: 0 none;
+}
+.permalink
+{
+  display:none;
+}
+span.keyword {
+  color: #008000;
+}
+span.keywordtype {
+  color: #604020;
+}
+span.keywordflow {
+  color: #E08000;
+}
+span.comment {
+  color: #800000;
+}
+span.preprocessor {
+  color: #806020;
+}
+span.stringliteral {
+  color: #002080;
+}
+span.charliteral {
+  color: #008080;
+}
+span.vhdldigit {
+  color: #FF00FF;
+}
+span.vhdlchar {
+  color: #000000;
+}
+span.vhdlkeyword {
+  color: #700070;
+}
+span.vhdllogic {
+  color: #FF0000;
+}
+.overload {
+  font-family: "courier new",courier,monospace;
+  font-weight: normal;
+  font-size: 65%;
+  color: #A0A0A0;
+}
+.arrow {
+  color: #9CAFD4;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 80%;
+  display: inline-block;
+  width: 16px;
+  height: 22px;
+}
+.icon {
+  font-family: Arial, Helvetica;
+  font-weight: bold;
+  font-size: 12px;
+  height: 14px;
+  width: 16px;
+  display: inline-block;
+  background-color: #728DC1;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.icona {
+  width: 24px;
+  height: 22px;
+  display: inline-block;
+}
+.search {
+  color: #003399;
+  font-weight: 700;
+}
+form.search {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+input.search {
+  background-color: #E8EEF2;
+  color: #000080;
+  font-size: 75%;
+  font-weight: 400;
+}
+td.tiny {
+  font-size: 75%;
+}
+.dirtab {
+  border: 1px solid #84B0C7;
+  border-collapse: collapse;
+  padding: 4px;
+}
+th.dirtab {
+  background: none repeat scroll 0 0 #E8EEF2;
+  font-weight: 700;
+}
+
