@@ -205,7 +205,6 @@ void MainWindow::setupPlot()
     ui->plot->xAxis->setTickLabelFont (font);
     /* Range */
     ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
-    ui->plot->xAxis->setAutoTickCount (12);
 
     /* Y Axis */
     ui->plot->yAxis->grid()->setPen (QPen(gui_colors[2], 1, Qt::DotLine));
@@ -220,8 +219,8 @@ void MainWindow::setupPlot()
     /* Range */
     ui->plot->yAxis->setRange (ui->spinAxesMin->value(), ui->spinAxesMax->value());
     /* User can change Y axis tick step with a spin box */
-    ui->plot->yAxis->setAutoTickStep (false);
-    ui->plot->yAxis->setTickStep (ui->spinYStep->value());
+    //ui->plot->yAxis->setAutoTickStep (false);
+    //ui->plot->yAxis->(ui->spinYStep->value());
 
     /* User interactions Drag and Zoom are allowed only on X axis, Y is fixed manually by UI control */
     ui->plot->setInteraction (QCP::iRangeDrag, true);
@@ -410,7 +409,7 @@ void MainWindow::onNewDataArrived(QStringList newData)
         for (i = 0; i < data_members; i++)
           {
             /* Update number of axes if needed */
-            while (ui->plot->graphCount() <= channel)
+            while (ui->plot->plottableCount() <= channel)
               {
                 /* Add new channel data */
                 ui->plot->addGraph();
@@ -550,7 +549,7 @@ void MainWindow::readData()
  */
 void MainWindow::on_spinYStep_valueChanged(int arg1)
 {
-    ui->plot->yAxis->setTickStep(arg1);
+    ui->plot->yAxis->ticker()->setTickCount(arg1);
     ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -606,12 +605,12 @@ void MainWindow::channel_selection (void)
          if (item->selected())
            {
              item->setSelected (true);
-             graph->setSelected (true);
+   //          graph->set (true);
            }
          else
            {
              item->setSelected (false);
-             graph->setSelected (false);
+     //        graph->setSelected (false);
            }
        }
 }
