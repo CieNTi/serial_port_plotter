@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>907</width>
-    <height>635</height>
+    <width>908</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -252,6 +252,28 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QListView" name="listView_Channels">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionRectVisible">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QGroupBox" name="gridGroupBox">

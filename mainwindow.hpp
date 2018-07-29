@@ -88,6 +88,10 @@ private slots:
 
     void on_pushButton_ShowallData_clicked();
 
+    void on_listView_Channels_doubleClicked(const QModelIndex &index);
+
+    void on_listView_Channels_clicked(const QModelIndex &index);
+
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open
@@ -113,6 +117,10 @@ private:
 
     /* Textbox Related */
     bool filterDisplayedData = true;
+
+    /* Listview Related */
+    QStringListModel *channelListModel;
+    QStringList     channelStrList;
 
     //-- CSV file to save data
     QFile* m_csvFile = 0;
