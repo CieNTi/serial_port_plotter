@@ -92,6 +92,10 @@ private slots:
 
     void on_listView_Channels_clicked(const QModelIndex &index);
 
+    void on_pushButton_AutoScale_clicked();
+
+    void on_pushButton_ResetVisible_clicked();
+
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open

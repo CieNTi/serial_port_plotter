@@ -26,6 +26,7 @@
 
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
+#include <x86intrin.h>
 
 /**
  * @brief Constructor
@@ -36,8 +37,7 @@ MainWindow::MainWindow (QWidget *parent) :
   ui (new Ui::MainWindow),
 
   /* Populate colors */
-  line_colors (
-    {
+  line_colors{
       /* For channel data (gruvbox palette) */
       /* Light */
       QColor ("#fb4934"),
@@ -55,22 +55,21 @@ MainWindow::MainWindow (QWidget *parent) :
       QColor ("#b16286"),
       QColor ("#689d6a"),
       QColor ("#d65d0e"),
-    }),
-  gui_colors (
-    {
+   },
+  gui_colors {
       /* Monochromatic for axes and ui */
       QColor (48,  47,  47,  255), /**<  0: qdark ui dark/background color */
       QColor (80,  80,  80,  255), /**<  1: qdark ui medium/grid color */
       QColor (170, 170, 170, 255), /**<  2: qdark ui light/text color */
       QColor (48,  47,  47,  200)  /**<  3: qdark ui dark/background color w/transparency */
-    }),
+    },
 
   /* Main vars */
   connected (false),
   plotting (false),
   dataPointNumber (0),
   channels(0),
-  serialPort (NULL),
+  serialPort (nullptr),
   STATE (WAIT_START),
   NUMBER_OF_POINTS (500)
 {
@@ -95,7 +94,7 @@ MainWindow::MainWindow (QWidget *parent) :
   /* Connect update timer to replot slot */
   connect (&updateTimer, SIGNAL (timeout()), this, SLOT (replot()));
 
-  m_csvFile = NULL;
+  m_csvFile = nullptr;
 }
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -107,7 +106,7 @@ MainWindow::~MainWindow()
 {
     closeCsvFile();
       
-    if (serialPort != NULL)
+    if (serialPort != nullptr)
       {
         delete serialPort;
       }
@@ -217,7 +216,7 @@ void MainWindow::setupPlot()
     ui->plot->yAxis->setTickLabelColor (gui_colors[2]);
     ui->plot->yAxis->setTickLabelFont (font);
     /* Range */
-    ui->plot->yAxis->setRange (ui->spinAxesMin->value(), ui->spinAxesMax->value());
+    //ui->plot->yAxis->setRange (ui->spinAxesMin->value(), ui->spinAxesMax->value());
     /* User can change Y axis tick step with a spin box */
     //ui->plot->yAxis->setAutoTickStep (false);
     //ui->plot->yAxis->(ui->spinYStep->value());
@@ -272,7 +271,7 @@ void MainWindow::enable_com_controls (bool enable)
  */
 void MainWindow::openPort (QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits)
 {
-    serialPort = new QSerialPort(portInfo, 0);                                            // Create a new serial port
+    serialPort = new QSerialPort(portInfo, nullptr);                                            // Create a new serial port
 
     connect (this, SIGNAL(portOpenOK()), this, SLOT(portOpenedSuccess()));                 // Connect port signals to GUI slots
     connect (this, SIGNAL(portOpenFail()), this, SLOT(portOpenedFail()));
@@ -551,6 +550,7 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
 {
     ui->plot->yAxis->ticker()->setTickCount(arg1);
     ui->plot->replot();
+    ui->spinYStep->setValue(ui->plot->yAxis->ticker()->tickCount());
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -569,8 +569,8 @@ void MainWindow::on_savePNGButton_clicked()
  */
 void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
 {
-    int xx = ui->plot->xAxis->pixelToCoord(event->x());
-    int yy = ui->plot->yAxis->pixelToCoord(event->y());
+    int xx = int(ui->plot->xAxis->pixelToCoord(event->x()));
+    int yy = int(ui->plot->yAxis->pixelToCoord(event->y()));
     QString coordinates("X: %1 Y: %2");
     coordinates = coordinates.arg(xx).arg(yy);
     ui->statusBar->showMessage(coordinates);
@@ -624,7 +624,7 @@ void MainWindow::channel_selection (void)
 void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *item, QMouseEvent *event)
 {
     Q_UNUSED (legend)
-
+    Q_UNUSED(event)
     /* Only react if item was clicked (user could have clicked on border padding of legend where there is no item, then item is 0) */
     if (item)
       {
@@ -650,8 +650,9 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
  */
 void MainWindow::on_spinPoints_valueChanged (int arg1)
 {
-  ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
-  ui->plot->replot();
+    Q_UNUSED(arg1)
+    ui->plot->xAxis->setRange (dataPointNumber - ui->spinPoints->value(), dataPointNumber);
+    ui->plot->replot();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -731,7 +732,7 @@ void MainWindow::on_actionConnect_triggered()
         }
 
       /* Use local instance of QSerialPort; does not crash */
-      serialPort = new QSerialPort (portInfo, 0);
+      serialPort = new QSerialPort (portInfo, nullptr);
 
       /* Open serial port and connect its signals */
       openPort (portInfo, baudRate, dataBits, parity, stopBits);
@@ -781,7 +782,7 @@ void MainWindow::on_actionDisconnect_triggered()
       serialPort->close();                                                              // Close serial port
       emit portClosed();                                                                // Notify application
       delete serialPort;                                                                // Delete the pointer
-      serialPort = NULL;                                                                // Assign NULL to dangling pointer
+      serialPort = nullptr;                                                                // Assign NULL to dangling pointer
 
       ui->statusBar->showMessage ("Disconnected!");
 
@@ -839,7 +840,7 @@ void MainWindow::closeCsvFile(void)
   if(!m_csvFile) return;
   m_csvFile->close();
   if(m_csvFile) delete m_csvFile;
-  m_csvFile = NULL;
+  m_csvFile = nullptr;
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -860,6 +861,7 @@ void MainWindow::saveStream(QStringList newData)
       out << "\n";
   }
 }
+
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void MainWindow::on_pushButton_TextEditHide_clicked()
@@ -894,22 +896,39 @@ void MainWindow::on_pushButton_ShowallData_clicked()
 void MainWindow::on_listView_Channels_doubleClicked(const QModelIndex &index)
 {
     int graphIdx = index.row();
-    bool res;
+
     if(ui->plot->graph(graphIdx)->visible())
     {
         ui->plot->graph(graphIdx)->setVisible(false);
-        res = this->channelListModel->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
+        // FIXME :
+        // this->channelListModel->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
     }
     else
     {
         ui->plot->graph(graphIdx)->setVisible(true);
-        res = ui->listView_Channels->model()->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
+        // FIXME : Doesn't work
+        //ui->listView_Channels->model()->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
     }
 }
 
 
 void MainWindow::on_listView_Channels_clicked(const QModelIndex &index)
 {
-
+    Q_UNUSED(index)
 }
 
+
+void MainWindow::on_pushButton_AutoScale_clicked()
+{
+    ui->plot->yAxis->rescale(true);
+    ui->spinAxesMax->setValue(int(ui->plot->yAxis->range().upper));
+    ui->spinAxesMin->setValue(int(ui->plot->yAxis->range().lower));
+}
+
+void MainWindow::on_pushButton_ResetVisible_clicked()
+{
+    for(int i=0; i<ui->plot->graphCount(); i++)
+    {
+        ui->plot->graph(i)->setVisible(true);
+    }
+}
