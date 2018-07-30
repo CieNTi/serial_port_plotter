@@ -275,7 +275,7 @@
          <item>
           <widget class="QListView" name="listView_Channels">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -471,7 +471,7 @@
                 <number>1</number>
                </property>
                <property name="value">
-                <number>5</number>
+                <number>10</number>
                </property>
               </widget>
              </item>
@@ -522,7 +522,7 @@
                 <number>10</number>
                </property>
                <property name="value">
-                <number>-90</number>
+                <number>-100</number>
                </property>
               </widget>
              </item>
@@ -573,7 +573,7 @@
                 <number>10</number>
                </property>
                <property name="value">
-                <number>90</number>
+                <number>100</number>
                </property>
               </widget>
              </item>
@@ -602,6 +602,11 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Consolas</family>
+         </font>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
