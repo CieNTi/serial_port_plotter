@@ -88,13 +88,11 @@ private slots:
 
     void on_pushButton_ShowallData_clicked();
 
-    void on_listView_Channels_doubleClicked(const QModelIndex &index);
-
-    void on_listView_Channels_clicked(const QModelIndex &index);
-
     void on_pushButton_AutoScale_clicked();
 
     void on_pushButton_ResetVisible_clicked();
+
+    void on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item);
 
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port

@@ -167,10 +167,8 @@ void MainWindow::createUI()
     ui->comboStop->addItem ("1 bit");
     ui->comboStop->addItem ("2 bits");
 
-    channelListModel = new QStringListModel(this);
-    channelListModel->setStringList(channelStrList);
-    ui->listView_Channels->setModel(channelListModel);
-
+    /* Initialize the listwidget */
+    ui->listWidget_Channels->clear();
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -398,12 +396,6 @@ void MainWindow::onNewDataArrived(QStringList newData)
         /* Get size of received list */
         data_members = newData.size();
 
-        /* Add new channels to the listbox */
-        for(int i=ui->listView_Channels->model()->rowCount(); i<data_members; i++)
-        {
-            ui->listView_Channels->model()->insertRow(ui->listView_Channels->model()->rowCount());
-        }
-
         /* Parse data */
         for (i = 0; i < data_members; i++)
           {
@@ -418,9 +410,8 @@ void MainWindow::onNewDataArrived(QStringList newData)
                 {
                     ui->plot->legend->item (channels)->setTextColor (line_colors[channels % CUSTOM_LINE_COLORS]);
                 }
-                ui->listView_Channels->model()->setData(this->channelListModel->index(i,0), ui->plot->graph()->name());
-                ui->listView_Channels->update();
-
+                ui->listWidget_Channels->addItem(ui->plot->graph()->name());
+                ui->listWidget_Channels->item(channel)->setForeground(QBrush(line_colors[channels % CUSTOM_LINE_COLORS]));
                 channels++;
               }
 
@@ -636,7 +627,7 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
             plItem->plottable()->setName(newName);
             for(int i=0; i<ui->plot->graphCount(); i++)
             {
-                ui->listView_Channels->model()->setData(ui->listView_Channels->model()->index(i,0), ui->plot->graph(i)->name());
+                ui->listWidget_Channels->model()->setData(ui->listWidget_Channels->model()->index(i,0), ui->plot->graph(i)->name());
             }
             ui->plot->replot();
           }
@@ -809,6 +800,7 @@ void MainWindow::on_actionDisconnect_triggered()
 void MainWindow::on_actionClear_triggered()
 {
     ui->plot->clearPlottables();
+    ui->listWidget_Channels->clear();
     channels = 0;
     dataPointNumber = 0;
     emit setupPlot();
@@ -892,32 +884,6 @@ void MainWindow::on_pushButton_ShowallData_clicked()
     }
 }
 
-
-void MainWindow::on_listView_Channels_doubleClicked(const QModelIndex &index)
-{
-    int graphIdx = index.row();
-
-    if(ui->plot->graph(graphIdx)->visible())
-    {
-        ui->plot->graph(graphIdx)->setVisible(false);
-        // FIXME :
-        // this->channelListModel->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
-    }
-    else
-    {
-        ui->plot->graph(graphIdx)->setVisible(true);
-        // FIXME : Doesn't work
-        //ui->listView_Channels->model()->setData(index, QBrush(Qt::white), Qt::ForegroundRole);
-    }
-}
-
-
-void MainWindow::on_listView_Channels_clicked(const QModelIndex &index)
-{
-    Q_UNUSED(index)
-}
-
-
 void MainWindow::on_pushButton_AutoScale_clicked()
 {
     ui->plot->yAxis->rescale(true);
@@ -930,5 +896,22 @@ void MainWindow::on_pushButton_ResetVisible_clicked()
     for(int i=0; i<ui->plot->graphCount(); i++)
     {
         ui->plot->graph(i)->setVisible(true);
+        ui->listWidget_Channels->item(i)->setBackground(Qt::NoBrush);
+    }
+}
+
+void MainWindow::on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item)
+{
+    int graphIdx = ui->listWidget_Channels->currentRow();
+
+    if(ui->plot->graph(graphIdx)->visible())
+    {
+        ui->plot->graph(graphIdx)->setVisible(false);
+        item->setBackgroundColor(Qt::black);
+    }
+    else
+    {
+        ui->plot->graph(graphIdx)->setVisible(true);
+        item->setBackground(Qt::NoBrush);
     }
 }
