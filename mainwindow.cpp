@@ -627,7 +627,7 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
             plItem->plottable()->setName(newName);
             for(int i=0; i<ui->plot->graphCount(); i++)
             {
-                ui->listWidget_Channels->model()->setData(ui->listWidget_Channels->model()->index(i,0), ui->plot->graph(i)->name());
+                ui->listWidget_Channels->item(i)->setText(ui->plot->graph(i)->name());
             }
             ui->plot->replot();
           }
