@@ -621,7 +621,7 @@ void MainWindow::legend_double_click(QCPLegend *legend, QCPAbstractLegendItem *i
       {
         QCPPlottableLegendItem *plItem = qobject_cast<QCPPlottableLegendItem*>(item);
         bool ok;
-        QString newName = QInputDialog::getText (this, "Change channel name", "New name:", QLineEdit::Normal, plItem->plottable()->name(), &ok, Qt::Tool);
+        QString newName = QInputDialog::getText (this, "Change channel name", "New name:", QLineEdit::Normal, plItem->plottable()->name(), &ok, Qt::Popup);
         if (ok)
           {
             plItem->plottable()->setName(newName);
@@ -887,8 +887,8 @@ void MainWindow::on_pushButton_ShowallData_clicked()
 void MainWindow::on_pushButton_AutoScale_clicked()
 {
     ui->plot->yAxis->rescale(true);
-    ui->spinAxesMax->setValue(int(ui->plot->yAxis->range().upper));
-    ui->spinAxesMin->setValue(int(ui->plot->yAxis->range().lower));
+    ui->spinAxesMax->setValue(int(ui->plot->yAxis->range().upper) + int(ui->plot->yAxis->range().upper*0.1));
+    ui->spinAxesMin->setValue(int(ui->plot->yAxis->range().lower) + int(ui->plot->yAxis->range().lower*0.1));
 }
 
 void MainWindow::on_pushButton_ResetVisible_clicked()

@@ -55,6 +55,8 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 - [Line Icon Set](http://www.flaticon.com/packs/line-icon-set) by [Situ Herrera](http://www.flaticon.com/authors/situ-herrera) icon pack
 - [Lynny](http://www.1001freedownloads.com/free-vector/lynny-icons-full) icon pack
 - [Changelog](http://keepachangelog.com/)
+- Base of this software by [CieNTi](https://github.com/CieNTi)
+- CSV export by [HackInventOrg](https://github.com/HackInventOrg)
 
 ## Changelog
 
@@ -65,17 +67,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Info
 
+- Built with QT 5.11.1
 - QT libraries updated and new plot features implemented
 - Beginning of version 1.3
 
 ### Added
 
 - COM port refresh button to update the list
-- Channel visibility control added
-- qDarkStyle updated
-- qCustomplot updated
-- Autoscale button for Y axis
+- Channel visibility control added to turn off unwanted channel
+- Autoscale button for Y axis will autoscale to the highest value + 10%
 - Save to CSV support
+
+### Changed
+
+- qDarkStyle updated to 2.5.4
+- qCustomplot updated 2.0.1
+
+### Bugfix
+
+- Axis rename dialog gets focus when popup occurs
 
 ## [1.2.2] - 2018-07-26
 
@@ -132,9 +142,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Original [Borislav Kereziev](mailto:b.kereziev@gmail.com) work commit [source](https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/)
 
-[1.2.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.2.0
-[1.1.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.1.0
-[1.0.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.0.0
 
 ## To-Do
 
@@ -142,3 +149,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fill baud automatically and allow custom by textbox (when COM ui)
 - PNG *WITH* transparency
 - Separate `receive_data` from `process_data` to allow non-throttled operations
+
+[1.3.0]: https://github.com/Eriobis/serial_port_plotter/releases/tag/v1.3.0
+[1.2.2]: https://github.com/Eriobis/serial_port_plotter/releases/tag/v1.2.2
+[1.2.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.2.0
+[1.1.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.1.0
+[1.0.0]: https://github.com/CieNTi/serial_port_plotter/releases/tag/v1.0.0
