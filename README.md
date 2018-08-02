@@ -28,9 +28,9 @@ Use the mouse wheel over controls to change its values and use it over plot area
 
 When stopped/paused, plot area can be dragged and file saving can be enabled.
 
-To enable the file saving, click on the document button before starting the plot
+To enable the file saving, click on the document button before starting the plot.
 
-Double click on a channel in the Graph Control panel to hide/show a specific channel
+Double click on a channel in the Graph Control panel to hide/show a specific channel.
 
 ![File Save Button](res/screen_1.png)
 
@@ -60,6 +60,22 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [1.3.0] - 2018-08-01
+
+### Info
+
+- QT libraries updated and new plot features implemented
+- Beginning of version 1.3
+
+### Added
+
+- COM port refresh button to update the list
+- Channel visibility control added
+- qDarkStyle updated
+- qCustomplot updated
+- Autoscale button for Y axis
+- Save to CSV support
 
 ## [1.2.2] - 2018-07-26
 

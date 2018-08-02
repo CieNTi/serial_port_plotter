@@ -52,7 +52,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -94,6 +94,8 @@ private slots:
 
     void on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_pushButton_clicked();
+
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open
@@ -125,7 +127,7 @@ private:
     QStringList     channelStrList;
 
     //-- CSV file to save data
-    QFile* m_csvFile = 0;
+    QFile* m_csvFile = nullptr;
     void openCsvFile(void);
     void closeCsvFile(void);
 

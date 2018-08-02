@@ -914,4 +914,15 @@ void MainWindow::on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item)
         ui->plot->graph(graphIdx)->setVisible(true);
         item->setBackground(Qt::NoBrush);
     }
+    ui->plot->replot();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->comboPort->clear();
+    /* List all available serial ports and populate ports combo box */
+    for (QSerialPortInfo port : QSerialPortInfo::availablePorts())
+    {
+        ui->comboPort->addItem (port.portName());
+    }
 }
