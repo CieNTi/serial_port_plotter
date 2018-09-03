@@ -52,7 +52,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -62,6 +62,7 @@ private slots:
     void onPortClosed();                                                                  // Called when closing the port
     void replot();                                                                        // Slot for repainting the plot
     void onNewDataArrived(QStringList newData);                                           // Slot for new data from serial port
+    void saveStream(QStringList newData);                                                 // Save the received data to the opened file
     void on_spinAxesMin_valueChanged(int arg1);                                           // Changing lower limit for the plot
     void on_spinAxesMax_valueChanged(int arg1);                                           // Changing upper limit for the plot
     void readData();                                                                      // Slot for inside serial port
@@ -81,8 +82,21 @@ private slots:
     void on_actionHow_to_use_triggered();
     void on_actionPause_Plot_triggered();
     void on_actionClear_triggered();
+    void on_actionRecord_stream_triggered();
 
-  signals:
+    void on_pushButton_TextEditHide_clicked();
+
+    void on_pushButton_ShowallData_clicked();
+
+    void on_pushButton_AutoScale_clicked();
+
+    void on_pushButton_ResetVisible_clicked();
+
+    void on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_pushButton_clicked();
+
+signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
     void portOpenOK();                                                                    // Emitted when port is open
     void portClosed();                                                                    // Emitted when port is closed
@@ -103,7 +117,19 @@ private:
     int channels;
 
     /* Data format */
-    int data_format;
+    int data_format;   
+
+    /* Textbox Related */
+    bool filterDisplayedData = true;
+
+    /* Listview Related */
+    QStringListModel *channelListModel;
+    QStringList     channelStrList;
+
+    //-- CSV file to save data
+    QFile* m_csvFile = nullptr;
+    void openCsvFile(void);
+    void closeCsvFile(void);
 
     QTimer updateTimer;                                                                   // Timer used for replotting the plot
     QTime timeOfFirstData;                                                                // Record the time of the first data point
