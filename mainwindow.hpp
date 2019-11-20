@@ -54,6 +54,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void closeEvent(QCloseEvent *event);                                                // close event to save settings
 
 private slots:
     void on_comboPort_currentIndexChanged(const QString &arg1);                           // Slot displays message on status bar
@@ -132,6 +133,21 @@ private:
     void openCsvFile(void);
     void closeCsvFile(void);
 
+    /* Preferences */
+    struct SPreferences
+    {
+        int port;                                                                       // last port used
+        int baud;                                                                       // last baudrate item used
+        int data;                                                                       // last data length used
+        int parity;                                                                     // last parity used
+        int stop;                                                                       // last stop bit number
+        int spinPoints;
+        int spinYStep;                                                                  // last value used
+        int spinAxesMin;                                                                // last value used
+        int spinAxesMax;                                                                // last value used
+    };
+    SPreferences m_prefs;                                                               // preferences stucture
+
     QTimer updateTimer;                                                                   // Timer used for replotting the plot
     QTime timeOfFirstData;                                                                // Record the time of the first data point
     double timeBetweenSamples;                                                            // Store time between samples
@@ -146,6 +162,9 @@ private:
     void setupPlot();                                                                     // Setup the QCustomPlot
                                                                                           // Open the inside serial port with these parameters
     void openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits);
+
+    void loadSettings();                                                                // load settings to populate preferences fro; config file
+    void saveSettings();                                                                // sqve preferences in config file
 };
 
 

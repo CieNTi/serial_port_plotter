@@ -63,6 +63,18 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [1.3.2] - 2019-11-20
+
+### Info
+
+- Load settings at startup
+- Save settings at close event : port, baud, data, parity, stop, spinPoints, spinYStep, spinAxesMin, spinAxesMax
+
+### Bugfix
+
+- Solve issue #10 : Save and load settings
+
 ## [1.3.1] - 2019-11-20
 
 ### Info

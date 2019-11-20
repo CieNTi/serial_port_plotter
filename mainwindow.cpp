@@ -153,7 +153,7 @@ void MainWindow::createUI()
     ui->comboBaud->addItem ("921600");
 
     /* Select 115200 bits by default */
-    ui->comboBaud->setCurrentIndex (7);
+    //ui->comboBaud->setCurrentIndex (7);       // done by loadSettings now
 
     /* Populate data bits combo box */
     ui->comboData->addItem ("8 bits");
@@ -170,7 +170,19 @@ void MainWindow::createUI()
 
     /* Initialize the listwidget */
     ui->listWidget_Channels->clear();
-}
+
+    // try to load settings, or populate with default value
+    loadSettings();
+    ui->comboPort->setCurrentIndex(m_prefs.port);
+    ui->comboBaud->setCurrentIndex(m_prefs.baud);
+    ui->comboData->setCurrentIndex(m_prefs.data);
+    ui->comboParity->setCurrentIndex(m_prefs.parity);
+    ui->comboStop->setCurrentIndex(m_prefs.stop);
+    ui->spinPoints->setValue(m_prefs.spinPoints);
+    ui->spinYStep->setValue(m_prefs.spinYStep);
+    ui->spinAxesMin->setValue(m_prefs.spinAxesMin);
+    ui->spinAxesMax->setValue(m_prefs.spinAxesMax);
+    }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
@@ -930,3 +942,56 @@ void MainWindow::on_pushButton_clicked()
         ui->comboPort->addItem (port.portName());
     }
 }
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Load settings from config file and populate preferences
+ *
+ */
+void MainWindow::loadSettings()
+{
+  QSettings settings;
+  m_prefs.port = settings.value("port", 0).toInt();
+  m_prefs.baud = settings.value("baud", 7).toInt();
+  m_prefs.data = settings.value("data", 0).toInt();
+  m_prefs.parity = settings.value("parity", 0).toInt();
+  m_prefs.stop = settings.value("stop", 0).toInt();
+  m_prefs.spinPoints = settings.value("spinPoints", 1000).toInt();
+  m_prefs.spinYStep = settings.value("spinYStep", 10).toInt();
+  m_prefs.spinAxesMin = settings.value("spinAxesMin", -100).toInt();
+  m_prefs.spinAxesMax = settings.value("spinAxesMax", 100).toInt();
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Load settings from config file and populate preferences
+ *
+ */
+void MainWindow::saveSettings()
+{
+    QSettings settings;
+    settings.setValue("port", ui->comboPort->currentIndex());
+    settings.setValue("baud", ui->comboBaud->currentIndex());
+    settings.setValue("data", ui->comboData->currentIndex());
+    settings.setValue("parity", ui->comboParity->currentIndex());
+    settings.setValue("stop", ui->comboStop->currentIndex());
+    settings.setValue("spinPoints", ui->spinPoints->value());
+    settings.setValue("spinYStep", ui->spinYStep->value());
+    settings.setValue("spinAxesMin",  ui->spinAxesMin->value());
+    settings.setValue("spinAxesMax",  ui->spinAxesMax->value());
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief t the close event, save settings
+ *
+ */
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    saveSettings();
+    event->accept();
+}
+
+
