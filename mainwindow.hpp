@@ -27,7 +27,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <QtSerialPort/QtSerialPort>
 #include <QSerialPortInfo>
 #include "helpwindow.hpp"
@@ -113,6 +113,7 @@ private:
     bool connected;                                                                       // Status connection variable
     bool plotting;                                                                        // Status plotting variable
     int dataPointNumber;                                                                  // Keep track of data points
+    char buffer[10];                                                                      // buffer to convert number in string for png export
     /* Channels of data (number of graphs) */
     int channels;
 

@@ -27,6 +27,7 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 #include <x86intrin.h>
+#include <cstdio>
 
 /**
  * @brief Constructor
@@ -124,7 +125,7 @@ void MainWindow::createUI()
       {
         enable_com_controls (false);
         ui->statusBar->showMessage ("No ports detected.");
-        ui->savePNGButton->setEnabled (false);
+        ui->savePNGButton->setEnabled(false);
         return;
       }
 
@@ -550,7 +551,9 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
  */
 void MainWindow::on_savePNGButton_clicked()
 {
-    ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
+    ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + '_' + QString::number(ui->plot->xAxis->coordToPixel(0)) + '_' + QString::number(ui->spinPoints->value()) + ".png", 1920, 1080, 2, 50);
+    //ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);    // add home path before picture's name
+    //ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -786,7 +789,7 @@ void MainWindow::on_actionDisconnect_triggered()
       ui->actionRecord_stream->setEnabled(true);
       receivedData.clear();                                                             // Clear received string
 
-      ui->savePNGButton->setEnabled (false);
+      //ui->savePNGButton->setEnabled (false);                                          // Disable export png, commented to be able to export when the plotting is stopped, permit zoom before export for example.
       enable_com_controls (true);
     }
 }
@@ -814,7 +817,8 @@ void MainWindow::on_actionClear_triggered()
  */
 void MainWindow::openCsvFile(void)
 {
-  m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
+    m_csvFile = new QFile(QDir::homePath() + '/' + QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");    // add home path before picture's name
+  //m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
   if(!m_csvFile)
       return;
   if (!m_csvFile->open(QIODevice::ReadWrite | QIODevice::Text))
