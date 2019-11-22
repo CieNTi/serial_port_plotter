@@ -817,8 +817,16 @@ void MainWindow::on_actionDisconnect_triggered()
  */
 void MainWindow::on_actionClear_triggered()
 {
-    ui->plot->clearPlottables();
-    ui->listWidget_Channels->clear();
+
+    // from https://www.qcustomplot.com/index.php/support/forum/1304
+    // delete dataset but not the graph
+    for( int g=0; g<ui->plot->graphCount(); g++ )
+    {
+        ui->plot->graph(g)->data().data()->clear();
+    }
+    ui->plot->replot();
+//    ui->plot->clearPlottables();
+//    ui->listWidget_Channels->clear();
     channels = 0;
     dataPointNumber = 0;
     emit setupPlot();
