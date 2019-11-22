@@ -69,7 +69,7 @@ private slots:
     void readData();                                                                      // Slot for inside serial port
     //void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
     void on_spinYStep_valueChanged(int arg1);                                             // Spin box for changing Y axis tick step
-    void on_savePNGButton_clicked();                                                      // Button for saving JPG
+    //void on_savePNGButton_clicked();                                                      // Button for saving JPG
     void onMouseMoveInPlot (QMouseEvent *event);                                          // Displays coordinates of mouse pointer when clicked in plot in status bar
     void on_spinPoints_valueChanged (int arg1);                                           // Spin box controls how many data points are collected and displayed
     void on_mouse_wheel_in_plot (QWheelEvent *event);                                     // Makes wheel mouse works while plotting
@@ -84,6 +84,7 @@ private slots:
     void on_actionPause_Plot_triggered();
     void on_actionClear_triggered();
     void on_actionRecord_stream_triggered();
+    void on_actionRecord_PNG_triggered();
 
     void on_pushButton_TextEditHide_clicked();
 
@@ -96,6 +97,7 @@ private slots:
     void on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item);
 
     void on_pushButton_clicked();
+
 
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
@@ -114,6 +116,7 @@ private:
     bool connected;                                                                       // Status connection variable
     bool plotting;                                                                        // Status plotting variable
     int dataPointNumber;                                                                  // Keep track of data points
+
     char buffer[10];                                                                      // buffer to convert number in string for png export
     /* Channels of data (number of graphs) */
     int channels;

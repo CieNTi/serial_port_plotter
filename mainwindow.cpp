@@ -27,7 +27,6 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 #include <x86intrin.h>
-#include <cstdio>
 
 /**
  * @brief Constructor
@@ -125,7 +124,6 @@ void MainWindow::createUI()
       {
         enable_com_controls (false);
         ui->statusBar->showMessage ("No ports detected.");
-        ui->savePNGButton->setEnabled(false);
         return;
       }
 
@@ -182,6 +180,9 @@ void MainWindow::createUI()
     ui->spinYStep->setValue(m_prefs.spinYStep);
     ui->spinAxesMin->setValue(m_prefs.spinAxesMin);
     ui->spinAxesMax->setValue(m_prefs.spinAxesMax);
+
+    // disable PNG export before starting record
+    ui->actionRecord_PNG->setEnabled(false);
     }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -559,9 +560,9 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
- * @brief Save a PNG image of the plot to current EXE directory
+ * @brief Save a PNG image of the plot to current HOME directory
  */
-void MainWindow::on_savePNGButton_clicked()
+void MainWindow::on_actionRecord_PNG_triggered()
 {
     ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + '_' + QString::number(ui->plot->xAxis->coordToPixel(0)) + '_' + QString::number(ui->spinPoints->value()) + ".png", 1920, 1080, 2, 50);
     //ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);    // add home path before picture's name
@@ -742,6 +743,9 @@ void MainWindow::on_actionConnect_triggered()
 
       /* Open serial port and connect its signals */
       openPort (portInfo, baudRate, dataBits, parity, stopBits);
+
+      /* Enable PNG export */
+      ui->actionRecord_PNG->setEnabled(true);
   }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -801,7 +805,6 @@ void MainWindow::on_actionDisconnect_triggered()
       ui->actionRecord_stream->setEnabled(true);
       receivedData.clear();                                                             // Clear received string
 
-      //ui->savePNGButton->setEnabled (false);                                          // Disable export png, commented to be able to export when the plotting is stopped, permit zoom before export for example.
       enable_com_controls (true);
     }
 }
@@ -820,6 +823,9 @@ void MainWindow::on_actionClear_triggered()
     dataPointNumber = 0;
     emit setupPlot();
     ui->plot->replot();
+
+    /* Disable PNG export */
+    ui->actionRecord_PNG->setEnabled(false);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
