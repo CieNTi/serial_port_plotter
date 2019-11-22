@@ -528,13 +528,6 @@
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="QPushButton" name="savePNGButton">
-             <property name="text">
-              <string>Save PNG</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
         </layout>
@@ -555,12 +548,6 @@
       </item>
       <item>
        <widget class="QGroupBox" name="gridGroupBox">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>80</height>
-         </size>
-        </property>
         <property name="title">
          <string>TEXT CONTROLS</string>
         </property>
@@ -703,6 +690,7 @@
    <addaction name="actionHow_to_use"/>
    <addaction name="separator"/>
    <addaction name="actionRecord_stream"/>
+   <addaction name="actionRecord_PNG"/>
   </widget>
   <action name="actionConnect">
    <property name="icon">
@@ -832,6 +820,18 @@
    </property>
    <property name="visible">
     <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionRecord_PNG">
+   <property name="icon">
+    <iconset resource="res/serial_port_plotter.qrc">
+     <normaloff>:/serial_port_plotter/ExPNG_nor.png</normaloff>:/serial_port_plotter/ExPNG_nor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Record_PNG</string>
+   </property>
+   <property name="toolTip">
+    <string>Record the currently plot view in PNG image.</string>
    </property>
   </action>
  </widget>

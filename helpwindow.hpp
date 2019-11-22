@@ -27,7 +27,7 @@
 #ifndef HELPWINDOW_HPP
 #define HELPWINDOW_HPP
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
     class HelpWindow;

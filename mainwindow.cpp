@@ -124,7 +124,6 @@ void MainWindow::createUI()
       {
         enable_com_controls (false);
         ui->statusBar->showMessage ("No ports detected.");
-        ui->savePNGButton->setEnabled (false);
         return;
       }
 
@@ -152,7 +151,7 @@ void MainWindow::createUI()
     ui->comboBaud->addItem ("921600");
 
     /* Select 115200 bits by default */
-    ui->comboBaud->setCurrentIndex (7);
+    //ui->comboBaud->setCurrentIndex (7);       // done by loadSettings now
 
     /* Populate data bits combo box */
     ui->comboData->addItem ("8 bits");
@@ -169,7 +168,22 @@ void MainWindow::createUI()
 
     /* Initialize the listwidget */
     ui->listWidget_Channels->clear();
-}
+
+    // try to load settings, or populate with default value
+    loadSettings();
+    ui->comboPort->setCurrentIndex(m_prefs.port);
+    ui->comboBaud->setCurrentIndex(m_prefs.baud);
+    ui->comboData->setCurrentIndex(m_prefs.data);
+    ui->comboParity->setCurrentIndex(m_prefs.parity);
+    ui->comboStop->setCurrentIndex(m_prefs.stop);
+    ui->spinPoints->setValue(m_prefs.spinPoints);
+    ui->spinYStep->setValue(m_prefs.spinYStep);
+    ui->spinAxesMin->setValue(m_prefs.spinAxesMin);
+    ui->spinAxesMax->setValue(m_prefs.spinAxesMax);
+
+    // disable PNG export before starting record
+    ui->actionRecord_PNG->setEnabled(false);
+    }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
@@ -546,11 +560,13 @@ void MainWindow::on_spinYStep_valueChanged(int arg1)
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /**
- * @brief Save a PNG image of the plot to current EXE directory
+ * @brief Save a PNG image of the plot to current HOME directory
  */
-void MainWindow::on_savePNGButton_clicked()
+void MainWindow::on_actionRecord_PNG_triggered()
 {
-    ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
+    ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + '_' + QString::number(ui->plot->xAxis->coordToPixel(0)) + '_' + QString::number(ui->spinPoints->value()) + ".png", 1920, 1080, 2, 50);
+    //ui->plot->savePng (QDir::homePath() + '/' + QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);    // add home path before picture's name
+    //ui->plot->savePng (QString::number(dataPointNumber) + ".png", 1920, 1080, 2, 50);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -727,6 +743,9 @@ void MainWindow::on_actionConnect_triggered()
 
       /* Open serial port and connect its signals */
       openPort (portInfo, baudRate, dataBits, parity, stopBits);
+
+      /* Enable PNG export */
+      ui->actionRecord_PNG->setEnabled(true);
   }
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -786,7 +805,6 @@ void MainWindow::on_actionDisconnect_triggered()
       ui->actionRecord_stream->setEnabled(true);
       receivedData.clear();                                                             // Clear received string
 
-      ui->savePNGButton->setEnabled (false);
       enable_com_controls (true);
     }
 }
@@ -799,12 +817,23 @@ void MainWindow::on_actionDisconnect_triggered()
  */
 void MainWindow::on_actionClear_triggered()
 {
-    ui->plot->clearPlottables();
-    ui->listWidget_Channels->clear();
+
+    // from https://www.qcustomplot.com/index.php/support/forum/1304
+    // delete dataset but not the graph
+    for( int g=0; g<ui->plot->graphCount(); g++ )
+    {
+        ui->plot->graph(g)->data().data()->clear();
+    }
+    ui->plot->replot();
+//    ui->plot->clearPlottables();
+//    ui->listWidget_Channels->clear();
     channels = 0;
     dataPointNumber = 0;
     emit setupPlot();
     ui->plot->replot();
+
+    /* Disable PNG export */
+    ui->actionRecord_PNG->setEnabled(false);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -814,7 +843,8 @@ void MainWindow::on_actionClear_triggered()
  */
 void MainWindow::openCsvFile(void)
 {
-  m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
+    m_csvFile = new QFile(QDir::homePath() + '/' + QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");    // add home path before picture's name
+  //m_csvFile = new QFile(QDateTime::currentDateTime().toString("yyyy-MM-d-HH-mm-ss-")+"data-out.csv");
   if(!m_csvFile)
       return;
   if (!m_csvFile->open(QIODevice::ReadWrite | QIODevice::Text))
@@ -926,3 +956,56 @@ void MainWindow::on_pushButton_clicked()
         ui->comboPort->addItem (port.portName());
     }
 }
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Load settings from config file and populate preferences
+ *
+ */
+void MainWindow::loadSettings()
+{
+  QSettings settings;
+  m_prefs.port = settings.value("port", 0).toInt();
+  m_prefs.baud = settings.value("baud", 7).toInt();
+  m_prefs.data = settings.value("data", 0).toInt();
+  m_prefs.parity = settings.value("parity", 0).toInt();
+  m_prefs.stop = settings.value("stop", 0).toInt();
+  m_prefs.spinPoints = settings.value("spinPoints", 1000).toInt();
+  m_prefs.spinYStep = settings.value("spinYStep", 10).toInt();
+  m_prefs.spinAxesMin = settings.value("spinAxesMin", -100).toInt();
+  m_prefs.spinAxesMax = settings.value("spinAxesMax", 100).toInt();
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief Load settings from config file and populate preferences
+ *
+ */
+void MainWindow::saveSettings()
+{
+    QSettings settings;
+    settings.setValue("port", ui->comboPort->currentIndex());
+    settings.setValue("baud", ui->comboBaud->currentIndex());
+    settings.setValue("data", ui->comboData->currentIndex());
+    settings.setValue("parity", ui->comboParity->currentIndex());
+    settings.setValue("stop", ui->comboStop->currentIndex());
+    settings.setValue("spinPoints", ui->spinPoints->value());
+    settings.setValue("spinYStep", ui->spinYStep->value());
+    settings.setValue("spinAxesMin",  ui->spinAxesMin->value());
+    settings.setValue("spinAxesMax",  ui->spinAxesMax->value());
+}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/**
+ * @brief t the close event, save settings
+ *
+ */
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    saveSettings();
+    event->accept();
+}
+
+
