@@ -479,7 +479,7 @@ void MainWindow::readData()
         QByteArray data = serialPort->readAll();                                          // Read all data in QByteArray
 
         if(!data.isEmpty()) {                                                             // If the byte array is not empty
-            char *temp = data.data();                                                     // Get a '\0'-terminated char* to the data
+            unsigned char *temp = (unsigned char*)data.data();                                                     // Get a '\0'-terminated char* to the data
 
             if (!filterDisplayedData){
                 ui->textEdit_UartWindow->append(data);
