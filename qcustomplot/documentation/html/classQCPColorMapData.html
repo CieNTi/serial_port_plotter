@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPColorMapData Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -642,7 +642,7 @@ Protected Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Transforms plot coordinates given by <em>key</em> and <em>value</em> to cell indices of this <a class="el" href="classQCPColorMapData.html" title="Holds the two-dimensional data of a QCPColorMap plottable. ">QCPColorMapData</a> instance. The resulting cell indices are returned via the output parameters <em>keyIndex</em> and <em>valueIndex</em>.</p>
 <p>The retrieved key/value cell indices can then be used for example with <a class="el" href="classQCPColorMapData.html#a8e75eaf8746596319032a93f3d2d0683">setCell</a>.</p>
-<p>If you are only interested in a key or value index, you may pass 0 as <em>valueIndex</em> or <em>keyIndex</em>.</p>
+<p>If you are only interested in a key or value index, you may pass <code>nullptr</code> as <em>valueIndex</em> or <em>keyIndex</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a> always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a> with logarithmic axes, you shouldn't use the <a class="el" href="classQCPColorMapData.html#aca5b29e0ca2f299c9060fc6e1f74d0c8">QCPColorMapData::coordToCell</a> method as it uses a linear transformation to determine the cell index.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPColorMapData.html#af1a36385c78ab624cd617065602408b6">cellToCoord</a>, <a class="el" href="classQCPAxis.html#af15d1b3a7f7e9b53d759d3ccff1fe4b4">QCPAxis::coordToPixel</a> </dd></dl>
 
@@ -686,7 +686,7 @@ Protected Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Transforms cell indices given by <em>keyIndex</em> and <em>valueIndex</em> to cell indices of this <a class="el" href="classQCPColorMapData.html" title="Holds the two-dimensional data of a QCPColorMap plottable. ">QCPColorMapData</a> instance. The resulting coordinates are returned via the output parameters <em>key</em> and <em>value</em>.</p>
-<p>If you are only interested in a key or value coordinate, you may pass 0 as <em>key</em> or <em>value</em>.</p>
+<p>If you are only interested in a key or value coordinate, you may pass <code>nullptr</code> as <em>key</em> or <em>value</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a> always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a> with logarithmic axes, you shouldn't use the <a class="el" href="classQCPColorMapData.html#af1a36385c78ab624cd617065602408b6">QCPColorMapData::cellToCoord</a> method as it uses a linear transformation to determine the cell index.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPColorMapData.html#aca5b29e0ca2f299c9060fc6e1f74d0c8">coordToCell</a>, <a class="el" href="classQCPAxis.html#a536ef8f624cac59b6b6fdcb495723c57">QCPAxis::pixelToCoord</a> </dd></dl>
 

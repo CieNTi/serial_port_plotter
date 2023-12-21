@@ -576,8 +576,8 @@ void MainWindow::on_actionRecord_PNG_triggered()
  */
 void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
 {
-    int xx = int(ui->plot->xAxis->pixelToCoord(event->x()));
-    int yy = int(ui->plot->yAxis->pixelToCoord(event->y()));
+    int xx = int(ui->plot->xAxis->pixelToCoord(event->position().x()));
+    int yy = int(ui->plot->yAxis->pixelToCoord(event->position().y()));
     QString coordinates("X: %1 Y: %2");
     coordinates = coordinates.arg(xx).arg(yy);
     ui->statusBar->showMessage(coordinates);
@@ -590,9 +590,10 @@ void MainWindow::onMouseMoveInPlot(QMouseEvent *event)
  */
 void MainWindow::on_mouse_wheel_in_plot (QWheelEvent *event)
 {
-  QWheelEvent inverted_event = QWheelEvent(event->posF(), event->globalPosF(),
+  QWheelEvent inverted_event = QWheelEvent(event->position(), event->globalPosition(),
                                            -event->pixelDelta(), -event->angleDelta(),
-                                           0, Qt::Vertical, event->buttons(), event->modifiers());
+                                           event->buttons(),event->modifiers(),
+                                           Qt::ScrollUpdate, 0,Qt::MouseEventNotSynthesized );
   QApplication::sendEvent (ui->spinPoints, &inverted_event);
 }
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -937,7 +938,7 @@ void MainWindow::on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item)
     if(ui->plot->graph(graphIdx)->visible())
     {
         ui->plot->graph(graphIdx)->setVisible(false);
-        item->setBackgroundColor(Qt::black);
+        item->setBackground(Qt::black);
     }
     else
     {

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>Data Selection Mechanism</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -66,7 +66,7 @@ Accessing a data selection</h1>
 <p>Of course, the data selections returned by <a class="el" href="classQCPAbstractPlottable.html#a040bf09f41d456284cfd39cc37aa068f">QCPAbstractPlottable::selection</a> are always within the plottable's data bounds, as long as they aren't changed after retrieving the selection.</p>
 <h1><a class="anchor" id="dataselection-dataatpos"></a>
 Retrieving the data point at a given pixel position</h1>
-<p>If you only want to find out which data point of a plottable is at or close to a given pixel position (without the need for a click or actual selection event), you can use <a class="el" href="classQCPAbstractPlottable.html#a38efe9641d972992a3d44204bc80ec1d">QCPAbstractPlottable::selectTest</a>. For example, the following code retrieves an iterator to the data point closest to a given QPoint in pixel coordinates:</p>
+<p>If you only want to find out which data point of a plottable is at or close to a given pixel position (without the need for a click or actual selection event), you can use <a class="el" href="classQCPAbstractPlottable.html#a0c76697b1f1d9b857eaf8586e520277a">QCPAbstractPlottable::selectTest</a>. For example, the following code retrieves an iterator to the data point closest to a given QPoint in pixel coordinates:</p>
 <div class="fragment"><div class="line">  QCPGraphDataContainer::const_iterator it = graph-&gt;data()-&gt;constEnd();</div><div class="line">  QVariant details;</div><div class="line">  <span class="keywordflow">if</span> (graph-&gt;selectTest(QPoint(123, 456), <span class="keyword">false</span>, &amp;details)) <span class="comment">// QPoint could be e.g. event-&gt;pos() of a mouse event</span></div><div class="line">  {</div><div class="line">    <a class="code" href="classQCPDataSelection.html">QCPDataSelection</a> dataPoints = details.value&lt;<a class="code" href="classQCPDataSelection.html">QCPDataSelection</a>&gt;();</div><div class="line">    <span class="keywordflow">if</span> (dataPoints.<a class="code" href="classQCPDataSelection.html#ac9e74dd294778aa799216c3435c9c4f0">dataPointCount</a>() &gt; 0)</div><div class="line">      it = graph-&gt;data()-&gt;at(dataPoints.<a class="code" href="classQCPDataSelection.html#a6956acf6a9a49a353b4f9b58608978ad">dataRange</a>().begin());</div><div class="line">  }</div><div class="line">  <span class="comment">// iterator &quot;it&quot; now carries the data point at pixel coordinates (123, 456), or constEnd if no data point was hit.</span></div></div><!-- fragment --><p> <br />
 <br />
 <br />

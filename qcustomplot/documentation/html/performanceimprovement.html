@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>Plot Performance Improvement</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -21,7 +21,7 @@
 <div class="title">Plot Performance Improvement </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> employs various techniques like adaptive sampling and text object caching in order to cut down the time required to replot. However, some features like complex translucent fills and thick lines can still cause a significant slow down. If you notice this in your application, here are some hints on how to increase replot performance.</p>
+<div class="textblock"><p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> employs various techniques like adaptive sampling and text object caching in order to cut down the time required to replot. However, some features like complex translucent fills and thick lines can still cause a significant slow down. If you notice this in your application, here are some hints on how to increase replot performance (to benchmark performance, see <a class="el" href="classQCustomPlot.html#ad582e335061a25da006acc58a4009ccc">QCustomPlot::replotTime</a>).</p>
 <p>By far the most time is spent in the drawing functions, specifically the drawing of high density graphs and other plottables. For maximum performance, consider the following points:</p>
 <ul>
 <li>Especially if you are using complex fills under/between graphs, thick lines, translucent colors: enable <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>'s OpenGL hardware accelerated rendering via <a class="el" href="classQCustomPlot.html#a7db1adc09016329f3aef7c60da935789">QCustomPlot::setOpenGl</a>. For details how to correctly enable OpenGL acceleration, see the documentation there. OpenGL acceleration is available for all Qt versions that are supported by <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>, and the respective backend is chosen appropriately. <br />
@@ -42,6 +42,9 @@ Note that with OpenGL acceleration, the maximum frame rate might be constrained 
 </ul>
 <ul>
 <li>To increase responsiveness during range dragging, consider setting <a class="el" href="classQCustomPlot.html#a775bdcb6329d44701aeaa6135b0e5265">QCustomPlot::setNoAntialiasingOnDrag</a> to true. This is only relevant if using the default software renderer. (OpenGL antialiasing can't be toggled on-the-fly and would require an expensive reallocation of the sample buffer.)</li>
+</ul>
+<ul>
+<li>Consider using setAttribute(Qt::WA_OpaquePaintEvent) on the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget. This allows to save one fill at every paint event. Note though that on embedded systems, this may prevent Qt from graying out the widget together with the rest of the UI, when a modal dialog is shown.</li>
 </ul>
 <ul>
 <li>Qt4 only: On X11 (GNU/Linux), avoid the slow native drawing system, use <em>raster</em> by supplying "-graphicssystem raster" as command line argument or calling <code>QApplication::setGraphicsSystem("raster")</code> before creating the QApplication object.</li>

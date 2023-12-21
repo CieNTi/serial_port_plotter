@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCP Namespace Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -254,7 +254,9 @@ const QMetaObject&#160;</td><td class="memItemRight" valign="bottom"><b>staticMe
 <p><code>Interactions</code> is a flag of or-combined elements of this enum type.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5ee1e2f6ae27419deca53e75907c27e5">QCustomPlot::setInteractions</a> </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18"></a>iRangeDrag&#160;</td><td class="fielddoc"><p><code>0x001</code> Axis ranges are draggable (see <a class="el" href="classQCPAxisRect.html#ae6aef2f7211ba6097c925dcd26008418">QCPAxisRect::setRangeDrag</a>, <a class="el" href="classQCPAxisRect.html#a648cce336bd99daac4a5ca3e5743775d">QCPAxisRect::setRangeDragAxes</a>) </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037a9acac96048a12b0d2b5396c9b4df768b"></a>iNone&#160;</td><td class="fielddoc"><p><code>0x000</code> None of the interactions are possible </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18"></a>iRangeDrag&#160;</td><td class="fielddoc"><p><code>0x001</code> Axis ranges are draggable (see <a class="el" href="classQCPAxisRect.html#ae6aef2f7211ba6097c925dcd26008418">QCPAxisRect::setRangeDrag</a>, <a class="el" href="classQCPAxisRect.html#a648cce336bd99daac4a5ca3e5743775d">QCPAxisRect::setRangeDragAxes</a>) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14"></a>iRangeZoom&#160;</td><td class="fielddoc"><p><code>0x002</code> Axis ranges are zoomable with the mouse wheel (see <a class="el" href="classQCPAxisRect.html#a7960a9d222f1c31d558b064b60f86a31">QCPAxisRect::setRangeZoom</a>, <a class="el" href="classQCPAxisRect.html#a9442cca2aa358405f39a64d51eca13d2">QCPAxisRect::setRangeZoomAxes</a>) </p>
 </td></tr>
@@ -269,6 +271,8 @@ const QMetaObject&#160;</td><td class="memItemRight" valign="bottom"><b>staticMe
 <tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260"></a>iSelectItems&#160;</td><td class="fielddoc"><p><code>0x040</code> Items are selectable (Rectangles, Arrows, Textitems, etc. see <a class="el" href="classQCPAbstractItem.html">QCPAbstractItem</a>) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949"></a>iSelectOther&#160;</td><td class="fielddoc"><p><code>0x080</code> All other objects are selectable (e.g. your own derived layerables, other layout elements,...) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2ad6bb6281c7c2d593d4277b44c2b037ac8eec3d1e6c3eadf6af60968906db8db"></a>iSelectPlottablesBeyondAxisRect&#160;</td><td class="fielddoc"><p><code>0x100</code> When performing plottable selection/hit tests, this flag extends the sensitive area beyond the axis rect </p>
 </td></tr>
 </table>
 

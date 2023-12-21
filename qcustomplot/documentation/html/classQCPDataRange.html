@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPDataRange Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -80,7 +80,7 @@ Related Non-Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Describes a data range given by begin and end index. </p>
-<p><a class="el" href="classQCPDataRange.html" title="Describes a data range given by begin and end index. ">QCPDataRange</a> holds two integers describing the begin (<a class="el" href="classQCPDataRange.html#a54ff59048e01e46ac4aefafc844626c6">setBegin</a>) and end (<a class="el" href="classQCPDataRange.html#a277f1a9eafe70b9184d9c00b641ae5de">setEnd</a>) index of a contiguous set of data points. The end index points to the data point just after the last data point that's part of the data range, similarly to the nomenclature used in standard iterators.</p>
+<p><a class="el" href="classQCPDataRange.html" title="Describes a data range given by begin and end index. ">QCPDataRange</a> holds two integers describing the begin (<a class="el" href="classQCPDataRange.html#a54ff59048e01e46ac4aefafc844626c6">setBegin</a>) and end (<a class="el" href="classQCPDataRange.html#a277f1a9eafe70b9184d9c00b641ae5de">setEnd</a>) index of a contiguous set of data points. The <em>end</em> index corresponds to the data point just after the last data point of the data range, like in standard iterators.</p>
 <p>Data Ranges are not bound to a certain plottable, thus they can be freely exchanged, created and modified. If a non-contiguous data set shall be described, the class <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> is used, which holds and manages multiple instances of <a class="el" href="classQCPDataRange.html">QCPDataRange</a>. In most situations, <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> is thus used.</p>
 <p>Both <a class="el" href="classQCPDataRange.html">QCPDataRange</a> and <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> offer convenience methods to work with them, e.g. <a class="el" href="classQCPDataRange.html#a93529421d12fdd3a8bdb2b8061936352">bounded</a>, <a class="el" href="classQCPDataRange.html#a36c8ad8acf177ffeb0a72c8d73030844">expanded</a>, <a class="el" href="classQCPDataRange.html#a8a1c437f9beffd55621f48f961d7f679">intersects</a>, <a class="el" href="classQCPDataRange.html#a84e1e03129dd52528efb4bac18d30183">intersection</a>, <a class="el" href="classQCPDataRange.html#a279ed36602b39607699dc5652bcaf813">adjusted</a>, <a class="el" href="classQCPDataRange.html#a13ca398776374a3160aa85433718b812">contains</a>. Further, addition and subtraction operators (defined in <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a>) can be used to join/subtract data ranges and data selections (or mixtures), to retrieve a corresponding <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a>.</p>
 <p>QCustomPlot's <a class="el" href="dataselection.html">data selection mechanism</a> is based on <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> and <a class="el" href="classQCPDataRange.html" title="Describes a data range given by begin and end index. ">QCPDataRange</a>.</p>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPAxisTickerDateTime Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -48,10 +48,15 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeFormat</b>
 <tr class="memitem:ae688e69ba55c9247af26b6db85cf9573"><td class="memItemLeft" align="right" valign="top"><a id="ae688e69ba55c9247af26b6db85cf9573"></a>
 Qt::TimeSpec&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeSpec</b> () const</td></tr>
 <tr class="separator:ae688e69ba55c9247af26b6db85cf9573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a8f7751d9d6deb0d9fd7513696f7b1"><td class="memItemLeft" align="right" valign="top"><a id="a64a8f7751d9d6deb0d9fd7513696f7b1"></a>
+QTimeZone&#160;</td><td class="memItemRight" valign="bottom"><b>timeZone</b> () const</td></tr>
+<tr class="separator:a64a8f7751d9d6deb0d9fd7513696f7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad52660a82f688395468674d555f6a86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a> (const QString &amp;format)</td></tr>
 <tr class="separator:ad52660a82f688395468674d555f6a86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd987c7197e42ab61e67fb1c38abebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a> (Qt::TimeSpec spec)</td></tr>
 <tr class="separator:afbd987c7197e42ab61e67fb1c38abebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e46bf56e771b08e1d344fd95f3dc405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> (const QTimeZone &amp;zone)</td></tr>
+<tr class="separator:a2e46bf56e771b08e1d344fd95f3dc405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5388e048cbd32cf1ba730b9f1859eb5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a5388e048cbd32cf1ba730b9f1859eb5c">setTickOrigin</a> (double origin)</td></tr>
 <tr class="separator:a5388e048cbd32cf1ba730b9f1859eb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea905872b8171847a49a5e093fb0c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a2ea905872b8171847a49a5e093fb0c48">setTickOrigin</a> (const QDateTime &amp;origin)</td></tr>
@@ -81,10 +86,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>tickOrigin</b> () c
 Static Public Functions</h2></td></tr>
 <tr class="memitem:a4c1761ad057f5564804a53f942629b53"><td class="memItemLeft" align="right" valign="top">static QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> (double key)</td></tr>
 <tr class="separator:a4c1761ad057f5564804a53f942629b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa24f293f16fff0f937bf71f4140033f1"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#aa24f293f16fff0f937bf71f4140033f1">dateTimeToKey</a> (const QDateTime dateTime)</td></tr>
-<tr class="separator:aa24f293f16fff0f937bf71f4140033f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad87afc7dba65843f68da5ca88bc004f4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#ad87afc7dba65843f68da5ca88bc004f4">dateTimeToKey</a> (const QDate date)</td></tr>
-<tr class="separator:ad87afc7dba65843f68da5ca88bc004f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23705013d5f289de98667bd46950ac8c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a23705013d5f289de98667bd46950ac8c">dateTimeToKey</a> (const QDateTime &amp;dateTime)</td></tr>
+<tr class="separator:a23705013d5f289de98667bd46950ac8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4498f59a228a2300dff67525a6c4c250"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTickerDateTime.html#a4498f59a228a2300dff67525a6c4c250">dateTimeToKey</a> (const QDate &amp;date, Qt::TimeSpec timeSpec=Qt::LocalTime)</td></tr>
+<tr class="separator:a4498f59a228a2300dff67525a6c4c250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -110,8 +115,8 @@ Protected Functions</h2></td></tr>
 <tr class="separator:ab28cc1ab549489be7975f5ce7e717916 inherit pro_methods_classQCPAxisTicker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea0a7c4ca1c610f92b9bd5944ab4260 inherit pro_methods_classQCPAxisTicker"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#a4ea0a7c4ca1c610f92b9bd5944ab4260">pickClosest</a> (double target, const QVector&lt; double &gt; &amp;candidates) const</td></tr>
 <tr class="separator:a4ea0a7c4ca1c610f92b9bd5944ab4260 inherit pro_methods_classQCPAxisTicker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f1e223bafbf2cec7c3ba8b08d5c77e8 inherit pro_methods_classQCPAxisTicker"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#a2f1e223bafbf2cec7c3ba8b08d5c77e8">getMantissa</a> (double input, double *magnitude=0) const</td></tr>
-<tr class="separator:a2f1e223bafbf2cec7c3ba8b08d5c77e8 inherit pro_methods_classQCPAxisTicker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe99aaaf6c512812869b0a19937c76ff inherit pro_methods_classQCPAxisTicker"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#abe99aaaf6c512812869b0a19937c76ff">getMantissa</a> (double input, double *magnitude=nullptr) const</td></tr>
+<tr class="separator:abe99aaaf6c512812869b0a19937c76ff inherit pro_methods_classQCPAxisTicker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7df6c72876b7abd67c932663a0b0f6a inherit pro_methods_classQCPAxisTicker"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#ac7df6c72876b7abd67c932663a0b0f6a">cleanMantissa</a> (double input) const</td></tr>
 <tr class="separator:ac7df6c72876b7abd67c932663a0b0f6a inherit pro_methods_classQCPAxisTicker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -126,11 +131,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="image">
 <img src="axisticker-datetime.png" alt="axisticker-datetime.png"/>
 </div>
-<p>This <a class="el" href="classQCPAxisTicker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels. ">QCPAxisTicker</a> subclass generates ticks that correspond to real calendar dates and times. The plot axis coordinate is interpreted as Unix Time, so seconds since Epoch (January 1, 1970, 00:00 UTC). This is also used for example by QDateTime in the <code>toTime_t()/setTime_t()</code> methods with a precision of one second. Since Qt 4.7, millisecond accuracy can be obtained from QDateTime by using <code>QDateTime::fromMSecsSinceEpoch()/1000.0</code>. The static methods <a class="el" href="classQCPAxisTickerDateTime.html#aa24f293f16fff0f937bf71f4140033f1">dateTimeToKey</a> and <a class="el" href="classQCPAxisTickerDateTime.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> conveniently perform this conversion achieving a precision of one millisecond on all Qt versions.</p>
-<p>The format of the date/time display in the tick labels is controlled with <a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>. If a different time spec (time zone) shall be used, see <a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a>.</p>
+<p>This <a class="el" href="classQCPAxisTicker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels. ">QCPAxisTicker</a> subclass generates ticks that correspond to real calendar dates and times. The plot axis coordinate is interpreted as Unix Time, so seconds since Epoch (January 1, 1970, 00:00 UTC). This is also used for example by QDateTime in the <code>toTime_t()/setTime_t()</code> methods with a precision of one second. Since Qt 4.7, millisecond accuracy can be obtained from QDateTime by using <code>QDateTime::fromMSecsSinceEpoch()/1000.0</code>. The static methods <a class="el" href="classQCPAxisTickerDateTime.html#a23705013d5f289de98667bd46950ac8c">dateTimeToKey</a> and <a class="el" href="classQCPAxisTickerDateTime.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> conveniently perform this conversion achieving a precision of one millisecond on all Qt versions.</p>
+<p>The format of the date/time display in the tick labels is controlled with <a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>. If a different time spec or time zone shall be used for the tick label appearance, see <a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a> or <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a>, respectively.</p>
 <p>This ticker produces unequal tick spacing in order to provide intuitive date and time-of-day ticks. For example, if the axis range spans a few years such that there is one tick per year, ticks will be positioned on 1. January of every year. This is intuitive but, due to leap years, will result in slightly unequal tick intervals (visually unnoticeable). The same can be seen in the image above: even though the number of days varies month by month, this ticker generates ticks on the same day of each month.</p>
 <p>If you would like to change the date/time that is used as a (mathematical) starting date for the ticks, use the <a class="el" href="classQCPAxisTickerDateTime.html#a2ea905872b8171847a49a5e093fb0c48">setTickOrigin(const QDateTime &amp;origin)</a> method overload, which takes a QDateTime. If you pass 15. July, 9:45 to this method, the yearly ticks will end up on 15. July at 9:45 of every year.</p>
-<p>The ticker can be created and assigned to an axis like this: </p><div class="fragment"><div class="line">  QSharedPointer&lt;QCPAxisTickerDateTime&gt; dateTimeTicker(<span class="keyword">new</span> <a class="code" href="classQCPAxisTickerDateTime.html">QCPAxisTickerDateTime</a>);</div><div class="line">  customPlot-&gt;xAxis-&gt;setTicker(dateTimeTicker);</div><div class="line">  </div><div class="line">  customPlot-&gt;xAxis-&gt;setRange(<a class="code" href="classQCPAxisTickerDateTime.html#aa24f293f16fff0f937bf71f4140033f1">QCPAxisTickerDateTime::dateTimeToKey</a>(QDate(2013, 11, 16)), <a class="code" href="classQCPAxisTickerDateTime.html#aa24f293f16fff0f937bf71f4140033f1">QCPAxisTickerDateTime::dateTimeToKey</a>(QDate(2015, 5, 2)));</div><div class="line">  dateTimeTicker-&gt;setDateTimeFormat(<span class="stringliteral">&quot;d. MMM\nyyyy&quot;</span>);</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>If you rather wish to display relative times in terms of days, hours, minutes, seconds and milliseconds, and are not interested in the intricacies of real calendar dates with months and (leap) years, have a look at <a class="el" href="classQCPAxisTickerTime.html" title="Specialized axis ticker for time spans in units of milliseconds to days. ">QCPAxisTickerTime</a> instead. </dd></dl>
+<p>The ticker can be created and assigned to an axis like this: </p><div class="fragment"><div class="line">  QSharedPointer&lt;QCPAxisTickerDateTime&gt; dateTimeTicker(<span class="keyword">new</span> <a class="code" href="classQCPAxisTickerDateTime.html">QCPAxisTickerDateTime</a>);</div><div class="line">  customPlot-&gt;xAxis-&gt;setTicker(dateTimeTicker);</div><div class="line">  </div><div class="line">  customPlot-&gt;xAxis-&gt;setRange(<a class="code" href="classQCPAxisTickerDateTime.html#a23705013d5f289de98667bd46950ac8c">QCPAxisTickerDateTime::dateTimeToKey</a>(QDate(2013, 11, 16)), <a class="code" href="classQCPAxisTickerDateTime.html#a23705013d5f289de98667bd46950ac8c">QCPAxisTickerDateTime::dateTimeToKey</a>(QDate(2015, 5, 2)));</div><div class="line">  dateTimeTicker-&gt;setDateTimeFormat(<span class="stringliteral">&quot;d. MMM\nyyyy&quot;</span>);</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>If you rather wish to display relative times in terms of days, hours, minutes, seconds and milliseconds, and are not interested in the intricacies of real calendar dates with months and (leap) years, have a look at <a class="el" href="classQCPAxisTickerTime.html" title="Specialized axis ticker for time spans in units of milliseconds to days. ">QCPAxisTickerTime</a> instead. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a84cc5c6bbc7c99c1f9bd4b3a392e1b9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84cc5c6bbc7c99c1f9bd4b3a392e1b9d">&sect;&nbsp;</a></span>QCPAxisTickerDateTime()</h2>
@@ -167,8 +172,56 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets the format in which dates and times are displayed as tick labels. For details about the <em>format</em> string, see the documentation of QDateTime::toString().</p>
-<p>Newlines can be inserted with "\n".</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a> </dd></dl>
+<p>Typical expressions are </p><table class="doxtable">
+<tr>
+<td><code>d</code> </td><td>The day as a number without a leading zero (1 to 31) </td></tr>
+<tr>
+<td><code>dd</code> </td><td>The day as a number with a leading zero (01 to 31) </td></tr>
+<tr>
+<td><code>ddd</code> </td><td>The abbreviated localized day name (e.g. 'Mon' to 'Sun'). Uses the system locale to localize the name, i.e. QLocale::system(). </td></tr>
+<tr>
+<td><code>dddd</code> </td><td>The long localized day name (e.g. 'Monday' to 'Sunday'). Uses the system locale to localize the name, i.e. QLocale::system(). </td></tr>
+<tr>
+<td><code>M</code> </td><td>The month as a number without a leading zero (1 to 12) </td></tr>
+<tr>
+<td><code>MM</code> </td><td>The month as a number with a leading zero (01 to 12) </td></tr>
+<tr>
+<td><code>MMM</code> </td><td>The abbreviated localized month name (e.g. 'Jan' to 'Dec'). Uses the system locale to localize the name, i.e. QLocale::system(). </td></tr>
+<tr>
+<td><code>MMMM</code> </td><td>The long localized month name (e.g. 'January' to 'December'). Uses the system locale to localize the name, i.e. QLocale::system(). </td></tr>
+<tr>
+<td><code>yy</code> </td><td>The year as a two digit number (00 to 99) </td></tr>
+<tr>
+<td><code>yyyy</code> </td><td>The year as a four digit number. If the year is negative, a minus sign is prepended, making five characters. </td></tr>
+<tr>
+<td><code>h</code> </td><td>The hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display) </td></tr>
+<tr>
+<td><code>hh</code> </td><td>The hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display) </td></tr>
+<tr>
+<td><code>H</code> </td><td>The hour without a leading zero (0 to 23, even with AM/PM display) </td></tr>
+<tr>
+<td><code>HH</code> </td><td>The hour with a leading zero (00 to 23, even with AM/PM display) </td></tr>
+<tr>
+<td><code>m</code> </td><td>The minute without a leading zero (0 to 59) </td></tr>
+<tr>
+<td><code>mm</code> </td><td>The minute with a leading zero (00 to 59) </td></tr>
+<tr>
+<td><code>s</code> </td><td>The whole second, without any leading zero (0 to 59) </td></tr>
+<tr>
+<td><code>ss</code> </td><td>The whole second, with a leading zero where applicable (00 to 59) </td></tr>
+<tr>
+<td><code>z</code> </td><td>The fractional part of the second, to go after a decimal point, without trailing zeroes (0 to 999). Thus "s.z" reports the seconds to full available (millisecond) precision without trailing zeroes. </td></tr>
+<tr>
+<td><code>zzz</code> </td><td>The fractional part of the second, to millisecond precision, including trailing zeroes where applicable (000 to 999). </td></tr>
+<tr>
+<td><code>AP</code> or <code>A</code> </td><td>Use AM/PM display. A/AP will be replaced by an upper-case version of either QLocale::amText() or QLocale::pmText(). </td></tr>
+<tr>
+<td><code>ap</code> or <code>a</code> </td><td>Use am/pm display. a/ap will be replaced by a lower-case version of either QLocale::amText() or QLocale::pmText(). </td></tr>
+<tr>
+<td><code>t</code> </td><td>The timezone (for example "CEST") </td></tr>
+</table>
+<p>Newlines can be inserted with <code>"\n"</code>, literal strings (even when containing above expressions) by encapsulating them using single-quotes. A literal single quote can be generated by using two consecutive single quotes in the format.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> </dd></dl>
 
 </div>
 </div>
@@ -188,8 +241,29 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets the time spec that is used for creating the tick labels from corresponding dates/times.</p>
-<p>The default value of QDateTime objects (and also <a class="el" href="classQCPAxisTickerDateTime.html" title="Specialized axis ticker for calendar dates and times as axis ticks. ">QCPAxisTickerDateTime</a>) is <code>Qt::LocalTime</code>. However, if the date time values passed to <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> (e.g. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set <em>spec</em> to <code>Qt::UTC</code> to get the correct axis labels.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a> </dd></dl>
+<p>The default value of QDateTime objects (and also <a class="el" href="classQCPAxisTickerDateTime.html" title="Specialized axis ticker for calendar dates and times as axis ticks. ">QCPAxisTickerDateTime</a>) is <code>Qt::LocalTime</code>. However, if the displayed tick labels shall be given in UTC, set <em>spec</em> to <code>Qt::UTC</code>.</p>
+<p>Tick labels corresponding to other time zones can be achieved with <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> (which sets <em>spec</em> to <code>Qt::TimeZone</code> internally). Note that if <em>spec</em> is afterwards set to not be <code>Qt::TimeZone</code> again, the <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> setting will be ignored accordingly.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2e46bf56e771b08e1d344fd95f3dc405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e46bf56e771b08e1d344fd95f3dc405">&sect;&nbsp;</a></span>setTimeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPAxisTickerDateTime::setTimeZone </td>
+          <td>(</td>
+          <td class="paramtype">const QTimeZone &amp;&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the time zone that is used for creating the tick labels from corresponding dates/times. The time spec (<a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a>) is set to <code>Qt::TimeZone</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a> </dd></dl>
 
 </div>
 </div>
@@ -258,12 +332,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A convenience method which turns <em>key</em> (in seconds since Epoch 1. Jan 1970, 00:00 UTC) into a QDateTime object. This can be used to turn axis coordinates to actual QDateTimes.</p>
 <p>The accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDateTime::fromMSecsSinceEpoch in Qt 4.6)</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#aa24f293f16fff0f937bf71f4140033f1">dateTimeToKey</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#a23705013d5f289de98667bd46950ac8c">dateTimeToKey</a> </dd></dl>
 
 </div>
 </div>
-<a id="aa24f293f16fff0f937bf71f4140033f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa24f293f16fff0f937bf71f4140033f1">&sect;&nbsp;</a></span>dateTimeToKey() <span class="overload">[1/2]</span></h2>
+<a id="a23705013d5f289de98667bd46950ac8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23705013d5f289de98667bd46950ac8c">&sect;&nbsp;</a></span>dateTimeToKey() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +348,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">double QCPAxisTickerDateTime::dateTimeToKey </td>
           <td>(</td>
-          <td class="paramtype">const QDateTime&#160;</td>
+          <td class="paramtype">const QDateTime &amp;&#160;</td>
           <td class="paramname"><em>dateTime</em></td><td>)</td>
           <td></td>
         </tr>
@@ -292,8 +366,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad87afc7dba65843f68da5ca88bc004f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87afc7dba65843f68da5ca88bc004f4">&sect;&nbsp;</a></span>dateTimeToKey() <span class="overload">[2/2]</span></h2>
+<a id="a4498f59a228a2300dff67525a6c4c250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4498f59a228a2300dff67525a6c4c250">&sect;&nbsp;</a></span>dateTimeToKey() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,9 +378,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">double QCPAxisTickerDateTime::dateTimeToKey </td>
           <td>(</td>
-          <td class="paramtype">const QDate&#160;</td>
-          <td class="paramname"><em>date</em></td><td>)</td>
+          <td class="paramtype">const QDate &amp;&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Qt::TimeSpec&#160;</td>
+          <td class="paramname"><em>timeSpec</em> = <code>Qt::LocalTime</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -317,6 +401,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>This is an overloaded function.</p>
 <p>A convenience method which turns a QDate object into a double value that corresponds to seconds since Epoch (1. Jan 1970, 00:00 UTC). This is the format used as axis coordinates by <a class="el" href="classQCPAxisTickerDateTime.html" title="Specialized axis ticker for calendar dates and times as axis ticks. ">QCPAxisTickerDateTime</a>.</p>
+<p>The returned value will be the start of the passed day of <em>date</em>, interpreted in the given <em>timeSpec</em>.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAxisTickerDateTime.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> </dd></dl>
 
 </div>
@@ -427,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Generates a date/time tick label for tick coordinate <em>tick</em>, based on the currently set format (<a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>) and time spec (<a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a>).</p>
+<p>Generates a date/time tick label for tick coordinate <em>tick</em>, based on the currently set format (<a class="el" href="classQCPAxisTickerDateTime.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a>), time spec (<a class="el" href="classQCPAxisTickerDateTime.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a>), and possibly time zone (<a class="el" href="classQCPAxisTickerDateTime.html#a2e46bf56e771b08e1d344fd95f3dc405">setTimeZone</a>).</p>
 <p>For general information about this virtual method, see the base class implementation. </p>
 
 <p>Reimplemented from <a class="el" href="classQCPAxisTicker.html#a8201eb4aa8be192bf786b126eb5ee089">QCPAxisTicker</a>.</p>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPAxisTicker Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -87,8 +87,8 @@ Protected Functions</h2></td></tr>
 <tr class="separator:ab28cc1ab549489be7975f5ce7e717916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea0a7c4ca1c610f92b9bd5944ab4260"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#a4ea0a7c4ca1c610f92b9bd5944ab4260">pickClosest</a> (double target, const QVector&lt; double &gt; &amp;candidates) const</td></tr>
 <tr class="separator:a4ea0a7c4ca1c610f92b9bd5944ab4260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f1e223bafbf2cec7c3ba8b08d5c77e8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#a2f1e223bafbf2cec7c3ba8b08d5c77e8">getMantissa</a> (double input, double *magnitude=0) const</td></tr>
-<tr class="separator:a2f1e223bafbf2cec7c3ba8b08d5c77e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe99aaaf6c512812869b0a19937c76ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#abe99aaaf6c512812869b0a19937c76ff">getMantissa</a> (double input, double *magnitude=nullptr) const</td></tr>
+<tr class="separator:abe99aaaf6c512812869b0a19937c76ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7df6c72876b7abd67c932663a0b0f6a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPAxisTicker.html#ac7df6c72876b7abd67c932663a0b0f6a">cleanMantissa</a> (double input) const</td></tr>
 <tr class="separator:ac7df6c72876b7abd67c932663a0b0f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -306,7 +306,7 @@ Creating own axis tickers</h1>
 </div><div class="memdoc">
 <p>This is the method called by <a class="el" href="classQCPAxis.html" title="Manages a single axis inside a QCustomPlot. ">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>).</p>
 <p>The ticks are generated for the specified <em>range</em>. The generated labels typically follow the specified <em>locale</em>, <em>formatChar</em> and number <em>precision</em>, however this might be different (or even irrelevant) for certain <a class="el" href="classQCPAxisTicker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels. ">QCPAxisTicker</a> subclasses.</p>
-<p>The output parameter <em>ticks</em> is filled with the generated tick positions in axis coordinates. The output parameters <em>subTicks</em> and <em>tickLabels</em> are optional (set them to 0 if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to <em>ticks</em> by index. </p>
+<p>The output parameter <em>ticks</em> is filled with the generated tick positions in axis coordinates. The output parameters <em>subTicks</em> and <em>tickLabels</em> are optional (set them to <code>nullptr</code> if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to <em>ticks</em> by index. </p>
 
 </div>
 </div>
@@ -336,7 +336,7 @@ Creating own axis tickers</h1>
 <p>Takes the entire currently visible axis range and returns a sensible tick step in order to provide readable tick labels as well as a reasonable number of tick counts (see <a class="el" href="classQCPAxisTicker.html#a47752abba8293e6dc18491501ae34008">setTickCount</a>, <a class="el" href="classQCPAxisTicker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a>).</p>
 <p>If a <a class="el" href="classQCPAxisTicker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels. ">QCPAxisTicker</a> subclass only wants a different tick step behaviour than the default implementation, it should reimplement this method. See <a class="el" href="classQCPAxisTicker.html#ac7df6c72876b7abd67c932663a0b0f6a">cleanMantissa</a> for a possible helper function. </p>
 
-<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a0cfa7330d77d827004d49b6d9e8a8f84">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerTime.html#ae651cc7e62a37d95e777913d3481f37f">QCPAxisTickerTime</a>, <a class="el" href="classQCPAxisTickerFixed.html#a7d7feb131738fc6c91e30e8058c671c1">QCPAxisTickerFixed</a>, <a class="el" href="classQCPAxisTickerDateTime.html#adf5f99b07bcab746dadc1321691abda5">QCPAxisTickerDateTime</a>, <a class="el" href="classQCPAxisTickerText.html#a3db56d8bb32347b45b78190667553af5">QCPAxisTickerText</a>, and <a class="el" href="classQCPAxisTickerLog.html#a6e7fa635aaceadb7dd7f639dd313fe7e">QCPAxisTickerLog</a>.</p>
+<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a0cfa7330d77d827004d49b6d9e8a8f84">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerDateTime.html#adf5f99b07bcab746dadc1321691abda5">QCPAxisTickerDateTime</a>, <a class="el" href="classQCPAxisTickerTime.html#ae651cc7e62a37d95e777913d3481f37f">QCPAxisTickerTime</a>, <a class="el" href="classQCPAxisTickerFixed.html#a7d7feb131738fc6c91e30e8058c671c1">QCPAxisTickerFixed</a>, and <a class="el" href="classQCPAxisTickerText.html#a3db56d8bb32347b45b78190667553af5">QCPAxisTickerText</a>.</p>
 
 </div>
 </div>
@@ -366,7 +366,7 @@ Creating own axis tickers</h1>
 <p>Takes the <em>tickStep</em>, i.e. the distance between two consecutive ticks, and returns an appropriate number of sub ticks for that specific tick step.</p>
 <p>Note that a returned sub tick count of e.g. 4 will split each tick interval into 5 sections. </p>
 
-<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a6ab1607192d85580730ee3d996fcdb1d">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerTime.html#a63262ef6286741344b5fcb9958707865">QCPAxisTickerTime</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a9ca4c826b2bbc2d02f144db54e49434b">QCPAxisTickerDateTime</a>, <a class="el" href="classQCPAxisTickerText.html#ab5b6f425cb2e0047735dd209958f8717">QCPAxisTickerText</a>, and <a class="el" href="classQCPAxisTickerLog.html#a562e859bad12ba5d3d849d41c9ab363a">QCPAxisTickerLog</a>.</p>
+<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a6ab1607192d85580730ee3d996fcdb1d">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a9ca4c826b2bbc2d02f144db54e49434b">QCPAxisTickerDateTime</a>, <a class="el" href="classQCPAxisTickerTime.html#a63262ef6286741344b5fcb9958707865">QCPAxisTickerTime</a>, <a class="el" href="classQCPAxisTickerText.html#ab5b6f425cb2e0047735dd209958f8717">QCPAxisTickerText</a>, and <a class="el" href="classQCPAxisTickerLog.html#a562e859bad12ba5d3d849d41c9ab363a">QCPAxisTickerLog</a>.</p>
 
 </div>
 </div>
@@ -418,7 +418,7 @@ Creating own axis tickers</h1>
 <p>This method returns the tick label string as it should be printed under the <em>tick</em> coordinate. If a textual number is returned, it should respect the provided <em>locale</em>, <em>formatChar</em> and <em>precision</em>.</p>
 <p>If the returned value contains exponentials of the form "2e5" and beautifully typeset powers is enabled in the <a class="el" href="classQCPAxis.html" title="Manages a single axis inside a QCustomPlot. ">QCPAxis</a> number format (<a class="el" href="classQCPAxis.html#ae585a54dc2aac662e90a2ca82f002590">QCPAxis::setNumberFormat</a>), the exponential part will be formatted accordingly using multiplication symbol and superscript during rendering of the label automatically. </p>
 
-<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a88fbe54a72c0cebb7c29cbbedb10a7f3">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerTime.html#a306a188fc7e428eeef4fdcf5c995b063">QCPAxisTickerTime</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a5ca9573562fa4dd453ec28f11dcb89b8">QCPAxisTickerDateTime</a>, and <a class="el" href="classQCPAxisTickerText.html#a0fbace8a70c16ba90d37c921365d695c">QCPAxisTickerText</a>.</p>
+<p>Reimplemented in <a class="el" href="classQCPAxisTickerPi.html#a88fbe54a72c0cebb7c29cbbedb10a7f3">QCPAxisTickerPi</a>, <a class="el" href="classQCPAxisTickerDateTime.html#a5ca9573562fa4dd453ec28f11dcb89b8">QCPAxisTickerDateTime</a>, <a class="el" href="classQCPAxisTickerTime.html#a306a188fc7e428eeef4fdcf5c995b063">QCPAxisTickerTime</a>, and <a class="el" href="classQCPAxisTickerText.html#a0fbace8a70c16ba90d37c921365d695c">QCPAxisTickerText</a>.</p>
 
 </div>
 </div>
@@ -633,8 +633,8 @@ Creating own axis tickers</h1>
 
 </div>
 </div>
-<a id="a2f1e223bafbf2cec7c3ba8b08d5c77e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f1e223bafbf2cec7c3ba8b08d5c77e8">&sect;&nbsp;</a></span>getMantissa()</h2>
+<a id="abe99aaaf6c512812869b0a19937c76ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe99aaaf6c512812869b0a19937c76ff">&sect;&nbsp;</a></span>getMantissa()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -652,7 +652,7 @@ Creating own axis tickers</h1>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>magnitude</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>magnitude</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

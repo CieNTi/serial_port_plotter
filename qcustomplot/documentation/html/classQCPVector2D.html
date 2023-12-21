@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPVector2D Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -59,6 +59,8 @@ double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ry</b> ()</td
 <tr class="separator:a10adb5ab031fe94f0b64a3c5aefb552e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766585459d84cb149334fda1a498b2e5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPVector2D.html#a766585459d84cb149334fda1a498b2e5">lengthSquared</a> () const</td></tr>
 <tr class="separator:a766585459d84cb149334fda1a498b2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d3ff018ba2aca0ac0d15db35d45a4de"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPVector2D.html#a2d3ff018ba2aca0ac0d15db35d45a4de">angle</a> () const</td></tr>
+<tr class="separator:a2d3ff018ba2aca0ac0d15db35d45a4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add3edf75de9b7bf1abc693b973b2e906"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPVector2D.html#add3edf75de9b7bf1abc693b973b2e906">toPoint</a> () const</td></tr>
 <tr class="separator:add3edf75de9b7bf1abc693b973b2e906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd7af3f4a62833ada58be3f3021dbbac"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPVector2D.html#acd7af3f4a62833ada58be3f3021dbbac">toPointF</a> () const</td></tr>
@@ -316,6 +318,32 @@ Related Non-Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a2d3ff018ba2aca0ac0d15db35d45a4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3ff018ba2aca0ac0d15db35d45a4de">&sect;&nbsp;</a></span>angle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPVector2D::angle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the angle of the vector in radians. The angle is measured between the positive x line and the vector, counter-clockwise in a mathematical coordinate system (y axis upwards positive). In screen/widget coordinates where the y axis is inverted, the angle appears clockwise. </p>
+
+</div>
+</div>
 <a id="add3edf75de9b7bf1abc693b973b2e906"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add3edf75de9b7bf1abc693b973b2e906">&sect;&nbsp;</a></span>toPoint()</h2>
 
@@ -411,6 +439,7 @@ Related Non-Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Normalizes this vector. After this operation, the length of the vector is equal to 1.</p>
+<p>If the vector has both entries set to zero, this method does nothing.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPVector2D.html#a707bb3af3b1f9331a2450ec75eaf7eb0">normalized</a>, <a class="el" href="classQCPVector2D.html#a10adb5ab031fe94f0b64a3c5aefb552e">length</a>, <a class="el" href="classQCPVector2D.html#a766585459d84cb149334fda1a498b2e5">lengthSquared</a> </dd></dl>
 
 </div>
@@ -430,6 +459,7 @@ Related Non-Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Returns a normalized version of this vector. The length of the returned vector is equal to 1.</p>
+<p>If the vector has both entries set to zero, this method returns the vector unmodified.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPVector2D.html#ad83268be370685c2a0630acc0fb1a425">normalize</a>, <a class="el" href="classQCPVector2D.html#a10adb5ab031fe94f0b64a3c5aefb552e">length</a>, <a class="el" href="classQCPVector2D.html#a766585459d84cb149334fda1a498b2e5">lengthSquared</a> </dd></dl>
 
 </div>
