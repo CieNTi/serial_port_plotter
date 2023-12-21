@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPColorGradient Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -33,6 +33,8 @@
 Public Types</h2></td></tr>
 <tr class="memitem:ac5dca17cc24336e6ca176610e7f77fc1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> </td></tr>
 <tr class="separator:ac5dca17cc24336e6ca176610e7f77fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd38ab8d2cceef9cd98eef88408ccb7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> </td></tr>
+<tr class="separator:afd38ab8d2cceef9cd98eef88408ccb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed6569828fee337023670272910c9072"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> </td></tr>
 <tr class="separator:aed6569828fee337023670272910c9072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -57,6 +59,12 @@ QMap&lt; double, QColor &gt;&#160;</td><td class="memItemRight" valign="bottom">
 <tr class="memitem:abad5002858db8cf75ecb045200881de6"><td class="memItemLeft" align="right" valign="top"><a id="abad5002858db8cf75ecb045200881de6"></a>
 <a class="el" href="classQCPColorGradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>colorInterpolation</b> () const</td></tr>
 <tr class="separator:abad5002858db8cf75ecb045200881de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db4d379cc88e61f881cdbc5b63da0cd"><td class="memItemLeft" align="right" valign="top"><a id="a9db4d379cc88e61f881cdbc5b63da0cd"></a>
+<a class="el" href="classQCPColorGradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nanHandling</b> () const</td></tr>
+<tr class="separator:a9db4d379cc88e61f881cdbc5b63da0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057a02669d4f9977e7299e74f439715b"><td class="memItemLeft" align="right" valign="top"><a id="a057a02669d4f9977e7299e74f439715b"></a>
+QColor&#160;</td><td class="memItemRight" valign="bottom"><b>nanColor</b> () const</td></tr>
+<tr class="separator:a057a02669d4f9977e7299e74f439715b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a1d2b17f203caf0dcec833507fb9e0"><td class="memItemLeft" align="right" valign="top"><a id="a22a1d2b17f203caf0dcec833507fb9e0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>periodic</b> () const</td></tr>
 <tr class="separator:a22a1d2b17f203caf0dcec833507fb9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -68,6 +76,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>periodic</b> () const
 <tr class="separator:a3b48be5e78079db1bb2a1188a4c3390e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13fda86406e1d896a465a409ae63b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a> (<a class="el" href="classQCPColorGradient.html#ac5dca17cc24336e6ca176610e7f77fc1">ColorInterpolation</a> interpolation)</td></tr>
 <tr class="separator:aa13fda86406e1d896a465a409ae63b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba44c2c0af3ffe917a68eef1678b71f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> (<a class="el" href="classQCPColorGradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">NanHandling</a> handling)</td></tr>
+<tr class="separator:a0ba44c2c0af3ffe917a68eef1678b71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1c11bdd1701c66e573aaff593c5c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> (const QColor &amp;<a class="el" href="classQCPColorGradient.html#a0599545c859268b025d2060dea741cea">color</a>)</td></tr>
+<tr class="separator:abb1c11bdd1701c66e573aaff593c5c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39d6448155fc00a219f239220d14bb39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a> (bool enabled)</td></tr>
 <tr class="separator:a39d6448155fc00a219f239220d14bb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf423ceb943e177b0ed2c48c811d83dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCPColorGradient.html#aaf423ceb943e177b0ed2c48c811d83dc">colorize</a> (const double *data, const <a class="el" href="classQCPRange.html">QCPRange</a> &amp;range, QRgb *scanLine, int n, int dataIndexFactor=1, bool logarithmic=false)</td></tr>
@@ -95,10 +107,11 @@ Protected Functions</h2></td></tr>
 <p>This class describes a color gradient which can be used to encode data with color. For example, <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a> and <a class="el" href="classQCPColorScale.html" title="A color scale for use with color coding data such as QCPColorMap. ">QCPColorScale</a> have <a class="el" href="classQCPColorMap.html#a7313c78360471cead3576341a2c50377">setGradient</a> methods which take an instance of this class. Colors are set with <a class="el" href="classQCPColorGradient.html#a3b48be5e78079db1bb2a1188a4c3390e">setColorStopAt(double position, const QColor &amp;color)</a> with a <em>position</em> from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in RGB or HSV space, see <a class="el" href="classQCPColorGradient.html#aa13fda86406e1d896a465a409ae63b38">setColorInterpolation</a>.</p>
 <p>Alternatively, load one of the preset color gradients shown in the image below, with <a class="el" href="classQCPColorGradient.html#aa0aeec1528241728b9671bf8e60b1622">loadPreset</a>, or by directly specifying the preset in the constructor.</p>
 <p>Apart from red, green and blue components, the gradient also interpolates the alpha values of the configured color stops. This allows to display some portions of the data range as transparent in the plot.</p>
+<p>How NaN values are interpreted can be configured with <a class="el" href="classQCPColorGradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a>.</p>
 <div class="image">
 <img src="QCPColorGradient.png" alt="QCPColorGradient.png"/>
 </div>
-<p>The <a class="el" href="classQCPColorGradient.html">ructor</a> allows directly converting a <a class="el" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to a <a class="el" href="classQCPColorGradient.html" title="Defines a color gradient for use with e.g. QCPColorMap. ">QCPColorGradient</a>. This means that you can directly pass <a class="el" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to all the <em>setGradient</em> methods, e.g.: </p><div class="fragment"><div class="line">  colorMap-&gt;setGradient(<a class="code" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">QCPColorGradient::gpHot</a>);</div></div><!-- fragment --><p> The total number of levels used in the gradient can be set with <a class="el" href="classQCPColorGradient.html#a18da587eb4f7fc788ea28ba15b6a12de">setLevelCount</a>. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with <a class="el" href="classQCPColorGradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a>. </p>
+<p>The constructor <a class="el" href="classQCPColorGradient.html#a4e570b4004fd60bd135e52d685ed2b66">QCPColorGradient(GradientPreset preset)</a> allows directly converting a <a class="el" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to a <a class="el" href="classQCPColorGradient.html" title="Defines a color gradient for use with e.g. QCPColorMap. ">QCPColorGradient</a>. This means that you can directly pass <a class="el" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072">GradientPreset</a> to all the <em>setGradient</em> methods, e.g.: </p><div class="fragment"><div class="line">  colorMap-&gt;setGradient(<a class="code" href="classQCPColorGradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5">QCPColorGradient::gpHot</a>);</div></div><!-- fragment --><p> The total number of levels used in the gradient can be set with <a class="el" href="classQCPColorGradient.html#a18da587eb4f7fc788ea28ba15b6a12de">setLevelCount</a>. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with <a class="el" href="classQCPColorGradient.html#a39d6448155fc00a219f239220d14bb39">setPeriodic</a>. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ac5dca17cc24336e6ca176610e7f77fc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5dca17cc24336e6ca176610e7f77fc1">&sect;&nbsp;</a></span>ColorInterpolation</h2>
@@ -117,6 +130,34 @@ Protected Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7"></a>ciRGB&#160;</td><td class="fielddoc"><p>Color channels red, green and blue are linearly interpolated. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb"></a>ciHSV&#160;</td><td class="fielddoc"><p>Color channels hue, saturation and value are linearly interpolated (The hue is interpolated over the shortest angle distance) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="afd38ab8d2cceef9cd98eef88408ccb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd38ab8d2cceef9cd98eef88408ccb7e">&sect;&nbsp;</a></span>NanHandling</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classQCPColorGradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">QCPColorGradient::NanHandling</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines how NaN data points shall appear in the plot.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPColorGradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a>, <a class="el" href="classQCPColorGradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea997c2713f8ffe470834e6ccdb45576f8"></a>nhNone&#160;</td><td class="fielddoc"><p>NaN data points are not explicitly handled and shouldn't occur in the data (this gives slight performance improvement) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea8a0f1857151baf1aab0f1bc5c8a2b73f"></a>nhLowestColor&#160;</td><td class="fielddoc"><p>NaN data points appear as the lowest color defined in this <a class="el" href="classQCPColorGradient.html" title="Defines a color gradient for use with e.g. QCPColorMap. ">QCPColorGradient</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea1f1fec8678f690bdb2a437661beba24e"></a>nhHighestColor&#160;</td><td class="fielddoc"><p>NaN data points appear as the highest color defined in this <a class="el" href="classQCPColorGradient.html" title="Defines a color gradient for use with e.g. QCPColorMap. ">QCPColorGradient</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7ea6abad803991346258fe0270ba24c2172"></a>nhTransparent&#160;</td><td class="fielddoc"><p>NaN data points appear transparent. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afd38ab8d2cceef9cd98eef88408ccb7eab2eff641b22417f165f4c1f5973aaf9b"></a>nhNanColor&#160;</td><td class="fielddoc"><p>NaN data points appear as the color defined with <a class="el" href="classQCPColorGradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a>. </p>
 </td></tr>
 </table>
 
@@ -297,6 +338,46 @@ Protected Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0ba44c2c0af3ffe917a68eef1678b71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba44c2c0af3ffe917a68eef1678b71f">&sect;&nbsp;</a></span>setNanHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setNanHandling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classQCPColorGradient.html#afd38ab8d2cceef9cd98eef88408ccb7e">QCPColorGradient::NanHandling</a>&#160;</td>
+          <td class="paramname"><em>handling</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets how NaNs in the data are displayed in the plot.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPColorGradient.html#abb1c11bdd1701c66e573aaff593c5c2d">setNanColor</a> </dd></dl>
+
+</div>
+</div>
+<a id="abb1c11bdd1701c66e573aaff593c5c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1c11bdd1701c66e573aaff593c5c2d">&sect;&nbsp;</a></span>setNanColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCPColorGradient::setNanColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the color that NaN data is represented by, if <a class="el" href="classQCPColorGradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> is set to ref nhNanColor.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPColorGradient.html#a0ba44c2c0af3ffe917a68eef1678b71f">setNanHandling</a> </dd></dl>
+
+</div>
+</div>
 <a id="a39d6448155fc00a219f239220d14bb39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39d6448155fc00a219f239220d14bb39">&sect;&nbsp;</a></span>setPeriodic()</h2>
 
@@ -374,7 +455,7 @@ Protected Functions</h2></td></tr>
 <p>This method is used to quickly convert a <em>data</em> array to colors. The colors will be output in the array <em>scanLine</em>. Both <em>data</em> and <em>scanLine</em> must have the length <em>n</em> when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in <em>range</em>. <em>logarithmic</em> indicates whether the data values shall be mapped to colors logarithmically.</p>
 <p>if <em>data</em> actually contains 2D-data linearized via <code>[row*columnCount + column]</code>, you can set <em>dataIndexFactor</em> to <code>columnCount</code> to convert a column instead of a row of the data array, in <em>scanLine</em>. <em>scanLine</em> will remain a regular (1D) array. This works because <em>data</em> is addressed <code>data[i*dataIndexFactor]</code>.</p>
 <p>Use the overloaded method to additionally provide alpha map data.</p>
-<p>The QRgb values that are placed in <em>scanLine</em> have their r, g and b components premultiplied with alpha (see QImage::Format_ARGB32_Premultiplied). </p>
+<p>The QRgb values that are placed in <em>scanLine</em> have their r, g, and b components premultiplied with alpha (see QImage::Format_ARGB32_Premultiplied). </p>
 
 </div>
 </div>

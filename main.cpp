@@ -25,11 +25,15 @@
 ****************************************************************************/
 
 #include "mainwindow.hpp"
-#include <QApplication>
+#include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    a.setOrganizationName("SerialPortPlotter");         // give the folder name to store settings in local home
+    a.setApplicationName("SerialPortPlotter");          // give file config name (.conf)
+
 
     /* Apply style sheet */
     QFile file(":/serial_port_plotter/styles/style.qss");

@@ -63,6 +63,33 @@ Source and .pro file of the Qt Project are available. A standalone .exe is inclu
 All notable changes to this project will be documented below this line.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [1.3.2] - 2019-11-20
+
+### Info
+
+- Load settings at startup
+- Save settings at close event : port, baud, data, parity, stop, spinPoints, spinYStep, spinAxesMin, spinAxesMax
+
+### Bugfix
+
+- Solve issue #10 : Save and load settings
+
+## [1.3.1] - 2019-11-20
+
+### Info
+
+- Built with QT 5.7.
+- Change #includes (Qwidget is a separate module)
+- Remove QApplication::UnicodeUTF8 in QApplication::translate method (read [Qt forum](https://forum.qt.io/topic/28054/unicodeutf8-not-member-qapplication-generated-with-qt5-designer/2))
+- add QDir::homePath() + in file name string in mainwindow.cpp in order to be able to save csv and png in home directory
+- add coordonateX(0) and spinPoints->value() in PNG name in order to be able to save multiple PNG from the same dataset with different zoom or drag
+- remove PNG export disable in order to allow export PNG after stop or pause
+
+### Bugfix
+
+- Solve issue #9 : Now export work on linux (maybe on mac too)
+
 ## [1.3.0] - 2018-08-01
 
 ### Info

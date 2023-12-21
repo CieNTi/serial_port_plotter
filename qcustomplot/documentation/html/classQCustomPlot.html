@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCustomPlot Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -42,8 +42,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Functions</h2></td></tr>
-<tr class="memitem:a45b99626558651a6428b83972b0b34b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a45b99626558651a6428b83972b0b34b8">QCustomPlot</a> (QWidget *parent=0)</td></tr>
-<tr class="separator:a45b99626558651a6428b83972b0b34b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1c171f620ef0ea4ae3dbb2e6a0209a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a3c1c171f620ef0ea4ae3dbb2e6a0209a">QCustomPlot</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="separator:a3c1c171f620ef0ea4ae3dbb2e6a0209a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19842409b18f556b256d05e97fffc670"><td class="memItemLeft" align="right" valign="top"><a id="a19842409b18f556b256d05e97fffc670"></a>
 QRect&#160;</td><td class="memItemRight" valign="bottom"><b>viewport</b> () const</td></tr>
 <tr class="separator:a19842409b18f556b256d05e97fffc670"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,16 +151,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>openGl</b> () const</
 <tr class="separator:a5f4f15991c14bf9ad659bb2a19dfbed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a747faaab57c56891e901a1e97fa4359a"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQCPAbstractPlottable.html">QCPAbstractPlottable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a747faaab57c56891e901a1e97fa4359a">selectedPlottables</a> () const</td></tr>
 <tr class="separator:a747faaab57c56891e901a1e97fa4359a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acddbbd8b16dd633f0d94e5a736fbd8cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPAbstractPlottable.html">QCPAbstractPlottable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#acddbbd8b16dd633f0d94e5a736fbd8cf">plottableAt</a> (const QPointF &amp;pos, bool onlySelectable=false) const</td></tr>
-<tr class="separator:acddbbd8b16dd633f0d94e5a736fbd8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545c0e63e13a4fbac3d5acbd8a03ef6f"><td class="memTemplParams" colspan="2">template&lt;class PlottableType &gt; </td></tr>
+<tr class="memitem:a545c0e63e13a4fbac3d5acbd8a03ef6f"><td class="memTemplItemLeft" align="right" valign="top">PlottableType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt</a> (const QPointF &amp;pos, bool onlySelectable=false, int *dataIndex=nullptr) const</td></tr>
+<tr class="separator:a545c0e63e13a4fbac3d5acbd8a03ef6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f1ef93533c5b91054dc23998c669e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPAbstractPlottable.html">QCPAbstractPlottable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a37f1ef93533c5b91054dc23998c669e1">plottableAt</a> (const QPointF &amp;pos, bool onlySelectable=false, int *dataIndex=nullptr) const</td></tr>
+<tr class="separator:a37f1ef93533c5b91054dc23998c669e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cefbfbb9e699940e37be605bd9c51e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a72cefbfbb9e699940e37be605bd9c51e">hasPlottable</a> (<a class="el" href="classQCPAbstractPlottable.html">QCPAbstractPlottable</a> *<a class="el" href="classQCustomPlot.html#a32de81ff53e263e785b83b52ecd99d6f">plottable</a>) const</td></tr>
 <tr class="separator:a72cefbfbb9e699940e37be605bd9c51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ecae130f684b25276fb47bd3a5875c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPGraph.html">QCPGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">graph</a> (int index) const</td></tr>
 <tr class="separator:a6ecae130f684b25276fb47bd3a5875c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac190865a67f19af3fdf2136774997af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPGraph.html">QCPGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#aac190865a67f19af3fdf2136774997af">graph</a> () const</td></tr>
 <tr class="separator:aac190865a67f19af3fdf2136774997af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fb2873d35a8a8089842d81a70a54167"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPGraph.html">QCPGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a> (<a class="el" href="classQCPAxis.html">QCPAxis</a> *keyAxis=0, <a class="el" href="classQCPAxis.html">QCPAxis</a> *valueAxis=0)</td></tr>
-<tr class="separator:a6fb2873d35a8a8089842d81a70a54167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2836a46e31d5aee174ae054c0aa6580b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPGraph.html">QCPGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a> (<a class="el" href="classQCPAxis.html">QCPAxis</a> *keyAxis=nullptr, <a class="el" href="classQCPAxis.html">QCPAxis</a> *valueAxis=nullptr)</td></tr>
+<tr class="separator:a2836a46e31d5aee174ae054c0aa6580b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a903561be895fb6528a770d66ac5e6713"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a903561be895fb6528a770d66ac5e6713">removeGraph</a> (<a class="el" href="classQCPGraph.html">QCPGraph</a> *<a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">graph</a>)</td></tr>
 <tr class="separator:a903561be895fb6528a770d66ac5e6713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9554b3d2d5b10c0f884bd4010b6c192c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a9554b3d2d5b10c0f884bd4010b6c192c">removeGraph</a> (int index)</td></tr>
@@ -185,6 +188,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>openGl</b> () const</
 <tr class="separator:a16025daf0341f9362be3080e404424c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afda487bcf2d6cf1a57173d82495e29ba"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQCPAbstractItem.html">QCPAbstractItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#afda487bcf2d6cf1a57173d82495e29ba">selectedItems</a> () const</td></tr>
 <tr class="separator:afda487bcf2d6cf1a57173d82495e29ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f7565773c5d59347a7f2262a737844"><td class="memTemplParams" colspan="2">template&lt;class ItemType &gt; </td></tr>
+<tr class="memitem:a89f7565773c5d59347a7f2262a737844"><td class="memTemplItemLeft" align="right" valign="top">ItemType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt</a> (const QPointF &amp;pos, bool onlySelectable=false) const</td></tr>
+<tr class="separator:a89f7565773c5d59347a7f2262a737844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac08578e0e6c059c83a8d340ba0038e8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPAbstractItem.html">QCPAbstractItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#ac08578e0e6c059c83a8d340ba0038e8e">itemAt</a> (const QPointF &amp;pos, bool onlySelectable=false) const</td></tr>
 <tr class="separator:ac08578e0e6c059c83a8d340ba0038e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0b57f35646079f93fa6161a65b36109"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#af0b57f35646079f93fa6161a65b36109">hasItem</a> (<a class="el" href="classQCPAbstractItem.html">QCPAbstractItem</a> *<a class="el" href="classQCustomPlot.html#ac042f2e78edd228ccf2f26b7fe215239">item</a>) const</td></tr>
@@ -201,8 +207,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>openGl</b> () const</
 <tr class="separator:a23a4d3cadad1a0063c5fe19aac5659e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa45d61e65292026f4c58c9c88c2cef0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#afa45d61e65292026f4c58c9c88c2cef0">layerCount</a> () const</td></tr>
 <tr class="separator:afa45d61e65292026f4c58c9c88c2cef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5255393df078448bb6ac83fa5db5f52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a> (const QString &amp;name, <a class="el" href="classQCPLayer.html">QCPLayer</a> *otherLayer=0, <a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7">LayerInsertMode</a> insertMode=<a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41">limAbove</a>)</td></tr>
-<tr class="separator:ad5255393df078448bb6ac83fa5db5f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f33108881c2e3c2fec50aa321e169af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a> (const QString &amp;name, <a class="el" href="classQCPLayer.html">QCPLayer</a> *otherLayer=nullptr, <a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7">LayerInsertMode</a> insertMode=<a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41">limAbove</a>)</td></tr>
+<tr class="separator:a8f33108881c2e3c2fec50aa321e169af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40f75e342c5eaab6a86066a42a0e2a94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> (<a class="el" href="classQCPLayer.html">QCPLayer</a> *<a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>)</td></tr>
 <tr class="separator:a40f75e342c5eaab6a86066a42a0e2a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae896140beff19424e9e9e02d6e331104"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> (<a class="el" href="classQCPLayer.html">QCPLayer</a> *<a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCPLayer.html">QCPLayer</a> *otherLayer, <a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7">LayerInsertMode</a> insertMode=<a class="el" href="classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41">limAbove</a>)</td></tr>
@@ -241,6 +247,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>openGl</b> () const</
 <tr class="separator:a1be68d5c0f1e086d6374d1340a193fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4bfe7d70dbe67e81d877819b75ab9af"><td class="memItemLeft" align="right" valign="top">Q_SLOT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a> (<a class="el" href="classQCustomPlot.html#a45d61392d13042e712a956d27762aa39">QCustomPlot::RefreshPriority</a> refreshPriority=<a class="el" href="classQCustomPlot.html#a45d61392d13042e712a956d27762aa39a49666a5854a68dbcca8b277b03331260">QCustomPlot::rpRefreshHint</a>)</td></tr>
 <tr class="separator:aa4bfe7d70dbe67e81d877819b75ab9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad582e335061a25da006acc58a4009ccc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#ad582e335061a25da006acc58a4009ccc">replotTime</a> (bool average=false) const</td></tr>
+<tr class="separator:ad582e335061a25da006acc58a4009ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Members</h2></td></tr>
@@ -287,6 +295,8 @@ Signals</h2></td></tr>
 <tr class="separator:a500c64a109bc773c973ad274f2fa4190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cd30e29b73efd6afe096e44bc5956f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a> ()</td></tr>
 <tr class="separator:a0cd30e29b73efd6afe096e44bc5956f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a37a057f64a7587436dabe98c592e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#aa3a37a057f64a7587436dabe98c592e9">afterLayout</a> ()</td></tr>
+<tr class="separator:aa3a37a057f64a7587436dabe98c592e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f4fa624af060bc5919c5f266cf426a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a> ()</td></tr>
 <tr class="separator:a6f4fa624af060bc5919c5f266cf426a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -332,10 +342,10 @@ Protected Functions</h2></td></tr>
 <tr class="separator:afbd4010b2e3f364c8d512691b2a1640a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1ca67a66d37b6d260a0b93de08f3bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a7f1ca67a66d37b6d260a0b93de08f3bd">updateLayerIndices</a> () const</td></tr>
 <tr class="separator:a7f1ca67a66d37b6d260a0b93de08f3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12536fa6d5deb34ec620acb5134ca82a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPLayerable.html">QCPLayerable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a12536fa6d5deb34ec620acb5134ca82a">layerableAt</a> (const QPointF &amp;pos, bool onlySelectable, QVariant *selectionDetails=0) const</td></tr>
-<tr class="separator:a12536fa6d5deb34ec620acb5134ca82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9048589e78e7959d27a2c48c253e159"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQCPLayerable.html">QCPLayerable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#ac9048589e78e7959d27a2c48c253e159">layerableListAt</a> (const QPointF &amp;pos, bool onlySelectable, QList&lt; QVariant &gt; *selectionDetails=0) const</td></tr>
-<tr class="separator:ac9048589e78e7959d27a2c48c253e159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998b3a93d7f08d42ce3ec4eab43afc03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQCPLayerable.html">QCPLayerable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a998b3a93d7f08d42ce3ec4eab43afc03">layerableAt</a> (const QPointF &amp;pos, bool onlySelectable, QVariant *selectionDetails=nullptr) const</td></tr>
+<tr class="separator:a998b3a93d7f08d42ce3ec4eab43afc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9d0033397b309343a6df8e87fb46c9"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQCPLayerable.html">QCPLayerable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a3f9d0033397b309343a6df8e87fb46c9">layerableListAt</a> (const QPointF &amp;pos, bool onlySelectable, QList&lt; QVariant &gt; *selectionDetails=nullptr) const</td></tr>
+<tr class="separator:a3f9d0033397b309343a6df8e87fb46c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05dd52438cee4353b18c1e53a439008d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a05dd52438cee4353b18c1e53a439008d">drawBackground</a> (<a class="el" href="classQCPPainter.html">QCPPainter</a> *painter)</td></tr>
 <tr class="separator:a05dd52438cee4353b18c1e53a439008d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2685341f7242c3882f4cc5e379308d71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQCustomPlot.html#a2685341f7242c3882f4cc5e379308d71">setupPaintBuffers</a> ()</td></tr>
@@ -352,7 +362,7 @@ Protected Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The central class of the library. This is the QWidget which displays the plot and interacts with the user. </p>
 <p>For tutorials on how to use <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>, see the website<br />
-<a href="http://www.qcustomplot.com/">http://www.qcustomplot.com/</a> </p>
+<a href="https://www.qcustomplot.com/">https://www.qcustomplot.com/</a> </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a75a8afbe6ef333b1f3d47abb25b9add7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75a8afbe6ef333b1f3d47abb25b9add7">&sect;&nbsp;</a></span>LayerInsertMode</h2>
@@ -366,7 +376,7 @@ Protected Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Defines how a layer should be inserted relative to an other layer.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a75a8afbe6ef333b1f3d47abb25b9add7aee39cf650cd24e68552da0b697ce4a93"></a>limBelow&#160;</td><td class="fielddoc"><p>Layer is inserted below other layer. </p>
 </td></tr>
@@ -403,8 +413,8 @@ Protected Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a45b99626558651a6428b83972b0b34b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45b99626558651a6428b83972b0b34b8">&sect;&nbsp;</a></span>QCustomPlot()</h2>
+<a id="a3c1c171f620ef0ea4ae3dbb2e6a0209a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1c171f620ef0ea4ae3dbb2e6a0209a">&sect;&nbsp;</a></span>QCustomPlot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +426,7 @@ Protected Functions</h2></td></tr>
           <td class="memname">QCustomPlot::QCustomPlot </td>
           <td>(</td>
           <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -500,7 +510,7 @@ Protected Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets the viewport of this <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>. Usually users of <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> don't need to change the viewport manually.</p>
-<p>The viewport is the area in which the plot is drawn. All mechanisms, e.g. margin caluclation take the viewport to be the outer border of the plot. The viewport normally is the rect() of the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget, i.e. a rect with top left (0, 0) and size of the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget.</p>
+<p>The viewport is the area in which the plot is drawn. All mechanisms, e.g. margin calculation take the viewport to be the outer border of the plot. The viewport normally is the rect() of the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget, i.e. a rect with top left (0, 0) and size of the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget.</p>
 <p>Don't confuse the viewport with the axis rect (<a class="el" href="classQCustomPlot.html#ae5eefcb5f6ca26689b1fd4f6e25b42f9">QCustomPlot::axisRect</a>). An axis rect is typically an area enclosed by four axes, where the graphs/plottables are drawn in. The viewport is larger and contains also the axes themselves, their tick numbers, their labels, or even additional axis rects, color scales and other layout elements.</p>
 <p>This function is used to allow arbitrary size exports with <a class="el" href="classQCustomPlot.html#aabb974d71ce96c137dc04eb6eab844fe">toPixmap</a>, <a class="el" href="classQCustomPlot.html#ac92cc9256d12f354b40a4be4600b5fb9">savePng</a>, <a class="el" href="classQCustomPlot.html#ad5acd34f6b39c3516887d7e54fec2412">savePdf</a>, etc. by temporarily changing the viewport size. </p>
 
@@ -773,7 +783,7 @@ Protected Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>If set to true, adding a plottable (e.g. a graph) to the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> automatically also adds the plottable to the legend (<a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">QCustomPlot::legend</a>).</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a>, <a class="el" href="classQCPLegend.html#a3ab274de52d2951faea45a6d975e6b3f">QCPLegend::addItem</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a>, <a class="el" href="classQCPLegend.html#a3ab274de52d2951faea45a6d975e6b3f">QCPLegend::addItem</a> </dd></dl>
 
 </div>
 </div>
@@ -854,7 +864,7 @@ Protected Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the tolerance that is used to decide whether a click selects an object (e.g. a plottable) or not.</p>
 <p>If the user clicks in the vicinity of the line of e.g. a <a class="el" href="classQCPGraph.html" title="A plottable representing a graph in a plot. ">QCPGraph</a>, it's only regarded as a potential selection when the minimum distance between the click position and the graph line is smaller than <em>pixels</em>. Objects that are defined by an area (e.g. <a class="el" href="classQCPBars.html" title="A plottable representing a bar chart in a plot. ">QCPBars</a>) only react to clicks directly inside the area and ignore this selection tolerance. In other words, it only has meaning for parts of objects that are too thin to exactly hit with a click and thus need such a tolerance.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5ee1e2f6ae27419deca53e75907c27e5">setInteractions</a>, <a class="el" href="classQCPLayerable.html#a04db8351fefd44cfdb77958e75c6288e">QCPLayerable::selectTest</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5ee1e2f6ae27419deca53e75907c27e5">setInteractions</a>, <a class="el" href="classQCPLayerable.html#a272989087fc8c4357b4ba614f9922336">QCPLayerable::selectTest</a> </dd></dl>
 
 </div>
 </div>
@@ -1045,7 +1055,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the plottable with <em>index</em>. If the index is invalid, returns 0.</p>
+<p>Returns the plottable with <em>index</em>. If the index is invalid, returns <code>nullptr</code>.</p>
 <p>There is an overloaded version of this function with no parameter which returns the last added plottable, see <a class="el" href="classQCustomPlot.html#adea38bdc660da9412ba69fb939031567">QCustomPlot::plottable()</a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5f4f15991c14bf9ad659bb2a19dfbed4">plottableCount</a> </dd></dl>
 
@@ -1066,7 +1076,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded function.</p>
-<p>Returns the last plottable that was added to the plot. If there are no plottables in the plot, returns 0.</p>
+<p>Returns the last plottable that was added to the plot. If there are no plottables in the plot, returns <code>nullptr</code>.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5f4f15991c14bf9ad659bb2a19dfbed4">plottableCount</a> </dd></dl>
 
 </div>
@@ -1171,8 +1181,50 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 
 </div>
 </div>
-<a id="acddbbd8b16dd633f0d94e5a736fbd8cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acddbbd8b16dd633f0d94e5a736fbd8cf">&sect;&nbsp;</a></span>plottableAt()</h2>
+<a id="a545c0e63e13a4fbac3d5acbd8a03ef6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545c0e63e13a4fbac3d5acbd8a03ef6f">&sect;&nbsp;</a></span>plottableAt() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class PlottableType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">PlottableType * QCustomPlot::plottableAt </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>onlySelectable</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>dataIndex</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the plottable at the pixel position <em>pos</em>. The plottable type (a <a class="el" href="classQCPAbstractPlottable.html" title="The abstract base class for all data representing objects in a plot. ">QCPAbstractPlottable</a> subclass) that shall be taken into consideration can be specified via the template parameter.</p>
+<p>Plottables that only consist of single lines (like graphs) have a tolerance band around them, see <a class="el" href="classQCustomPlot.html#a4dc31241d7b09680950e19e5f971ed93">setSelectionTolerance</a>. If multiple plottables come into consideration, the one closest to <em>pos</em> is returned.</p>
+<p>If <em>onlySelectable</em> is true, only plottables that are selectable (<a class="el" href="classQCPAbstractPlottable.html#ac238d6e910f976f1f30d41c2bca44ac3">QCPAbstractPlottable::setSelectable</a>) are considered.</p>
+<p>if <em>dataIndex</em> is non-null, it is set to the index of the plottable's data point that is closest to <em>pos</em>.</p>
+<p>If there is no plottable of the specified type at <em>pos</em>, returns <code>nullptr</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
+
+</div>
+</div>
+<a id="a37f1ef93533c5b91054dc23998c669e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f1ef93533c5b91054dc23998c669e1">&sect;&nbsp;</a></span>plottableAt() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1187,7 +1239,13 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>onlySelectable</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>onlySelectable</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>dataIndex</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1196,10 +1254,9 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the plottable at the pixel position <em>pos</em>. Plottables that only consist of single lines (like graphs) have a tolerance band around them, see <a class="el" href="classQCustomPlot.html#a4dc31241d7b09680950e19e5f971ed93">setSelectionTolerance</a>. If multiple plottables come into consideration, the one closest to <em>pos</em> is returned.</p>
-<p>If <em>onlySelectable</em> is true, only plottables that are selectable (<a class="el" href="classQCPAbstractPlottable.html#ac238d6e910f976f1f30d41c2bca44ac3">QCPAbstractPlottable::setSelectable</a>) are considered.</p>
-<p>If there is no plottable at <em>pos</em>, the return value is 0.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ac08578e0e6c059c83a8d340ba0038e8e">itemAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
+<p>Returns any plottable at the pixel position <em>pos</em>. Since it can capture all plottables, the return type is the abstract base class of all plottables, <a class="el" href="classQCPAbstractPlottable.html" title="The abstract base class for all data representing objects in a plot. ">QCPAbstractPlottable</a>.</p>
+<p>For details, and if you wish to specify a certain plottable type (e.g. <a class="el" href="classQCPGraph.html" title="A plottable representing a graph in a plot. ">QCPGraph</a>), see the template method <a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt&lt;PlottableType&gt;()</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt&lt;PlottableType&gt;()</a>, <a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
 
 </div>
 </div>
@@ -1237,9 +1294,9 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the graph with <em>index</em>. If the index is invalid, returns 0.</p>
+<p>Returns the graph with <em>index</em>. If the index is invalid, returns <code>nullptr</code>.</p>
 <p>There is an overloaded version of this function with no parameter which returns the last created graph, see <a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">QCustomPlot::graph()</a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5e1787cdde868c4d3790f9ebc8207d90">graphCount</a>, <a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5e1787cdde868c4d3790f9ebc8207d90">graphCount</a>, <a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a> </dd></dl>
 
 </div>
 </div>
@@ -1258,13 +1315,13 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded function.</p>
-<p>Returns the last graph, that was created with <a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a>. If there are no graphs in the plot, returns 0.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5e1787cdde868c4d3790f9ebc8207d90">graphCount</a>, <a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a> </dd></dl>
+<p>Returns the last graph, that was created with <a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a>. If there are no graphs in the plot, returns <code>nullptr</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a5e1787cdde868c4d3790f9ebc8207d90">graphCount</a>, <a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a> </dd></dl>
 
 </div>
 </div>
-<a id="a6fb2873d35a8a8089842d81a70a54167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fb2873d35a8a8089842d81a70a54167">&sect;&nbsp;</a></span>addGraph()</h2>
+<a id="a2836a46e31d5aee174ae054c0aa6580b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2836a46e31d5aee174ae054c0aa6580b">&sect;&nbsp;</a></span>addGraph()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1273,13 +1330,13 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
           <td class="memname"><a class="el" href="classQCPGraph.html">QCPGraph</a> * QCustomPlot::addGraph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classQCPAxis.html">QCPAxis</a> *&#160;</td>
-          <td class="paramname"><em>keyAxis</em> = <code>0</code>, </td>
+          <td class="paramname"><em>keyAxis</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classQCPAxis.html">QCPAxis</a> *&#160;</td>
-          <td class="paramname"><em>valueAxis</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>valueAxis</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1290,7 +1347,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </div><div class="memdoc">
 <p>Creates a new graph inside the plot. If <em>keyAxis</em> and <em>valueAxis</em> are left unspecified (0), the bottom (xAxis) is used as key and the left (yAxis) is used as value axis. If specified, <em>keyAxis</em> and <em>valueAxis</em> must reside in this <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>.</p>
 <p><em>keyAxis</em> will be used as key axis (typically "x") and <em>valueAxis</em> as value axis (typically "y") for the graph.</p>
-<p>Returns a pointer to the newly created graph, or 0 if adding the graph failed.</p>
+<p>Returns a pointer to the newly created graph, or <code>nullptr</code> if adding the graph failed.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">graph</a>, <a class="el" href="classQCustomPlot.html#a5e1787cdde868c4d3790f9ebc8207d90">graphCount</a>, <a class="el" href="classQCustomPlot.html#a903561be895fb6528a770d66ac5e6713">removeGraph</a>, <a class="el" href="classQCustomPlot.html#ab0f3abff2d2f7df3668b5836f39207fa">clearGraphs</a> </dd></dl>
 
 </div>
@@ -1310,7 +1367,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes the specified <em>graph</em> from the plot and deletes it. If necessary, the corresponding legend item is also removed from the default legend (<a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">QCustomPlot::legend</a>). If any other graphs in the plot have a channel fill set towards the removed graph, the channel fill property of those graphs is reset to zero (no channel fill).</p>
+<p>Removes the specified <em>graph</em> from the plot and deletes it. If necessary, the corresponding legend item is also removed from the default legend (<a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">QCustomPlot::legend</a>). If any other graphs in the plot have a channel fill set towards the removed graph, the channel fill property of those graphs is reset to <code>nullptr</code> (no channel fill).</p>
 <p>Returns true on success.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ab0f3abff2d2f7df3668b5836f39207fa">clearGraphs</a> </dd></dl>
 
@@ -1371,7 +1428,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>Returns the number of currently existing graphs in the plot</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">graph</a>, <a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">addGraph</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">graph</a>, <a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">addGraph</a> </dd></dl>
 
 </div>
 </div>
@@ -1410,7 +1467,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the item with <em>index</em>. If the index is invalid, returns 0.</p>
+<p>Returns the item with <em>index</em>. If the index is invalid, returns <code>nullptr</code>.</p>
 <p>There is an overloaded version of this function with no parameter which returns the last added item, see <a class="el" href="classQCustomPlot.html#ac042f2e78edd228ccf2f26b7fe215239">QCustomPlot::item()</a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a16025daf0341f9362be3080e404424c2">itemCount</a> </dd></dl>
 
@@ -1431,7 +1488,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded function.</p>
-<p>Returns the last item that was added to this plot. If there are no items in the plot, returns 0.</p>
+<p>Returns the last item that was added to this plot. If there are no items in the plot, returns <code>nullptr</code>.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a16025daf0341f9362be3080e404424c2">itemCount</a> </dd></dl>
 
 </div>
@@ -1535,8 +1592,42 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 
 </div>
 </div>
+<a id="a89f7565773c5d59347a7f2262a737844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f7565773c5d59347a7f2262a737844">&sect;&nbsp;</a></span>itemAt() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ItemType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ItemType * QCustomPlot::itemAt </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>onlySelectable</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the item at the pixel position <em>pos</em>. The item type (a <a class="el" href="classQCPAbstractItem.html" title="The abstract base class for all items in a plot. ">QCPAbstractItem</a> subclass) that shall be taken into consideration can be specified via the template parameter. Items that only consist of single lines (e.g. <a class="el" href="classQCPItemLine.html">QCPItemLine</a> or <a class="el" href="classQCPItemCurve.html">QCPItemCurve</a>) have a tolerance band around them, see <a class="el" href="classQCustomPlot.html#a4dc31241d7b09680950e19e5f971ed93">setSelectionTolerance</a>. If multiple items come into consideration, the one closest to <em>pos</em> is returned.</p>
+<p>If <em>onlySelectable</em> is true, only items that are selectable (<a class="el" href="classQCPAbstractItem.html#a8a8e32a55bc478b849756a78c2d87fd2">QCPAbstractItem::setSelectable</a>) are considered.</p>
+<p>If there is no item at <em>pos</em>, returns <code>nullptr</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
+
+</div>
+</div>
 <a id="ac08578e0e6c059c83a8d340ba0038e8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac08578e0e6c059c83a8d340ba0038e8e">&sect;&nbsp;</a></span>itemAt()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08578e0e6c059c83a8d340ba0038e8e">&sect;&nbsp;</a></span>itemAt() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1560,10 +1651,9 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the item at the pixel position <em>pos</em>. Items that only consist of single lines (e.g. <a class="el" href="classQCPItemLine.html">QCPItemLine</a> or <a class="el" href="classQCPItemCurve.html">QCPItemCurve</a>) have a tolerance band around them, see <a class="el" href="classQCustomPlot.html#a4dc31241d7b09680950e19e5f971ed93">setSelectionTolerance</a>. If multiple items come into consideration, the one closest to <em>pos</em> is returned.</p>
-<p>If <em>onlySelectable</em> is true, only items that are selectable (<a class="el" href="classQCPAbstractItem.html#a8a8e32a55bc478b849756a78c2d87fd2">QCPAbstractItem::setSelectable</a>) are considered.</p>
-<p>If there is no item at <em>pos</em>, the return value is 0.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#acddbbd8b16dd633f0d94e5a736fbd8cf">plottableAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
+<p>Returns the item at the pixel position <em>pos</em>. Since it can capture all items, the return type is the abstract base class of all items, <a class="el" href="classQCPAbstractItem.html" title="The abstract base class for all items in a plot. ">QCPAbstractItem</a>.</p>
+<p>For details, and if you wish to specify a certain item type (e.g. <a class="el" href="classQCPItemLine.html" title="A line from one point to another. ">QCPItemLine</a>), see the template method <a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt&lt;ItemType&gt;()</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt&lt;ItemType&gt;()</a>, <a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
 
 </div>
 </div>
@@ -1602,9 +1692,9 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the layer with the specified <em>name</em>. If there is no layer with the specified name, 0 is returned.</p>
+<p>Returns the layer with the specified <em>name</em>. If there is no layer with the specified name, <code>nullptr</code> is returned.</p>
 <p>Layer names are case-sensitive.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1624,8 +1714,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded function.</p>
-<p>Returns the layer by <em>index</em>. If the index is invalid, 0 is returned.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
+<p>Returns the layer by <em>index</em>. If the index is invalid, <code>nullptr</code> is returned.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1665,7 +1755,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 <p>Sets the layer with the specified <em>name</em> to be the current layer. All layerables (<a class="el" href="classQCPLayerable.html">QCPLayerable</a>), e.g. plottables and items, are created on the current layer.</p>
 <p>Returns true on success, i.e. if there is a layer with the specified <em>name</em> in the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>.</p>
 <p>Layer names are case-sensitive.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a>, <a class="el" href="classQCPLayerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">QCPLayerable::setLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a>, <a class="el" href="classQCPLayerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">QCPLayerable::setLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1687,7 +1777,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 <p>This is an overloaded function.</p>
 <p>Sets the provided <em>layer</em> to be the current layer.</p>
 <p>Returns true on success, i.e. when <em>layer</em> is a valid layer in the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a>, <a class="el" href="classQCustomPlot.html#a40f75e342c5eaab6a86066a42a0e2a94">removeLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1706,12 +1796,12 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>Returns the number of currently existing layers in the plot</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a> </dd></dl>
 
 </div>
 </div>
-<a id="ad5255393df078448bb6ac83fa5db5f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5255393df078448bb6ac83fa5db5f52">&sect;&nbsp;</a></span>addLayer()</h2>
+<a id="a8f33108881c2e3c2fec50aa321e169af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f33108881c2e3c2fec50aa321e169af">&sect;&nbsp;</a></span>addLayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1726,7 +1816,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classQCPLayer.html">QCPLayer</a> *&#160;</td>
-          <td class="paramname"><em>otherLayer</em> = <code>0</code>, </td>
+          <td class="paramname"><em>otherLayer</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1768,7 +1858,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 <p>All layerables (e.g. plottables and items) on the removed layer will be moved to the layer below <em>layer</em>. If <em>layer</em> is the bottom layer, the layerables are moved to the layer above. In both cases, the total rendering order of all layerables in the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> is preserved.</p>
 <p>If <em>layer</em> is the current layer (<a class="el" href="classQCustomPlot.html#a73a6dc47c653bb6f8f030abca5a11852">setCurrentLayer</a>), the layer below (or above, if bottom layer) becomes the new current layer.</p>
 <p>It is not possible to remove the last layer of the plot.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1805,7 +1895,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </div><div class="memdoc">
 <p>Moves the specified <em>layer</em> either above or below <em>otherLayer</em>. Whether it's placed above or below is controlled with <em>insertMode</em>.</p>
 <p>Returns true on success, i.e. when both <em>layer</em> and <em>otherLayer</em> are valid layers in the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#ad5255393df078448bb6ac83fa5db5f52">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0a96244e7773b242ef23c32b7bdfb159">layer</a>, <a class="el" href="classQCustomPlot.html#a8f33108881c2e3c2fec50aa321e169af">addLayer</a>, <a class="el" href="classQCustomPlot.html#ae896140beff19424e9e9e02d6e331104">moveLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -1888,9 +1978,9 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the layout element at pixel position <em>pos</em>. If there is no element at that position, returns 0.</p>
+<p>Returns the layout element at pixel position <em>pos</em>. If there is no element at that position, returns <code>nullptr</code>.</p>
 <p>Only visible elements are used. If <a class="el" href="classQCPLayerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">QCPLayoutElement::setVisible</a> on the element itself or on any of its parent elements is set to false, it will not be considered.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ac08578e0e6c059c83a8d340ba0038e8e">itemAt</a>, <a class="el" href="classQCustomPlot.html#acddbbd8b16dd633f0d94e5a736fbd8cf">plottableAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a89f7565773c5d59347a7f2262a737844">itemAt</a>, <a class="el" href="classQCustomPlot.html#a545c0e63e13a4fbac3d5acbd8a03ef6f">plottableAt</a> </dd></dl>
 
 </div>
 </div>
@@ -1909,7 +1999,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the layout element of type <a class="el" href="classQCPAxisRect.html">QCPAxisRect</a> at pixel position <em>pos</em>. This method ignores other layout elements even if they are visually in front of the axis rect (e.g. a <a class="el" href="classQCPLegend.html">QCPLegend</a>). If there is no axis rect at that position, returns 0.</p>
+<p>Returns the layout element of type <a class="el" href="classQCPAxisRect.html">QCPAxisRect</a> at pixel position <em>pos</em>. This method ignores other layout elements even if they are visually in front of the axis rect (e.g. a <a class="el" href="classQCPLegend.html">QCPLegend</a>). If there is no axis rect at that position, returns <code>nullptr</code>.</p>
 <p>Only visible axis rects are used. If <a class="el" href="classQCPLayerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">QCPLayoutElement::setVisible</a> on the axis rect itself or on any of its parent elements is set to false, it will not be considered.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a> </dd></dl>
 
@@ -2414,7 +2504,28 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 <p>The parameter <em>refreshPriority</em> can be used to fine-tune the timing of the replot. For example if your application calls <a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a> very quickly in succession (e.g. multiple independent functions change some aspects of the plot and each wants to make sure the change gets replotted), it is advisable to set <em>refreshPriority</em> to <a class="el" href="classQCustomPlot.html#a45d61392d13042e712a956d27762aa39a019650c6ddf308f97e811fbfff207a8f">QCustomPlot::rpQueuedReplot</a>. This way, the actual replotting is deferred to the next event loop iteration. Multiple successive calls of <a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a> with this priority will only cause a single replot, avoiding redundant replots and improving performance.</p>
 <p>Under a few circumstances, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> causes a replot by itself. Those are resize events of the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget and user interactions (object selection and range dragging/zooming).</p>
 <p>Before the replot happens, the signal <a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a> is emitted. After the replot, <a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a> is emitted. It is safe to mutually connect the replot slot with any of those two signals on two QCustomPlots to make them replot synchronously, it won't cause an infinite recursion.</p>
-<p>If a layer is in mode <a class="el" href="classQCPLayer.html#a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538">QCPLayer::lmBuffered</a> (<a class="el" href="classQCPLayer.html#a938d57b04f4e4c23cedf1711f983919b">QCPLayer::setMode</a>), it is also possible to replot only that specific layer via <a class="el" href="classQCPLayer.html#adefd53b6db02f470151c416f42e37180">QCPLayer::replot</a>. See the documentation there for details. </p>
+<p>If a layer is in mode <a class="el" href="classQCPLayer.html#a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538">QCPLayer::lmBuffered</a> (<a class="el" href="classQCPLayer.html#a938d57b04f4e4c23cedf1711f983919b">QCPLayer::setMode</a>), it is also possible to replot only that specific layer via <a class="el" href="classQCPLayer.html#adefd53b6db02f470151c416f42e37180">QCPLayer::replot</a>. See the documentation there for details.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ad582e335061a25da006acc58a4009ccc">replotTime</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad582e335061a25da006acc58a4009ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad582e335061a25da006acc58a4009ccc">&sect;&nbsp;</a></span>replotTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCustomPlot::replotTime </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>average</em> = <code>false</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the time in milliseconds that the last replot took. If <em>average</em> is set to true, an exponential moving average over the last couple of replots is returned.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a> </dd></dl>
 
 </div>
 </div>
@@ -2856,7 +2967,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </table>
 </div><div class="memdoc">
 <p>This signal is emitted when a legend (item) is clicked.</p>
-<p><em>event</em> is the mouse event that caused the click, <em>legend</em> is the legend that received the click and <em>item</em> is the legend item that received the click. If only the legend and no item is clicked, <em>item</em> is 0. This happens for a click inside the legend padding or the space between two items.</p>
+<p><em>event</em> is the mouse event that caused the click, <em>legend</em> is the legend that received the click and <em>item</em> is the legend item that received the click. If only the legend and no item is clicked, <em>item</em> is <code>nullptr</code>. This happens for a click inside the legend padding or the space between two items.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a0250f835c044521df1619b132288bca7">legendDoubleClick</a> </dd></dl>
 
 </div>
@@ -2901,7 +3012,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </table>
 </div><div class="memdoc">
 <p>This signal is emitted when a legend (item) is double clicked.</p>
-<p><em>event</em> is the mouse event that caused the click, <em>legend</em> is the legend that received the click and <em>item</em> is the legend item that received the click. If only the legend and no item is clicked, <em>item</em> is 0. This happens for a click inside the legend padding or the space between two items.</p>
+<p><em>event</em> is the mouse event that caused the click, <em>legend</em> is the legend that received the click and <em>item</em> is the legend item that received the click. If only the legend and no item is clicked, <em>item</em> is <code>nullptr</code>. This happens for a click inside the legend padding or the space between two items.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a79cff0baafbca10a3aaf694d2d3b9ab3">legendClick</a> </dd></dl>
 
 </div>
@@ -2959,7 +3070,36 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </div><div class="memdoc">
 <p>This signal is emitted immediately before a replot takes place (caused by a call to the slot <a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>).</p>
 <p>It is safe to mutually connect the replot slot with this signal on two QCustomPlots to make them replot synchronously, it won't cause an infinite recursion.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>, <a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>, <a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a>, <a class="el" href="classQCustomPlot.html#aa3a37a057f64a7587436dabe98c592e9">afterLayout</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa3a37a057f64a7587436dabe98c592e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a37a057f64a7587436dabe98c592e9">&sect;&nbsp;</a></span>afterLayout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QCustomPlot::afterLayout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This signal is emitted immediately after the layout step has been completed, which occurs right before drawing the plot. This is typically during a call to <a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>, and in such cases this signal is emitted in between the signals <a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a> and <a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a>. Unlike those signals however, this signal is also emitted during off-screen painting, such as when calling <a class="el" href="classQCustomPlot.html#aabb974d71ce96c137dc04eb6eab844fe">toPixmap</a> or <a class="el" href="classQCustomPlot.html#ad5acd34f6b39c3516887d7e54fec2412">savePdf</a>.</p>
+<p>The layout step queries all layouts and layout elements in the plot for their proposed size and arranges the objects accordingly as preparation for the subsequent drawing step. Through this signal, you have the opportunity to update certain things in your plot that depend crucially on the exact dimensions/positioning of layout elements such as axes and axis rects.</p>
+<dl class="section warning"><dt>Warning</dt><dd>However, changing any parameters of this <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> instance which would normally affect the layouting (e.g. axis range order of magnitudes, tick label sizes, etc.) will not issue a second run of the layout step. It will propagate directly to the draw step and may cause graphical inconsistencies such as overlapping objects, if sizes or positions have changed.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a6e6693e2c249f65437382ffd93405e04">updateLayout</a>, <a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a>, <a class="el" href="classQCustomPlot.html#a6f4fa624af060bc5919c5f266cf426a0">afterReplot</a> </dd></dl>
 
 </div>
 </div>
@@ -2987,7 +3127,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </div><div class="memdoc">
 <p>This signal is emitted immediately after a replot has taken place (caused by a call to the slot <a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>).</p>
 <p>It is safe to mutually connect the replot slot with this signal on two QCustomPlots to make them replot synchronously, it won't cause an infinite recursion.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>, <a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">replot</a>, <a class="el" href="classQCustomPlot.html#a0cd30e29b73efd6afe096e44bc5956f5">beforeReplot</a>, <a class="el" href="classQCustomPlot.html#aa3a37a057f64a7587436dabe98c592e9">afterLayout</a> </dd></dl>
 
 </div>
 </div>
@@ -3454,8 +3594,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </div><div class="memdoc">
 <p>This method is called when a simple left mouse click was detected on the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> surface.</p>
 <p>It first determines the layerable that was hit by the click, and then calls its <a class="el" href="classQCPLayerable.html#a7498c2d0d081cf7cad0fb3bb93aa0e91">QCPLayerable::selectEvent</a>. All other layerables receive a <a class="el" href="classQCPLayerable.html#ae546370644a5551c76af739afc008bee">QCPLayerable::deselectEvent</a> (unless the multi-select modifier was pressed, see <a class="el" href="classQCustomPlot.html#a8fc96e3b5138a06759a2a90c166df516">setMultiSelectModifier</a>).</p>
-<p>In this method the hit layerable is determined a second time using <a class="el" href="classQCustomPlot.html#a12536fa6d5deb34ec620acb5134ca82a">layerableAt</a> (after the one in <a class="el" href="classQCustomPlot.html#abce84fa2c71e47b9295d67e8fce84bb4">mousePressEvent</a>), because we want <em>onlySelectable</em> set to true this time. This implies that the mouse event grabber (mMouseEventLayerable) may be a different one from the clicked layerable determined here. For example, if a non-selectable layerable is in front of a selectable layerable at the click position, the front layerable will receive mouse events but the selectable one in the back will receive the <a class="el" href="classQCPLayerable.html#a7498c2d0d081cf7cad0fb3bb93aa0e91">QCPLayerable::selectEvent</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ac10849411e1d0e858ea7f29c8ade364c">processRectSelection</a>, <a class="el" href="classQCPLayerable.html#a04db8351fefd44cfdb77958e75c6288e">QCPLayerable::selectTest</a> </dd></dl>
+<p>In this method the hit layerable is determined a second time using <a class="el" href="classQCustomPlot.html#a998b3a93d7f08d42ce3ec4eab43afc03">layerableAt</a> (after the one in <a class="el" href="classQCustomPlot.html#abce84fa2c71e47b9295d67e8fce84bb4">mousePressEvent</a>), because we want <em>onlySelectable</em> set to true this time. This implies that the mouse event grabber (mMouseEventLayerable) may be a different one from the clicked layerable determined here. For example, if a non-selectable layerable is in front of a selectable layerable at the click position, the front layerable will receive mouse events but the selectable one in the back will receive the <a class="el" href="classQCPLayerable.html#a7498c2d0d081cf7cad0fb3bb93aa0e91">QCPLayerable::selectEvent</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ac10849411e1d0e858ea7f29c8ade364c">processRectSelection</a>, <a class="el" href="classQCPLayerable.html#a272989087fc8c4357b4ba614f9922336">QCPLayerable::selectTest</a> </dd></dl>
 
 </div>
 </div>
@@ -3571,8 +3711,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 
 </div>
 </div>
-<a id="a12536fa6d5deb34ec620acb5134ca82a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12536fa6d5deb34ec620acb5134ca82a">&sect;&nbsp;</a></span>layerableAt()</h2>
+<a id="a998b3a93d7f08d42ce3ec4eab43afc03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998b3a93d7f08d42ce3ec4eab43afc03">&sect;&nbsp;</a></span>layerableAt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3596,7 +3736,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QVariant *&#160;</td>
-          <td class="paramname"><em>selectionDetails</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>selectionDetails</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3610,14 +3750,14 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the top-most layerable at pixel position <em>pos</em>. If <em>onlySelectable</em> is set to true, only those layerables that are selectable will be considered. (Layerable subclasses communicate their selectability via the <a class="el" href="classQCPLayerable.html#a04db8351fefd44cfdb77958e75c6288e">QCPLayerable::selectTest</a> method, by returning -1.)</p>
+<p>Returns the top-most layerable at pixel position <em>pos</em>. If <em>onlySelectable</em> is set to true, only those layerables that are selectable will be considered. (Layerable subclasses communicate their selectability via the <a class="el" href="classQCPLayerable.html#a272989087fc8c4357b4ba614f9922336">QCPLayerable::selectTest</a> method, by returning -1.)</p>
 <p><em>selectionDetails</em> is an output parameter that contains selection specifics of the affected layerable. This is useful if the respective layerable shall be given a subsequent <a class="el" href="classQCPLayerable.html#a7498c2d0d081cf7cad0fb3bb93aa0e91">QCPLayerable::selectEvent</a> (like in <a class="el" href="classQCustomPlot.html#a724e97d2e8c03e68adac5f4b6164a1b3">mouseReleaseEvent</a>). <em>selectionDetails</em> usually contains information about which part of the layerable was hit, in multi-part layerables (e.g. <a class="el" href="classQCPAxis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a>). If the layerable is a plottable, <em>selectionDetails</em> contains a <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> instance with the single data point which is closest to <em>pos</em>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#ac9048589e78e7959d27a2c48c253e159">layerableListAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a>, <a class="el" href="classQCustomPlot.html#a4a08842fc3e9ba6bed83aa410c5c5ba5">axisRectAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a3f9d0033397b309343a6df8e87fb46c9">layerableListAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a>, <a class="el" href="classQCustomPlot.html#a4a08842fc3e9ba6bed83aa410c5c5ba5">axisRectAt</a> </dd></dl>
 
 </div>
 </div>
-<a id="ac9048589e78e7959d27a2c48c253e159"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9048589e78e7959d27a2c48c253e159">&sect;&nbsp;</a></span>layerableListAt()</h2>
+<a id="a3f9d0033397b309343a6df8e87fb46c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9d0033397b309343a6df8e87fb46c9">&sect;&nbsp;</a></span>layerableListAt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3641,7 +3781,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QList&lt; QVariant &gt; *&#160;</td>
-          <td class="paramname"><em>selectionDetails</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>selectionDetails</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3655,10 +3795,10 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the layerables at pixel position <em>pos</em>. If <em>onlySelectable</em> is set to true, only those layerables that are selectable will be considered. (Layerable subclasses communicate their selectability via the <a class="el" href="classQCPLayerable.html#a04db8351fefd44cfdb77958e75c6288e">QCPLayerable::selectTest</a> method, by returning -1.)</p>
-<p>The returned list is sorted by the layerable/drawing order. If you only need to know the top-most layerable, rather use <a class="el" href="classQCustomPlot.html#a12536fa6d5deb34ec620acb5134ca82a">layerableAt</a>.</p>
+<p>Returns the layerables at pixel position <em>pos</em>. If <em>onlySelectable</em> is set to true, only those layerables that are selectable will be considered. (Layerable subclasses communicate their selectability via the <a class="el" href="classQCPLayerable.html#a272989087fc8c4357b4ba614f9922336">QCPLayerable::selectTest</a> method, by returning -1.)</p>
+<p>The returned list is sorted by the layerable/drawing order such that the layerable that appears on top in the plot is at index 0 of the returned list. If you only need to know the top layerable, rather use <a class="el" href="classQCustomPlot.html#a998b3a93d7f08d42ce3ec4eab43afc03">layerableAt</a>.</p>
 <p><em>selectionDetails</em> is an output parameter that contains selection specifics of the affected layerable. This is useful if the respective layerable shall be given a subsequent <a class="el" href="classQCPLayerable.html#a7498c2d0d081cf7cad0fb3bb93aa0e91">QCPLayerable::selectEvent</a> (like in <a class="el" href="classQCustomPlot.html#a724e97d2e8c03e68adac5f4b6164a1b3">mouseReleaseEvent</a>). <em>selectionDetails</em> usually contains information about which part of the layerable was hit, in multi-part layerables (e.g. <a class="el" href="classQCPAxis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a>). If the layerable is a plottable, <em>selectionDetails</em> contains a <a class="el" href="classQCPDataSelection.html">QCPDataSelection</a> instance with the single data point which is closest to <em>pos</em>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a12536fa6d5deb34ec620acb5134ca82a">layerableAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a>, <a class="el" href="classQCustomPlot.html#a4a08842fc3e9ba6bed83aa410c5c5ba5">axisRectAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCustomPlot.html#a998b3a93d7f08d42ce3ec4eab43afc03">layerableAt</a>, <a class="el" href="classQCustomPlot.html#afaa1d304e0287d140fd238e90889ef3c">layoutElementAt</a>, <a class="el" href="classQCustomPlot.html#a4a08842fc3e9ba6bed83aa410c5c5ba5">axisRectAt</a> </dd></dl>
 
 </div>
 </div>
@@ -3771,7 +3911,7 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
 </table>
 </div><div class="memdoc">
 <p>This method returns whether any of the paint buffers held by this <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> instance are invalidated.</p>
-<p>If any buffer is invalidated, a partial replot (<a class="el" href="classQCPLayer.html#adefd53b6db02f470151c416f42e37180">QCPLayer::replot</a>) is not allowed and always causes a full replot (<a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">QCustomPlot::replot</a>) of all layers. This is the case when for example the layer order has changed, new layers were added, layers were removed, or layer modes were changed (<a class="el" href="classQCPLayer.html#a938d57b04f4e4c23cedf1711f983919b">QCPLayer::setMode</a>).</p>
+<p>If any buffer is invalidated, a partial replot (<a class="el" href="classQCPLayer.html#adefd53b6db02f470151c416f42e37180">QCPLayer::replot</a>) is not allowed and always causes a full replot (<a class="el" href="classQCustomPlot.html#aa4bfe7d70dbe67e81d877819b75ab9af">QCustomPlot::replot</a>) of all layers. This is the case when for example the layer order has changed, new layers were added or removed, layer modes were changed (<a class="el" href="classQCPLayer.html#a938d57b04f4e4c23cedf1711f983919b">QCPLayer::setMode</a>), or layerables were added or removed.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classQCPAbstractPaintBuffer.html#ae4c7dc70dfc66be2879ce297b2b3d67f">QCPAbstractPaintBuffer::setInvalidated</a> </dd></dl>
 
 </div>
@@ -3846,8 +3986,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>A pointer to the primary x Axis (bottom) of the main axis rect of the plot.</p>
-<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become 0.</p>
-<p>If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
+<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become <code>nullptr</code>.</p>
+<p>If an axis convenience pointer is currently <code>nullptr</code> and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
 
 </div>
 </div>
@@ -3863,8 +4003,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>A pointer to the primary y Axis (left) of the main axis rect of the plot.</p>
-<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become 0.</p>
-<p>If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
+<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become <code>nullptr</code>.</p>
+<p>If an axis convenience pointer is currently <code>nullptr</code> and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
 
 </div>
 </div>
@@ -3880,8 +4020,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>A pointer to the secondary x Axis (top) of the main axis rect of the plot. Secondary axes are invisible by default. Use <a class="el" href="classQCPLayerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">QCPAxis::setVisible</a> to change this (or use <a class="el" href="classQCPAxisRect.html#a5fa906175447b14206954f77fc7f1ef4">QCPAxisRect::setupFullAxesBox</a>).</p>
-<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become 0.</p>
-<p>If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
+<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become <code>nullptr</code>.</p>
+<p>If an axis convenience pointer is currently <code>nullptr</code> and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
 
 </div>
 </div>
@@ -3897,8 +4037,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>A pointer to the secondary y Axis (right) of the main axis rect of the plot. Secondary axes are invisible by default. Use <a class="el" href="classQCPLayerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">QCPAxis::setVisible</a> to change this (or use <a class="el" href="classQCPAxisRect.html#a5fa906175447b14206954f77fc7f1ef4">QCPAxisRect::setupFullAxesBox</a>).</p>
-<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become 0.</p>
-<p>If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
+<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple axis rects or multiple axes to one side, use the <a class="el" href="classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1">QCPAxisRect::axis</a> interface to access the new axes. If one of the four default axes or the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointers become <code>nullptr</code>.</p>
+<p>If an axis convenience pointer is currently <code>nullptr</code> and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
 
 </div>
 </div>
@@ -3914,8 +4054,8 @@ If you are using a Qt version before 5.0, you must also add the module "opengl" 
       </table>
 </div><div class="memdoc">
 <p>A pointer to the default legend of the main axis rect. The legend is invisible by default. Use <a class="el" href="classQCPLayerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">QCPLegend::setVisible</a> to change this.</p>
-<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple legends to the plot, use the layout system interface to access the new legend. For example, legends can be placed inside an axis rect's <a class="el" href="classQCPAxisRect.html#a949f803466619924c7018df4b511ae10">inset layout</a>, and must then also be accessed via the inset layout. If the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointer becomes 0.</p>
-<p>If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
+<p><a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> offers convenient pointers to the axes (<a class="el" href="classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4">xAxis</a>, <a class="el" href="classQCustomPlot.html#af6fea5679725b152c14facd920b19367">yAxis</a>, <a class="el" href="classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9">xAxis2</a>, <a class="el" href="classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7">yAxis2</a>) and the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a>. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use <a class="el" href="thelayoutsystem.html">the layout system</a> to add multiple legends to the plot, use the layout system interface to access the new legend. For example, legends can be placed inside an axis rect's <a class="el" href="classQCPAxisRect.html#a949f803466619924c7018df4b511ae10">inset layout</a>, and must then also be accessed via the inset layout. If the default legend is removed due to manipulation of the layout system (e.g. by removing the main axis rect), the corresponding pointer becomes <code>nullptr</code>.</p>
+<p>If an axis convenience pointer is currently <code>nullptr</code> and a new axis rect or a corresponding axis is added in the place of the main axis rect, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> resets the convenience pointers to the according new axes. Similarly the <a class="el" href="classQCustomPlot.html#a4eadcd237dc6a09938b68b16877fa6af">legend</a> convenience pointer will be reset if a legend is added after the main legend was removed before. </p>
 
 </div>
 </div>

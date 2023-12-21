@@ -17,6 +17,9 @@
         <file alias="stop_act.png">icons/lynny-2x_white/Stop.png</file>
         <file alias="clear_act.png">icons/lynny-2x_white/No Entry.png</file>
         <file alias="help_act.png">icons/lynny-2x_white/Help.png</file>
+        <file alias="ExPNG_dis.png">icons/lynny-2x/File Type PNG.png</file>
+        <file alias="ExPNG_nor.png">icons/lynny-2x_text/File Type PNG.png</file>
+        <file alias="ExPNG_act.png">icons/lynny-2x_white/File Type PNG.png</file>
     </qresource>
     <qresource prefix="/">
         <file>icons/line_icon_set/document.png</file>

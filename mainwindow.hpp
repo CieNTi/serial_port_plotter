@@ -27,7 +27,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <QtSerialPort/QtSerialPort>
 #include <QSerialPortInfo>
 #include "helpwindow.hpp"
@@ -54,6 +54,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void closeEvent(QCloseEvent *event);                                                // close event to save settings
 
 private slots:
     void on_comboPort_currentIndexChanged(const QString &arg1);                           // Slot displays message on status bar
@@ -68,7 +69,7 @@ private slots:
     void readData();                                                                      // Slot for inside serial port
     //void on_comboAxes_currentIndexChanged(int index);                                     // Display number of axes and colors in status bar
     void on_spinYStep_valueChanged(int arg1);                                             // Spin box for changing Y axis tick step
-    void on_savePNGButton_clicked();                                                      // Button for saving JPG
+    //void on_savePNGButton_clicked();                                                      // Button for saving JPG
     void onMouseMoveInPlot (QMouseEvent *event);                                          // Displays coordinates of mouse pointer when clicked in plot in status bar
     void on_spinPoints_valueChanged (int arg1);                                           // Spin box controls how many data points are collected and displayed
     void on_mouse_wheel_in_plot (QWheelEvent *event);                                     // Makes wheel mouse works while plotting
@@ -83,6 +84,7 @@ private slots:
     void on_actionPause_Plot_triggered();
     void on_actionClear_triggered();
     void on_actionRecord_stream_triggered();
+    void on_actionRecord_PNG_triggered();
 
     void on_pushButton_TextEditHide_clicked();
 
@@ -95,6 +97,7 @@ private slots:
     void on_listWidget_Channels_itemDoubleClicked(QListWidgetItem *item);
 
     void on_pushButton_clicked();
+
 
 signals:
     void portOpenFail();                                                                  // Emitted when cannot open port
@@ -113,6 +116,8 @@ private:
     bool connected;                                                                       // Status connection variable
     bool plotting;                                                                        // Status plotting variable
     int dataPointNumber;                                                                  // Keep track of data points
+
+    char buffer[10];                                                                      // buffer to convert number in string for png export
     /* Channels of data (number of graphs) */
     int channels;
 
@@ -131,6 +136,21 @@ private:
     void openCsvFile(void);
     void closeCsvFile(void);
 
+    /* Preferences */
+    struct SPreferences
+    {
+        int port;                                                                       // last port used
+        int baud;                                                                       // last baudrate item used
+        int data;                                                                       // last data length used
+        int parity;                                                                     // last parity used
+        int stop;                                                                       // last stop bit number
+        int spinPoints;
+        int spinYStep;                                                                  // last value used
+        int spinAxesMin;                                                                // last value used
+        int spinAxesMax;                                                                // last value used
+    };
+    SPreferences m_prefs;                                                               // preferences stucture
+
     QTimer updateTimer;                                                                   // Timer used for replotting the plot
     QTime timeOfFirstData;                                                                // Record the time of the first data point
     double timeBetweenSamples;                                                            // Store time between samples
@@ -145,6 +165,9 @@ private:
     void setupPlot();                                                                     // Setup the QCustomPlot
                                                                                           // Open the inside serial port with these parameters
     void openPort(QSerialPortInfo portInfo, int baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits);
+
+    void loadSettings();                                                                // load settings to populate preferences fro; config file
+    void saveSettings();                                                                // sqve preferences in config file
 };
 
 

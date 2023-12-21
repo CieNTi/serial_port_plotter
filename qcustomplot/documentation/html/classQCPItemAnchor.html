@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
 <title>QCPItemAnchor Class Reference</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -159,7 +159,7 @@ Protected Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns 0 if this instance is merely a <a class="el" href="classQCPItemAnchor.html" title="An anchor of an item to which positions can be attached to. ">QCPItemAnchor</a>, and a valid pointer of type QCPItemPosition* if it actually is a <a class="el" href="classQCPItemPosition.html" title="Manages the position of an item. ">QCPItemPosition</a> (which is a subclass of <a class="el" href="classQCPItemAnchor.html" title="An anchor of an item to which positions can be attached to. ">QCPItemAnchor</a>).</p>
+<p>Returns <code>nullptr</code> if this instance is merely a <a class="el" href="classQCPItemAnchor.html" title="An anchor of an item to which positions can be attached to. ">QCPItemAnchor</a>, and a valid pointer of type QCPItemPosition* if it actually is a <a class="el" href="classQCPItemPosition.html" title="Manages the position of an item. ">QCPItemPosition</a> (which is a subclass of <a class="el" href="classQCPItemAnchor.html" title="An anchor of an item to which positions can be attached to. ">QCPItemAnchor</a>).</p>
 <p>This safe downcast functionality could also be achieved with a dynamic_cast. However, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> avoids dynamic_cast to work with projects that don't have RTTI support enabled (e.g. -fno-rtti flag with gcc compiler). </p>
 
 <p>Reimplemented in <a class="el" href="classQCPItemPosition.html#a577a7efc601df85a20b3e709d1ac320e">QCPItemPosition</a>.</p>

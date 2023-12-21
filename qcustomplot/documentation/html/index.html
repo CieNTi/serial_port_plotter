@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Emanuel Eichhammer" />
-<meta name="copyright" content="(C) 2011-2016 Emanuel Eichhammer" />
-<title>QCustomPlot 2.0.1 Documentation</title>
+<meta name="copyright" content="(C) 2011-2022 Emanuel Eichhammer" />
+<title>QCustomPlot 2.1.1 Documentation</title>
 <link href="qcp.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -18,22 +18,22 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">QCustomPlot 2.0.1 Documentation </div>  </div>
+<div class="title">QCustomPlot 2.1.1 Documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="image">
 <img src="qcp-doc-logo.png" alt="qcp-doc-logo.png"/>
 </div>
 <p>If you are new to <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> and just want to start using it, it's recommended to look at the tutorials and examples at</p>
-<p><a href="http://www.qcustomplot.com/">http://www.qcustomplot.com/</a></p>
+<p><a href="https://www.qcustomplot.com/">https://www.qcustomplot.com/</a></p>
 <p>This documentation is especially helpful as a reference, when you're familiar with the basics of data visualization with QCustomPlot and you wish to learn more about specific functionality or more advanced concepts. See the <a class="el" href="classoverview.html">class overview</a> for diagrams explaining the relationships between the most important classes of the QCustomPlot library.</p>
 <h1><a class="anchor" id="mainpage-plottables"></a>
 Plottables</h1>
 <p><em>Plottables</em> are classes that display any kind of data in <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>. They all derive from <a class="el" href="classQCPAbstractPlottable.html">QCPAbstractPlottable</a>. For example, <a class="el" href="classQCPGraph.html">QCPGraph</a> is a plottable that displays a graph with different line styles, scatter styles, filling etc.</p>
 <p>Since plotting graphs is such a dominant use case, <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> has a special interface for working with <a class="el" href="classQCPGraph.html">QCPGraph</a> plottables, that makes it very easy to handle them:<br />
- A new graph can be created with <a class="el" href="classQCustomPlot.html#a6fb2873d35a8a8089842d81a70a54167">QCustomPlot::addGraph</a> and accessed with <a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">QCustomPlot::graph</a>.</p>
+ A new graph can be created with <a class="el" href="classQCustomPlot.html#a2836a46e31d5aee174ae054c0aa6580b">QCustomPlot::addGraph</a> and accessed with <a class="el" href="classQCustomPlot.html#a6ecae130f684b25276fb47bd3a5875c6">QCustomPlot::graph</a>.</p>
 <p>For all other plottables, the normal plottable interface is used: First, an instance of the respective plottable is created and added to the <a class="el" href="classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>, e.g. </p><div class="fragment"><div class="line">  <a class="code" href="classQCPCurve.html">QCPCurve</a> *newCurve = <span class="keyword">new</span> <a class="code" href="classQCPCurve.html">QCPCurve</a>(customPlot-&gt;xAxis, customPlot-&gt;yAxis);</div></div><!-- fragment --><p>The properties of the newly created plottable can then be accessed via the <code>newCurve</code> pointer.</p>
-<p>Plottables (including graphs) can be retrieved via <a class="el" href="classQCustomPlot.html#a32de81ff53e263e785b83b52ecd99d6f">QCustomPlot::plottable</a>. Since the return type of that function is the abstract base class of all plottables, <a class="el" href="classQCPAbstractPlottable.html" title="The abstract base class for all data representing objects in a plot. ">QCPAbstractPlottable</a>, you will probably want to <code>qobject_cast</code> the returned pointer to the respective plottable subclass. As usual, the cast returns zero if the plottable wasn't of that specific subclass.</p>
+<p>Plottables (including graphs) can be retrieved via <a class="el" href="classQCustomPlot.html#a32de81ff53e263e785b83b52ecd99d6f">QCustomPlot::plottable</a>. Since the return type of that function is the abstract base class of all plottables, <a class="el" href="classQCPAbstractPlottable.html" title="The abstract base class for all data representing objects in a plot. ">QCPAbstractPlottable</a>, you will probably want to <code>qobject_cast</code> the returned pointer to the respective plottable subclass. As usual, the cast returns <code>nullptr</code> if the plottable wasn't of that specific subclass.</p>
 <p>All further interfacing with plottables (e.g how to set data) is specific to the plottable type. See the documentations of the subclasses: <a class="el" href="classQCPGraph.html" title="A plottable representing a graph in a plot. ">QCPGraph</a>, <a class="el" href="classQCPCurve.html" title="A plottable representing a parametric curve in a plot. ">QCPCurve</a>, <a class="el" href="classQCPBars.html" title="A plottable representing a bar chart in a plot. ">QCPBars</a>, <a class="el" href="classQCPStatisticalBox.html" title="A plottable representing a single statistical box in a plot. ">QCPStatisticalBox</a>, <a class="el" href="classQCPColorMap.html" title="A plottable representing a two-dimensional color map in a plot. ">QCPColorMap</a>, <a class="el" href="classQCPFinancial.html" title="A plottable representing a financial stock chart. ">QCPFinancial</a>.</p>
 <h1><a class="anchor" id="mainpage-axes"></a>
 Controlling the Axes</h1>
